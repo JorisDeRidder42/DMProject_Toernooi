@@ -1,0 +1,58 @@
+﻿<Window x:Class="DeRidderJoris_GRPLTId1._1_DM_Project.DatabaseWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DeRidderJoris_GRPLTId1._1_DM_Project"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        FontFamily="{DynamicResource MaterialDesignFont}"
+       Title="TeamWindow" Height="650" Width="800" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition  Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Label Content="Kies in welk toernooi u wilt worden ingeschreven" FontFamily="Open Sans" FontSize="20" VerticalAlignment="Center" FontWeight="Bold" Grid.ColumnSpan="4" Grid.Row="0" Grid.Column="0" Margin="10"/>
+
+        <Button
+        Style="{StaticResource MaterialDesignFloatingActionAccentButton}" Grid.Column="4" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="10"
+        ToolTip="MaterialDesignFloatingActionAccentButton" Width="50" Height="50" >
+            <materialDesign:PackIcon Kind="House" Height="30" Width="30" />
+        </Button>
+
+
+        <DataGrid x:Name="dataToernooi" AutoGenerateColumns="False" Margin="5"
+	    Grid.Row="1" Grid.Column="0"  Grid.ColumnSpan="4" Grid.RowSpan="3" IsReadOnly="True" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding toernooiNaam}" Header="Naam van het toernooi"/>
+                <DataGridTextColumn Binding="{Binding startdatum}" Header="BeginDatum"/>
+                <DataGridTextColumn Binding="{Binding einddatum}" Header="EindDatum"/>
+                <DataGridTextColumn Binding="{Binding Gamemode}" Header="Spel"/>
+                <DataGridTextColumn Binding="{Binding CheckInuur}" Header="Check in uur"/>
+                <DataGridTextColumn Binding="{Binding Startuur}" Header="StartUur"/>
+                <DataGridTextColumn Binding="{Binding prijzenpot}" Header="Rewards"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button x:Name="btnVerwijderen" Content="Verwijderen" Grid.Row="5" Grid.Column="0" Margin="5" Style="{StaticResource MaterialDesignRaisedAccentButton}"  />
+        <Button x:Name="btnAanpassen" Content="Aanpassen" Grid.Row="5" Grid.Column="1" Margin="5" Style="{StaticResource MaterialDesignRaisedAccentButton}" />
+        <Button x:Name="btnToevoegen" Content="Toevoegen" Grid.Row="5" Grid.Column="2" Margin="5" Style="{StaticResource MaterialDesignRaisedAccentButton}"  />
+        <Button x:Name="btnAnnuleren" Content="Annuleren" Grid.Row="5" Grid.Column="3" Margin="15"/>
+    </Grid>
+</Window>

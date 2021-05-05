@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeRidderJoris_GRPLTId1.1_DM_Project", "DeRidderJoris_GRPLTId1.1_DM_Project.csproj", "{E532985A-2311-42EB-B1B0-0C3A646114EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeRidderJoris_GRPLTId1.1_DM_DAL", "..\DeRidderJoris_GRPLTId1.1_DM_DAL\DeRidderJoris_GRPLTId1.1_DM_DAL.csproj", "{BB76C8D0-0401-448B-B6C5-D6DBA5A67BFE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E532985A-2311-42EB-B1B0-0C3A646114EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E532985A-2311-42EB-B1B0-0C3A646114EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E532985A-2311-42EB-B1B0-0C3A646114EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E532985A-2311-42EB-B1B0-0C3A646114EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB76C8D0-0401-448B-B6C5-D6DBA5A67BFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB76C8D0-0401-448B-B6C5-D6DBA5A67BFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB76C8D0-0401-448B-B6C5-D6DBA5A67BFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB76C8D0-0401-448B-B6C5-D6DBA5A67BFE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {70B10952-3FB0-45C7-A4C7-17887EA7CF9E}
+	EndGlobalSection
+EndGlobal

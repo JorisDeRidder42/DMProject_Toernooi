@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ToernooiDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Prijs">
+    <Key>
+      <PropertyRef Name="prijsId" />
+    </Key>
+    <Property Name="prijsId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="toernooiId" Type="int" Nullable="false" />
+    <Property Name="prijsnaam" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="spelerId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="roleId" />
+    </Key>
+    <Property Name="roleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="rolenaam" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Speler">
+    <Key>
+      <PropertyRef Name="spelerId" />
+    </Key>
+    <Property Name="spelerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="voornaam" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="achternaam" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="nicknaam" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="geboortedatum" Type="date" />
+    <Property Name="geboorteplaats" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Toernooi">
+    <Key>
+      <PropertyRef Name="toernooiId" />
+    </Key>
+    <Property Name="toernooiId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="toernooiNaam" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="plaats" Type="varchar" MaxLength="20" />
+    <Property Name="prijzenpot" Type="int" />
+    <Property Name="startdatum" Type="date" Nullable="false" />
+    <Property Name="einddatum" Type="date" />
+    <Property Name="CheckInuur" Type="time" Precision="7" Nullable="false" />
+    <Property Name="Startuur" Type="time" Precision="7" Nullable="false" />
+    <Property Name="Gamemode" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Prijs_Toernooi">
+    <End Role="Toernooi" Type="Self.Toernooi" Multiplicity="1" />
+    <End Role="Prijs" Type="Self.Prijs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Toernooi">
+        <PropertyRef Name="toernooiId" />
+      </Principal>
+      <Dependent Role="Prijs">
+        <PropertyRef Name="toernooiId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ToernooiInschrijven_Role">
+    <End Role="Speler" Type="Self.Speler" Multiplicity="1" />
+    <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Speler">
+        <PropertyRef Name="spelerId" />
+      </Principal>
+      <Dependent Role="Role">
+        <PropertyRef Name="roleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ToernooiInschrijven_Speler">
+    <End Role="Prijs" Type="Self.Prijs" Multiplicity="1" />
+    <End Role="Speler" Type="Self.Speler" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Prijs">
+        <PropertyRef Name="prijsId" />
+      </Principal>
+      <Dependent Role="Speler">
+        <PropertyRef Name="spelerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ToernooiDBModelStoreContainer">
+    <EntitySet Name="Prijs" EntityType="Self.Prijs" Schema="ToernooiInschrijven" store:Type="Tables" />
+    <EntitySet Name="Role" EntityType="Self.Role" Schema="ToernooiInschrijven" store:Type="Tables" />
+    <EntitySet Name="Speler" EntityType="Self.Speler" Schema="ToernooiInschrijven" store:Type="Tables" />
+    <EntitySet Name="Toernooi" EntityType="Self.Toernooi" Schema="ToernooiInschrijven" store:Type="Tables" />
+    <AssociationSet Name="FK_Prijs_Toernooi" Association="Self.FK_Prijs_Toernooi">
+      <End Role="Toernooi" EntitySet="Toernooi" />
+      <End Role="Prijs" EntitySet="Prijs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ToernooiInschrijven_Role" Association="Self.FK_ToernooiInschrijven_Role">
+      <End Role="Speler" EntitySet="Speler" />
+      <End Role="Role" EntitySet="Role" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ToernooiInschrijven_Speler" Association="Self.FK_ToernooiInschrijven_Speler">
+      <End Role="Prijs" EntitySet="Prijs" />
+      <End Role="Speler" EntitySet="Speler" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

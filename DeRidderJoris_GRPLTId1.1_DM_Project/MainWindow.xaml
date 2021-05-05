@@ -1,0 +1,103 @@
+﻿<Window x:Class="DeRidderJoris_GRPLTId1._1_DM_Project.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DeRidderJoris_GRPLTId1._1_DM_Project"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="MainWindow" Height="650" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Label Content="Inschrijven Toernooi" FontFamily="Open Sans" FontSize="20" VerticalAlignment="Center" FontWeight="Bold" Grid.ColumnSpan="4" Grid.Row="0" Grid.Column="0" Margin="10"/>
+        <Button
+        Style="{StaticResource MaterialDesignFloatingActionAccentButton}" Grid.Column="3" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="10"
+        ToolTip="MaterialDesignFloatingActionAccentButton" Width="50" Height="50" x:Name="btnAfsluiten" Click="btnAfsluiten_Click">
+            <materialDesign:PackIcon Kind="PowerStandby" Height="30" Width="30" />
+        </Button>
+
+        <Border Grid.Column="0" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="4" Margin="10">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF173780" Offset="1"/>
+                    <GradientStop Color="#FF2D6DFF"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Label Content="Voor welk spel wil je je inschrijven?" FontFamily="Open Sans" FontSize="20" FontWeight="Bold" Foreground="White" VerticalAlignment="Top" Margin="20" HorizontalAlignment="Center"/>
+        </Border>
+        <Button x:Name="btnFortnite" Grid.Column="0" Grid.Row="2" Width="120" Height="120" Margin="10" BorderThickness="0" Click="btnFortnite_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="images/fortnite-logo.jpg"/>
+            </Button.Background>
+        </Button>
+        <Label Content="Fortnite" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White" Margin="20"/>
+
+        <Button x:Name="btnRocketLeague" Grid.Column="1" Grid.Row="2" Width="120" Height="120" Margin="10" BorderThickness="0" Click="btnRocketLeague_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="images/rocket-league-logo.jpg"/>
+            </Button.Background>
+        </Button>
+        <Label Content="Rocket league" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White" Margin="20"/>
+
+        <Button x:Name="btnLeagueOfLegends" Grid.Column="2" Grid.Row="2" Width="120" Height="120" Margin="10" BorderThickness="0" Click="btnLeagueOfLegends_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="images/Leagueoflegends-icon.jpg"/>
+            </Button.Background>
+        </Button>
+        <Label Content="League of legends" Grid.Column="2" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White" Margin="20"/>
+
+        <Button x:Name="btnValorant" Grid.Column="3" Grid.Row="2" Width="120" Height="120" Margin="10" BorderThickness="0" Click="btnValorant_Click" >
+            <Button.Background>
+                <ImageBrush ImageSource="images/Valorant-logo.jpg"/>
+            </Button.Background>
+        </Button>
+        <Label Content="Valorant" Grid.Column="3" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White" Margin="20"/>
+
+        <Button x:Name="btnCSGO" Grid.Column="0" Grid.Row="3" Width="120" Height="120" Margin="10" BorderThickness="0" Click="btnCSGO_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="images/CSGO.jpg"/>
+            </Button.Background>
+        </Button>
+        <Label Content="CS: Global offensive" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White" Margin="20"/>
+
+
+        <Button x:Name="btnDota" Grid.Column="1" Grid.Row="3" Width="120" Height="120" Margin="10" BorderThickness="0" Click="btnDota_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="images/dota-logo.jpg"/>
+            </Button.Background>
+        </Button>
+        <Label Content="Dota 2" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White" Margin="20"/>
+
+        <Button x:Name="btnStarCraft" Grid.Column="2" Grid.Row="3" Width="120" Height="120" Margin="10" BorderThickness="0" Click="btnStarCraft_Click" >
+            <Button.Background>
+                <ImageBrush ImageSource="images/starcraft-logo.jpg"/>
+            </Button.Background>
+        </Button>
+        <Label Content="Star craft" Grid.Column="2" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White" Margin="20"/>
+
+        <Button x:Name="btnSuperSmash" Grid.Column="3" Grid.Row="3" Width="120" Height="120" Margin="10" BorderThickness="0" Click="btnSuperSmash_Click" >
+            <Button.Background>
+                <ImageBrush ImageSource="images/supersmashbros-logo.jpg"/>
+            </Button.Background>
+        </Button>
+        <Label Content="super smash bros" Grid.Column="3" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White" Margin="20"/>
+    </Grid>
+</Window>
