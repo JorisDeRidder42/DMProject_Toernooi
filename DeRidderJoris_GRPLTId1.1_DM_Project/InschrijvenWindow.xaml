@@ -41,7 +41,6 @@
                 <StackPanel Orientation="Vertical">
                     <Label x:Name="lblDate" Content="Date" FontWeight="Bold" FontFamily="Open Sans" Margin="5"/>
                     <Label x:Name="lblCheckIn" Content="Check in" FontWeight="Bold" FontFamily="Open Sans" Margin="5"/>
-                    <Label x:Name="lblMaxpart" Content="Max participants" FontWeight="Bold" FontFamily="Open Sans" Margin="5"/>
                     <Label x:Name="lblFirstGame" Content="First Game" FontWeight="Bold" FontFamily="Open Sans" Margin="5"/>
                     <Label x:Name="lblLineUp" Content="Lineup" FontWeight="Bold" FontFamily="Open Sans" Margin="5"/>
                     <Label x:Name="lblGame" Content="Gamemode" FontWeight="Bold" FontFamily="Open Sans" Margin="5"/>
@@ -50,10 +49,9 @@
                 <StackPanel Orientation="Vertical">
                     <Label x:Name="lblDatum" Content="" Margin="5" FontFamily="Open Sans"/>
                     <Label x:Name="lblTijd" Content="" Margin="5" FontFamily="Open Sans"/>
-                    <Label x:Name="lblMDeelnemers" Content="" Margin="5" FontFamily="Open Sans"/>
                     <Label x:Name="lbleersteGame" Content="" Margin="5" FontFamily="Open Sans"/>
                     <Label x:Name="lblLijnup" Content="" Margin="5" FontFamily="Open Sans"/>
-                    <Label x:Name="lblStijl" Content="" Margin="5" FontFamily="Open Sans"/>
+                    <Label x:Name="lblSpel" Content="" Margin="5" FontFamily="Open Sans"/>
                     <Label x:Name="lblRanking" Content="" Margin="5" FontFamily="Open Sans"/>
                 </StackPanel>
             </StackPanel>
@@ -67,7 +65,7 @@
         </Button>
 
         <Border Grid.Column="0" Grid.Row="4" Margin="10" Background="#FFE1E1E1">
-            <ComboBox x:Name="cmbRewards" DisplayMemberPath="..."  materialDesign:HintAssist.Hint="Reward" Foreground="Black" FontWeight="Bold" Grid.Row="1" Grid.Column="0" Margin="5"/>
+            <ComboBox x:Name="cmbRewards" DisplayMemberPath="prijzenpot"  materialDesign:HintAssist.Hint="Reward" Foreground="Black" FontWeight="Bold" Grid.Row="1" Grid.Column="0" Margin="5"/>
         </Border>
 
         <Border Grid.Column="1" Grid.Row="1" Grid.RowSpan="4" Grid.ColumnSpan="3" Margin="10">

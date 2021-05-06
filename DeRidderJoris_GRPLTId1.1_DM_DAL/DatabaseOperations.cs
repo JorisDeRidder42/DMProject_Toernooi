@@ -15,10 +15,19 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
             using (ToernooiDBEntities toernooiEntities = new ToernooiDBEntities())
             {
                 return toernooiEntities.Toernooi
-                    .Where(t => t.Gamemode == ButtonHelper.buttonSpel)
+                    .Where(t => t.Gamemode == Helper.buttonSpel)
                     .OrderBy(t => t.toernooiNaam)
                     .ThenBy(t => t.CheckInuur)
                      .ToList();
+            }
+        }
+        public static Toernooi OphalenWedstrijdId()
+        {
+            using(ToernooiDBEntities toernooiEntities = new ToernooiDBEntities())
+            {
+                return toernooiEntities.Toernooi
+                    .Where(t => t.toernooiId == Helper.IdGame)
+                    .SingleOrDefault();
             }
         }
     }

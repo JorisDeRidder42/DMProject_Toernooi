@@ -32,7 +32,7 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
         }
         private void btnFortnite_Click(object sender, RoutedEventArgs e)
         {
-            ButtonHelper.buttonSpel = lblFortnite.Content.ToString();
+            Helper.buttonSpel = lblFortnite.Content.ToString();
             DatabaseWindow databaseWindow = new DatabaseWindow();
             databaseWindow.Show();
         }
@@ -43,7 +43,7 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
             // pad in code behind zetten
 
             // roept klasse op voor het lezen welke button het is
-            ButtonHelper.buttonSpel = lblRocketLeague.Content.ToString();
+            Helper.buttonSpel = lblRocketLeague.Content.ToString();
             DatabaseWindow databaseWindow = new DatabaseWindow();
             databaseWindow.Show();
             //InschrijvenWindow inschrijvenWindow = new InschrijvenWindow();
@@ -53,42 +53,42 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
 
         private void btnLeagueOfLegends_Click(object sender, RoutedEventArgs e)
         {
-            ButtonHelper.buttonSpel = lblLeagueOfLegends.Content.ToString();
+            Helper.buttonSpel = lblLeagueOfLegends.Content.ToString();
             DatabaseWindow databaseWindow = new DatabaseWindow();
             databaseWindow.Show();
         }
 
         private void btnValorant_Click(object sender, RoutedEventArgs e)
         {
-            ButtonHelper.buttonSpel = lblLValorant.Content.ToString();
+            Helper.buttonSpel = lblLValorant.Content.ToString();
             DatabaseWindow databaseWindow = new DatabaseWindow();
             databaseWindow.Show();
         }
 
         private void btnCSGO_Click(object sender, RoutedEventArgs e)
         {
-            ButtonHelper.buttonSpel = lblCounterStrike.Content.ToString();
+            Helper.buttonSpel = lblCounterStrike.Content.ToString();
             DatabaseWindow databaseWindow = new DatabaseWindow();
             databaseWindow.Show();
         }
 
         private void btnDota_Click(object sender, RoutedEventArgs e)
         {
-            ButtonHelper.buttonSpel = lblDota2.Content.ToString();
+            Helper.buttonSpel = lblDota2.Content.ToString();
             DatabaseWindow databaseWindow = new DatabaseWindow();
             databaseWindow.Show();
         }
 
         private void btnStarCraft_Click(object sender, RoutedEventArgs e)
         {
-            ButtonHelper.buttonSpel = lblStarCraft.Content.ToString();
+            Helper.buttonSpel = lblStarCraft.Content.ToString();
             DatabaseWindow databaseWindow = new DatabaseWindow();
             databaseWindow.Show();
         }
 
         private void btnSuperSmash_Click(object sender, RoutedEventArgs e)
         {
-            ButtonHelper.buttonSpel = lblSuperSmashBros.Content.ToString();
+            Helper.buttonSpel = lblSuperSmashBros.Content.ToString();
             DatabaseWindow databaseWindow = new DatabaseWindow();
             databaseWindow.Show();
         }

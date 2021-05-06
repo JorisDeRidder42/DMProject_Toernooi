@@ -37,14 +37,16 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
 
         private void dataToernooi_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            RowSelector.RijSelecteren = dataToernooi.SelectedItem;
+            Toernooi GeselecteerdeWedstrijd = dataToernooi.SelectedItem as Toernooi;
+
+            Helper.IdGame = GeselecteerdeWedstrijd.toernooiId;
+
             InschrijvenWindow inschrijven = new InschrijvenWindow();
             inschrijven.Show();
         }
 
         private void btnToevoegen_Click(object sender, RoutedEventArgs e)
         {
-            RowSelector.RijSelecteren = dataToernooi.SelectedItem;
             InschrijvenWindow inschrijven = new InschrijvenWindow();
             inschrijven.Show();
         }

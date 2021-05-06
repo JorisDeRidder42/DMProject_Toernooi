@@ -6,12 +6,10 @@ using System.Threading.Tasks;
 
 namespace DeRidderJoris_GRPLTId1._1_DM_DAL
 {
-    public static class ButtonHelper
+    public static class Helper
     {
         public static string buttonSpel;
+        public static int IdGame;
     }
-    public static class RowSelector
-    {
-        public static object RijSelecteren;
-    }
+  
 }
