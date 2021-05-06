@@ -29,13 +29,14 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
         {
             //id ophalen en plaatsen in label
             Toernooi toernooi = DatabaseOperations.OphalenWedstrijdId();
-            lblDatum.Content = toernooi.startdatum.ToShortDateString();
-            //lblCheckIn.Content = toernooi.
-            //lbleersteGame.Content = toernooi
+            lblDatum.Content = toernooi.startdatum.ToString("dd / MM / yyyy");
+            lblTijd.Content = toernooi.CheckInuur.ToString("hh\\:mm");
+            lblEersteGame.Content = toernooi.Startuur.ToString("hh\\:mm");
 
             lblLijnup.Content = toernooi.toernooiNaam.Substring(0, toernooi.toernooiNaam.LastIndexOf('_'));
-            toernooi.toernooiNaam = toernooi.toernooiNaam.Replace('_', ' ');
-            lblSpel.Content = toernooi.Gamemode.Replace('-', ' ');
+            toernooi.toernooiNaam = toernooi.toernooiNaam.Replace("_", " ");
+            lblSpel.Content = toernooi.Gamemode.Replace("-", " ");
+            //lblRank.Content = toernooi.
             //cmbRewards.ItemsSource;
         }
     }
