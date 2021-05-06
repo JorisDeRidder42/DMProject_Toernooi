@@ -23,5 +23,10 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
         {
             InitializeComponent();
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }

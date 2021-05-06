@@ -53,6 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ButtonHelper.cs" />
     <Compile Include="DatabaseOperations.cs" />
     <Compile Include="Model1.Context.cs">
       <AutoGen>True</AutoGen>

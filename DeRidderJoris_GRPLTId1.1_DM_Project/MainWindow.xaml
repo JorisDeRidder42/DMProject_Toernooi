@@ -48,35 +48,35 @@
                 <ImageBrush ImageSource="images/fortnite-logo.jpg"/>
             </Button.Background>
         </Button>
-        <Label Content="Fortnite" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White" Margin="20"/>
+        <Label x:Name="lblFortnite" Content="Fortnite" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White" Margin="20"/>
 
         <Button x:Name="btnRocketLeague" Grid.Column="1" Grid.Row="2" Width="120" Height="120" Margin="10" BorderThickness="0" Click="btnRocketLeague_Click">
             <Button.Background>
                 <ImageBrush ImageSource="images/rocket-league-logo.jpg"/>
             </Button.Background>
         </Button>
-        <Label Content="Rocket league" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White" Margin="20"/>
+        <Label x:Name="lblRocketLeague" Content="Rocket-league" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White" Margin="20"/>
 
         <Button x:Name="btnLeagueOfLegends" Grid.Column="2" Grid.Row="2" Width="120" Height="120" Margin="10" BorderThickness="0" Click="btnLeagueOfLegends_Click">
             <Button.Background>
                 <ImageBrush ImageSource="images/Leagueoflegends-icon.jpg"/>
             </Button.Background>
         </Button>
-        <Label Content="League of legends" Grid.Column="2" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White" Margin="20"/>
+        <Label x:Name="lblLeagueOfLegends" Content="League of legends" Grid.Column="2" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White" Margin="20"/>
 
         <Button x:Name="btnValorant" Grid.Column="3" Grid.Row="2" Width="120" Height="120" Margin="10" BorderThickness="0" Click="btnValorant_Click" >
             <Button.Background>
                 <ImageBrush ImageSource="images/Valorant-logo.jpg"/>
             </Button.Background>
         </Button>
-        <Label Content="Valorant" Grid.Column="3" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White" Margin="20"/>
+        <Label x:Name="lblLValorant" Content="Valorant" Grid.Column="3" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White" Margin="20"/>
 
         <Button x:Name="btnCSGO" Grid.Column="0" Grid.Row="3" Width="120" Height="120" Margin="10" BorderThickness="0" Click="btnCSGO_Click">
             <Button.Background>
                 <ImageBrush ImageSource="images/CSGO.jpg"/>
             </Button.Background>
         </Button>
-        <Label Content="CS: Global offensive" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White" Margin="20"/>
+        <Label x:Name="lblCounterStrike" Content="Counter strike" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White" Margin="20"/>
 
 
         <Button x:Name="btnDota" Grid.Column="1" Grid.Row="3" Width="120" Height="120" Margin="10" BorderThickness="0" Click="btnDota_Click">
@@ -84,20 +84,20 @@
                 <ImageBrush ImageSource="images/dota-logo.jpg"/>
             </Button.Background>
         </Button>
-        <Label Content="Dota 2" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White" Margin="20"/>
+        <Label x:Name="lblDota2" Content="Dota2" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White" Margin="20"/>
 
         <Button x:Name="btnStarCraft" Grid.Column="2" Grid.Row="3" Width="120" Height="120" Margin="10" BorderThickness="0" Click="btnStarCraft_Click" >
             <Button.Background>
                 <ImageBrush ImageSource="images/starcraft-logo.jpg"/>
             </Button.Background>
         </Button>
-        <Label Content="Star craft" Grid.Column="2" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White" Margin="20"/>
+        <Label  x:Name="lblStarCraft" Content="Star craft 2" Grid.Column="2" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White" Margin="20"/>
 
         <Button x:Name="btnSuperSmash" Grid.Column="3" Grid.Row="3" Width="120" Height="120" Margin="10" BorderThickness="0" Click="btnSuperSmash_Click" >
             <Button.Background>
                 <ImageBrush ImageSource="images/supersmashbros-logo.jpg"/>
             </Button.Background>
         </Button>
-        <Label Content="super smash bros" Grid.Column="3" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White" Margin="20"/>
+        <Label x:Name="lblSuperSmashBros" Content="super smash bros" Grid.Column="3" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White" Margin="20"/>
     </Grid>
 </Window>
