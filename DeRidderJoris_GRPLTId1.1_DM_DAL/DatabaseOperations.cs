@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity;
 
 namespace DeRidderJoris_GRPLTId1._1_DM_DAL
 {
@@ -28,6 +29,15 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
                 return toernooiEntities.Toernooi
                     .Where(t => t.toernooiId == Helper.IdGame)
                     .SingleOrDefault();
+            }
+        }
+        public static List<Toernooi> OphalenPrijsId()
+        {
+            using (ToernooiDBEntities toernooiEntities = new ToernooiDBEntities())
+            {
+                return toernooiEntities.Toernooi
+                   .Include(p => p.Prijs)
+                   .ToList();
             }
         }
     }
