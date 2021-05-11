@@ -50,5 +50,19 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
             InschrijvenWindow inschrijven = new InschrijvenWindow();
             inschrijven.Show();
         }
+
+        private string Valideer(string columnName)
+        {
+            if (columnName == "Toernooi" && dataToernooi.SelectedItem == null)
+            {
+                return "selecteer een Toernooi om te verwijderen!\n";
+            }
+            return "";
+        }
+
+        private void btnVerwijderen_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

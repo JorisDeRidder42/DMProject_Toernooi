@@ -41,3 +41,10 @@ CREATE TABLE ToernooiInschrijven.[Role]
 	CONSTRAINT PK_Role PRIMARY KEY (roleId),
 	CONSTRAINT FK_ToernooiInschrijven_Role FOREIGN KEY (roleId) REFERENCES ToernooiInschrijven.Speler(spelerId)
 )
+CREATE TABLE ToernooiInschrijven.[Rank]
+(
+	[rankId] int IDENTITY(1,1) NOT NULL,
+	ranknaam varchar(20) NULL,
+	CONSTRAINT PK_Rank PRIMARY KEY (rankId),
+	CONSTRAINT FK_ToernooiInschrijven_Rank FOREIGN KEY (rankId) REFERENCES ToernooiInschrijven.Speler(spelerId)
+)

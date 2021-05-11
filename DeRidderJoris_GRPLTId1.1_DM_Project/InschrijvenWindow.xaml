@@ -13,10 +13,10 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
         Title="InschrijvenWindow" Height="650" Width="800" Loaded="Window_Loaded" >
-        <Window.CommandBindings>
-            <CommandBinding Command="ApplicationCommands.Close"
+    <Window.CommandBindings>
+        <CommandBinding Command="ApplicationCommands.Close"
                         Executed="btnAnnuleren_Click"/>
-        </Window.CommandBindings>
+    </Window.CommandBindings>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto"/>
@@ -36,9 +36,9 @@
             <Label x:Name="lblImageDatumTijdLabel" Content="" Foreground ="Black" />
             <Label x:Name="lblImageLabel" Content="" FontSize="20" Foreground="Black" />
         </StackPanel>
-        
 
-        <Border Grid.Column="0" Grid.Row="1" Grid.RowSpan="2" Margin="10" Background="#FFE1E1E1">
+
+        <Border Grid.Column="0" Grid.Row="1" Grid.RowSpan="2" Margin="10" Background="#E1E1E1">
             <StackPanel Orientation="Horizontal">
                 <StackPanel Orientation="Vertical">
                     <Label x:Name="lblDate" Content="Datum" FontWeight="Bold" FontFamily="Open Sans" Margin="5"/>
@@ -55,40 +55,42 @@
                     <Label x:Name="lblLijnup" Content="" Margin="5" FontFamily="Open Sans"/>
                     <Label x:Name="lblSpel" Content="" Margin="5" FontFamily="Open Sans"/>
                     <Label x:Name="lblRanking" Content="Enabled" Margin="5" FontFamily="Open Sans"/>
-                   
+
                 </StackPanel>
             </StackPanel>
         </Border>
 
-        <Button Grid.Column="0" Grid.Row="3" Margin="10" Background="#FFE1E1E1" Style="{StaticResource MaterialDesignFlatLightBgButton}">
+        <Button Grid.Column="0" Grid.Row="3" Margin="10" Background="#E1E1E1" Style="{StaticResource MaterialDesignFlatLightBgButton}">
             <StackPanel Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="UserHelp"/>
                 <TextBlock Text=" Hoe kan je meedoen?"/>
             </StackPanel>
         </Button>
 
-        <ComboBox Grid.Row="4" Margin="10" Background="#FFE1E1E1" DisplayMemberPath="prijsnaam" x:Name="cmbRewards" materialDesign:HintAssist.Hint="Prijzen" Style="{StaticResource MaterialDesignOutlinedComboBox}" />
+        <ComboBox Grid.Row="4" Margin="10" Background="White" DisplayMemberPath="prijsnaam" x:Name="cmbRewards" materialDesign:HintAssist.Hint="Prijzen" Style="{StaticResource MaterialDesignOutlinedComboBox}" />
 
         <Border Grid.Column="1" Grid.Row="1" Grid.RowSpan="4" Grid.ColumnSpan="3" Margin="10">
             <Border.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FFE1E1E1"/>
+                    <GradientStop Color="#FF173780" Offset="1"/>
+                    <GradientStop Color="#FF2D6DFF"/>
                 </LinearGradientBrush>
             </Border.Background>
         </Border>
 
 
 
-        <TextBox x:Name="txtVoornaam" Grid.Row="1" Grid.Column="1" materialDesign:HintAssist.Hint="Voornaam" Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalAlignment="Center" Margin="20" />
-        <TextBox x:Name="txtAchternaam" Grid.Row="2" Grid.Column="1" materialDesign:HintAssist.Hint="Achternaam" Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalAlignment="Center" Margin="20" />
-        <TextBox x:Name="txtNickName" Grid.Row="3" Grid.Column="1" materialDesign:HintAssist.Hint="Nickname" Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalAlignment="Center" Margin="20" />
-        <TextBox x:Name="txtRol" Grid.Row="1" Grid.Column="2" materialDesign:HintAssist.Hint="Rol" Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalAlignment="Center" Margin="0" />
+        <TextBox x:Name="txtVoornaam" Grid.Row="1" Grid.Column="1" materialDesign:HintAssist.Hint="Voornaam" Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalAlignment="Center" Margin="20" Background="White" />
+        <TextBox x:Name="txtAchternaam" Grid.Row="2" Grid.Column="1" materialDesign:HintAssist.Hint="Achternaam" Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalAlignment="Center" Margin="20" Background="White" />
+        <TextBox x:Name="txtNickName" Grid.Row="3" Grid.Column="1" materialDesign:HintAssist.Hint="Nickname" Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalAlignment="Center" Margin="20" Background="White" />
+        <TextBox x:Name="txtRol" Grid.Row="1" Grid.Column="2" materialDesign:HintAssist.Hint="Rol" Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalAlignment="Center" Margin="0" Background="White" />
 
-        <ComboBox x:Name="cmbRank" Grid.Column="2" Grid.Row="2" Margin="20" materialDesign:HintAssist.Hint="Rank" Style="{StaticResource MaterialDesignOutlinedComboBox}"></ComboBox>
+        <ComboBox x:Name="cmbRank" Grid.Column="2" Grid.Row="2" Margin="20" materialDesign:HintAssist.Hint="Rank" Style="{StaticResource MaterialDesignOutlinedComboBox}" Background="White"></ComboBox>
 
-        <DatePicker materialDesign:HintAssist.Hint="Geboortedatum" Style="{StaticResource MaterialDesignOutlinedDatePicker}" x:Name="txtGeboortedatum" Grid.Row="3" Grid.Column="2" Margin="10"/>
+        <DatePicker x:Name="txtGeboortedatum" Grid.Row="3" Grid.Column="2" Margin="10" materialDesign:HintAssist.Hint="Geboortedatum" Style="{StaticResource MaterialDesignOutlinedDatePicker}"/>
 
-        <Button x:Name="btnBewaren" Content="Bewaren" Grid.Row="4" Grid.Column="1" Margin="20" VerticalAlignment="Bottom"  Style="{StaticResource MaterialDesignRaisedAccentButton}"/>
+        <Button x:Name="btnBewaren" Content="Bewaren" Grid.Row="4" Grid.Column="1" Margin="20" VerticalAlignment="Bottom"  Style="{StaticResource MaterialDesignRaisedAccentButton}" Click="btnBewaren_Click"/>
         <Button x:Name="btnAnnuleren" Content="Annuleren" Grid.Row="4" Grid.Column="2" Margin="20" VerticalAlignment="Bottom" Click="btnAnnuleren_Click"/>
     </Grid>
 </Window>
+ 

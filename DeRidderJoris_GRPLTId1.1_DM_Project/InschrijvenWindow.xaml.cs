@@ -30,7 +30,7 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
             //id ophalen en plaatsen in label
             Toernooi toernooi = DatabaseOperations.OphalenWedstrijdId();
             List<Toernooi> toernooi1 = DatabaseOperations.OphalenPrijsId();
-            lblImageDatumTijdLabel.Content = "begint " + toernooi.startdatum.ToString("dd/MM/yyyy") + " " + toernooi.CheckInuur.ToString("hh\\:mm");
+            lblImageDatumTijdLabel.Content = "begint " + toernooi.startdatum.ToString("dd/MM/yyyy") + " | " + toernooi.CheckInuur.ToString("hh\\:mm");
             lblImageLabel.Content = toernooi.Gamemode.Replace("-", " ");
 
             lblDatum.Content = toernooi.startdatum.ToString("dd / MM / yyyy");
@@ -46,6 +46,11 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
         private void btnAnnuleren_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void btnBewaren_Click(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }

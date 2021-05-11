@@ -24,7 +24,7 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
         }
         public static Toernooi OphalenWedstrijdId()
         {
-            using(ToernooiDBEntities toernooiEntities = new ToernooiDBEntities())
+            using (ToernooiDBEntities toernooiEntities = new ToernooiDBEntities())
             {
                 return toernooiEntities.Toernooi
                     .Where(t => t.toernooiId == Helper.IdGame)
