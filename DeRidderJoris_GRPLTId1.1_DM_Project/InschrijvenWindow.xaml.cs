@@ -52,5 +52,10 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
         {
             
         }
+
+        private void cmbRewards_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
