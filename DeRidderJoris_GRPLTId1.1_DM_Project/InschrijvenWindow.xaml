@@ -92,6 +92,7 @@
 
         <Button x:Name="btnBewaren" Content="Bewaren" Grid.Row="4" Grid.Column="1" Margin="20" VerticalAlignment="Bottom"  Style="{StaticResource MaterialDesignRaisedAccentButton}" Click="btnBewaren_Click"/>
         <Button x:Name="btnAnnuleren" Content="Annuleren" Grid.Row="4" Grid.Column="2" Margin="20" VerticalAlignment="Bottom" Click="btnAnnuleren_Click"/>
+        <Button x:Name="btnVerwijderen" Content="Verwijderen" Grid.Row="4" Grid.Column="3" Margin="5" Style="{StaticResource MaterialDesignRaisedAccentButton}" />
     </Grid>
 </Window>
  

@@ -1,0 +1,77 @@
+--------------------
+-- DROP EN CREATE --
+--------------------
+
+-- DROP TABLES
+IF OBJECT_ID('ToernooiInschrijven.Rank') IS NOT NULL
+	DROP TABLE ToernooiInschrijven.[Rank]
+IF OBJECT_ID('ToernooiInschrijven.Prijs') IS NOT NULL
+	DROP TABLE ToernooiInschrijven.Prijs
+IF OBJECT_ID('ToernooiInschrijven.Speler') IS NOT NULL
+	DROP TABLE ToernooiInschrijven.Speler
+IF OBJECT_ID('ToernooiInschrijven.Toernooi') IS NOT NULL
+	DROP TABLE ToernooiInschrijven.Toernooi
+GO
+
+-- DROP + CREATE SCHEMA
+DROP SCHEMA IF EXISTS ToernooiInschrijven;
+GO
+EXECUTE('CREATE SCHEMA ToernooiInschrijven');
+GO
+
+CREATE TABLE ToernooiInschrijven.Toernooi
+(
+	[toernooiId] int IDENTITY(1,1) NOT NULL,
+	toernooiNaam varchar(15) NOT NULL,
+	datum date NOT NULL,
+	checkInuur time NOT NULL,
+	startuur time NOT NULL,
+	gamemode varchar(40) NOT NULL,
+	CONSTRAINT PK_Toernooi PRIMARY KEY (toernooiId)
+)
+
+CREATE TABLE ToernooiInschrijven.Speler
+(
+	[spelerId] int IDENTITY(1,1) NOT NULL,
+	voornaam varchar(20) NOT NULL,
+	achternaam varchar(50) NOT NULL,
+	nicknaam varchar(20) NOT NULL,
+	wachtwoord varchar(50) NOT NULL,
+	email varchar(50) NOT NULL,
+	geboortedatum date NOT NULL,
+	geboorteplaats varchar(50) NULL,
+	CONSTRAINT PK_Speler PRIMARY KEY (spelerId)
+)
+
+CREATE TABLE ToernooiInschrijven.Prijs
+(
+	[prijsId] int IDENTITY(1,1) NOT NULL,
+	spelerId int NOT NULL,
+	PrijsPot int NOT NULL,
+	CONSTRAINT PK_Prijs PRIMARY KEY (prijsId),
+	CONSTRAINT FK_Prijs_Speler FOREIGN KEY (prijsId) REFERENCES ToernooiInschrijven.Speler(spelerId)
+)
+
+CREATE TABLE ToernooiInschrijven.ToernooiPrijs
+(
+	[toernooiPrijsId] int IDENTITY(1,1) NOT NULL,
+	prijsId int NOT NULL,
+	toernooiId int NOT NULL,
+	CONSTRAINT PK_ToernooiPrijs PRIMARY KEY (toernooiPrijsId),
+	CONSTRAINT FK_ToernooiPrijs_Toernooi FOREIGN KEY (toernooiId) REFERENCES ToernooiInschrijven.Toernooi(toernooiId),
+	CONSTRAINT FK_ToernooiPrijs_Prijs FOREIGN KEY (prijsId) REFERENCES ToernooiInschrijven.Prijs(prijsId)
+)
+
+CREATE TABLE ToernooiInschrijven.[Rank]
+(
+	[rankId] int IDENTITY(1,1) NOT NULL,
+	ranknaam varchar(20) NULL,
+	CONSTRAINT PK_Rank PRIMARY KEY (rankId),
+	CONSTRAINT FK_Rank_Speler FOREIGN KEY (rankId) REFERENCES ToernooiInschrijven.Speler(spelerId)
+)
+
+
+INSERT INTO ToernooiInschrijven.Toernooi
+    VALUES ('RL_3V3_1000','Germany', '2021-05-05','20:00:00', '20:30:00','Rocket-league');
+INSERT INTO ToernooiInschrijven.Toernooi
+    VALUES ('FN_1V1_2000','Spain', '2021-06-05','21:00:00', '21:30:00','Fortnite');

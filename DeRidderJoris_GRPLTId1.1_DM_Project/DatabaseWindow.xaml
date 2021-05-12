@@ -38,20 +38,18 @@
         <DataGrid x:Name="dataToernooi" SelectionChanged="dataToernooi_SelectionChanged" AutoGenerateColumns="False" Margin="5"
 	        Grid.Row="1" Grid.Column="0"  Grid.ColumnSpan="4" Grid.RowSpan="3" IsReadOnly="True" >
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Gamemode}" Header="Spel"/>
+                <DataGridTextColumn Binding="{Binding gamemode}" Header="Spel"/>
                     <!-- verwijder tijd met StringFormat=d  of pas bepaalde notatie aan dmv custom-->
-                <DataGridTextColumn Binding="{Binding startdatum, StringFormat=dd/MM/yyyy}" Header="BeginDatum"/>
-                <DataGridTextColumn Binding="{Binding einddatum,StringFormat=dd/MM/yyyy}" Header="EindDatum"/>
+                <DataGridTextColumn Binding="{Binding datum, StringFormat=dd/MM/yyyy}" Header="Datum"/>
                 <DataGridTextColumn Binding="{Binding toernooiNaam}" Header="Naam van het toernooi"/>
-                <DataGridTextColumn Binding="{Binding CheckInuur,StringFormat=hh\\:mm}" Header="Check in uur"/>
-                <DataGridTextColumn Binding="{Binding Startuur,StringFormat=hh\\:mm}" Header="StartUur"/>
-                <DataGridTextColumn Binding="{Binding prijzenpot}" Header="Rewards"/> 
+                <DataGridTextColumn Binding="{Binding checkInuur,StringFormat=hh\\:mm}" Header="Check in uur"/>
+                <DataGridTextColumn Binding="{Binding startuur,StringFormat=hh\\:mm}" Header="Start uur"/>
             </DataGrid.Columns>
         </DataGrid>
 
         <Button x:Name="btnVerwijderen" Content="Verwijderen" Grid.Row="5" Grid.Column="0" Margin="5" Style="{StaticResource MaterialDesignRaisedAccentButton}" />
-        <Button x:Name="btnAanpassen" Content="Aanpassen" Grid.Row="5" Grid.Column="1" Margin="5" Style="{StaticResource MaterialDesignRaisedAccentButton}" />
-        <Button x:Name="btnToevoegen" Content="Toevoegen" Grid.Row="5" Grid.Column="2" Margin="5" Click="btnToevoegen_Click"  />
+        <Button x:Name="btnInschrijvingAanpassen" Content="Inschrijving aanpassen" Grid.Row="5" Grid.Column="1" Margin="5" Style="{StaticResource MaterialDesignRaisedAccentButton}" />
+        <Button x:Name="btnInschrijven" Content="Inschrijven" Grid.Row="5" Grid.Column="2" Margin="5" Click="btnToevoegen_Click"  />
         <Button x:Name="btnAnnuleren" Content="Annuleren" Grid.Row="5" Grid.Column="3" Margin="5" Click="btnAnnuleren_Click" Command="ApplicationCommands.Close"/>
     </Grid>
 </Window>

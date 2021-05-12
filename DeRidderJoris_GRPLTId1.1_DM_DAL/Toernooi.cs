@@ -17,20 +17,17 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Toernooi()
         {
-            this.Prijs = new HashSet<Prijs>();
+            this.ToernooiPrijzen = new HashSet<ToernooiPrijs>();
         }
     
         public int toernooiId { get; set; }
         public string toernooiNaam { get; set; }
-        public string plaats { get; set; }
-        public Nullable<int> prijzenpot { get; set; }
-        public System.DateTime startdatum { get; set; }
-        public Nullable<System.DateTime> einddatum { get; set; }
-        public System.TimeSpan CheckInuur { get; set; }
-        public System.TimeSpan Startuur { get; set; }
-        public string Gamemode { get; set; }
+        public System.DateTime datum { get; set; }
+        public System.TimeSpan checkInuur { get; set; }
+        public System.TimeSpan startuur { get; set; }
+        public string gamemode { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Prijs> Prijs { get; set; }
+        public virtual ICollection<ToernooiPrijs> ToernooiPrijzen { get; set; }
     }
 }

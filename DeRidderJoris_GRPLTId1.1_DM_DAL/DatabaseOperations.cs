@@ -16,9 +16,9 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
             using (ToernooiDBEntities toernooiEntities = new ToernooiDBEntities())
             {
                 return toernooiEntities.Toernooi
-                    .Where(t => t.Gamemode == Helper.buttonSpel)
+                    .Where(t => t.gamemode == Helper.buttonSpel)
                     .OrderBy(t => t.toernooiNaam)
-                    .ThenBy(t => t.CheckInuur)
+                    .ThenBy(t => t.checkInuur)
                      .ToList();
             }
         }
@@ -29,15 +29,6 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
                 return toernooiEntities.Toernooi
                     .Where(t => t.toernooiId == Helper.IdGame)
                     .SingleOrDefault();
-            }
-        }
-        public static List<Toernooi> OphalenPrijsId()
-        {
-            using (ToernooiDBEntities toernooiEntities = new ToernooiDBEntities())
-            {
-                return toernooiEntities.Toernooi
-                   .Include(p => p.Prijs)
-                   .ToList();
             }
         }
     }

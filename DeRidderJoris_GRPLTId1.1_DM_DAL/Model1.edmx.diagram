@@ -4,14 +4,14 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="917f3c7259ac48dbb1172ca5756f1369" Name="Diagram1">
+      <Diagram DiagramId="254dc70b7cb6429b9ded9a28f3df2368" Name="Diagram1">
         <EntityTypeShape EntityType="ToernooiDBModel.Prijs" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="ToernooiDBModel.Role" Width="1.5" PointX="7.5" PointY="1.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="ToernooiDBModel.Speler" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="ToernooiDBModel.Toernooi" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
-        <AssociationConnector Association="ToernooiDBModel.FK_Prijs_Toernooi" ManuallyRouted="false" />
-        <AssociationConnector Association="ToernooiDBModel.FK_ToernooiInschrijven_Speler" ManuallyRouted="false" />
-        <AssociationConnector Association="ToernooiDBModel.FK_ToernooiInschrijven_Role" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ToernooiDBModel.Speler" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="ToernooiDBModel.Toernooi" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ToernooiDBModel.ToernooiPrijs" Width="1.5" PointX="5.25" PointY="1.375" IsExpanded="true" />
+        <AssociationConnector Association="ToernooiDBModel.FK_Prijs_Speler" ManuallyRouted="false" />
+        <AssociationConnector Association="ToernooiDBModel.FK_ToernooiPrijs_Prijs" ManuallyRouted="false" />
+        <AssociationConnector Association="ToernooiDBModel.FK_ToernooiPrijs_Toernooi" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

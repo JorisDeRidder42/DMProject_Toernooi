@@ -5,19 +5,10 @@
       <PropertyRef Name="prijsId" />
     </Key>
     <Property Name="prijsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="toernooiId" Type="Int32" Nullable="false" />
-    <Property Name="prijsnaam" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="spelerId" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Toernooien" Relationship="Self.FK_Prijs_Toernooi" FromRole="Prijs" ToRole="Toernooi" />
-    <NavigationProperty Name="Spelers" Relationship="Self.FK_ToernooiInschrijven_Speler" FromRole="Prijs" ToRole="Speler" />
-  </EntityType>
-  <EntityType Name="Role">
-    <Key>
-      <PropertyRef Name="roleId" />
-    </Key>
-    <Property Name="roleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="rolenaam" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-    <NavigationProperty Name="Speler" Relationship="Self.FK_ToernooiInschrijven_Role" FromRole="Role" ToRole="Speler" />
+    <Property Name="PrijsPot" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Speler" Relationship="Self.FK_Prijs_Speler" FromRole="Prijs" ToRole="Speler" />
+    <NavigationProperty Name="ToernooiPrijs" Relationship="Self.FK_ToernooiPrijs_Prijs" FromRole="Prijs" ToRole="ToernooiPrijs" />
   </EntityType>
   <EntityType Name="Speler">
     <Key>
@@ -25,80 +16,88 @@
     </Key>
     <Property Name="spelerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="voornaam" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="achternaam" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="achternaam" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="nicknaam" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="geboortedatum" Type="DateTime" Precision="0" />
-    <Property Name="geboorteplaats" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="Prijs" Relationship="Self.FK_ToernooiInschrijven_Speler" FromRole="Speler" ToRole="Prijs" />
-    <NavigationProperty Name="Role" Relationship="Self.FK_ToernooiInschrijven_Role" FromRole="Speler" ToRole="Role" />
+    <Property Name="wachtwoord" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="geboortedatum" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="geboorteplaats" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Prijs" Relationship="Self.FK_Prijs_Speler" FromRole="Speler" ToRole="Prijs" />
   </EntityType>
   <EntityType Name="Toernooi">
     <Key>
       <PropertyRef Name="toernooiId" />
     </Key>
     <Property Name="toernooiId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="toernooiNaam" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="plaats" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="prijzenpot" Type="Int32" />
-    <Property Name="startdatum" Type="DateTime" Nullable="false" Precision="0" />
-    <Property Name="einddatum" Type="DateTime" Precision="0" />
-    <Property Name="CheckInuur" Type="Time" Nullable="false" Precision="7" />
-    <Property Name="Startuur" Type="Time" Nullable="false" Precision="7" />
-    <Property Name="Gamemode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-    <NavigationProperty Name="Prijs" Relationship="Self.FK_Prijs_Toernooi" FromRole="Toernooi" ToRole="Prijs" />
+    <Property Name="toernooiNaam" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="datum" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="checkInuur" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="startuur" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="gamemode" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="ToernooiPrijzen" Relationship="Self.FK_ToernooiPrijs_Toernooi" FromRole="Toernooi" ToRole="ToernooiPrijs" />
   </EntityType>
-  <Association Name="FK_Prijs_Toernooi">
-    <End Role="Toernooi" Type="Self.Toernooi" Multiplicity="1" />
-    <End Role="Prijs" Type="Self.Prijs" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Toernooi">
-        <PropertyRef Name="toernooiId" />
-      </Principal>
-      <Dependent Role="Prijs">
-        <PropertyRef Name="toernooiId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_ToernooiInschrijven_Speler">
-    <End Role="Prijs" Type="Self.Prijs" Multiplicity="1" />
-    <End Role="Speler" Type="Self.Speler" Multiplicity="0..1" />
-    <ReferentialConstraint>
-      <Principal Role="Prijs">
-        <PropertyRef Name="prijsId" />
-      </Principal>
-      <Dependent Role="Speler">
-        <PropertyRef Name="spelerId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_ToernooiInschrijven_Role">
+  <EntityType Name="ToernooiPrijs">
+    <Key>
+      <PropertyRef Name="toernooiPrijsId" />
+    </Key>
+    <Property Name="toernooiPrijsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="prijsId" Type="Int32" Nullable="false" />
+    <Property Name="toernooiId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Prijs" Relationship="Self.FK_ToernooiPrijs_Prijs" FromRole="ToernooiPrijs" ToRole="Prijs" />
+    <NavigationProperty Name="Toernooi" Relationship="Self.FK_ToernooiPrijs_Toernooi" FromRole="ToernooiPrijs" ToRole="Toernooi" />
+  </EntityType>
+  <Association Name="FK_Prijs_Speler">
     <End Role="Speler" Type="Self.Speler" Multiplicity="1" />
-    <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
+    <End Role="Prijs" Type="Self.Prijs" Multiplicity="0..1" />
     <ReferentialConstraint>
       <Principal Role="Speler">
         <PropertyRef Name="spelerId" />
       </Principal>
-      <Dependent Role="Role">
-        <PropertyRef Name="roleId" />
+      <Dependent Role="Prijs">
+        <PropertyRef Name="prijsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ToernooiPrijs_Prijs">
+    <End Role="Prijs" Type="Self.Prijs" Multiplicity="1" />
+    <End Role="ToernooiPrijs" Type="Self.ToernooiPrijs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Prijs">
+        <PropertyRef Name="prijsId" />
+      </Principal>
+      <Dependent Role="ToernooiPrijs">
+        <PropertyRef Name="prijsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ToernooiPrijs_Toernooi">
+    <End Role="Toernooi" Type="Self.Toernooi" Multiplicity="1" />
+    <End Role="ToernooiPrijs" Type="Self.ToernooiPrijs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Toernooi">
+        <PropertyRef Name="toernooiId" />
+      </Principal>
+      <Dependent Role="ToernooiPrijs">
+        <PropertyRef Name="toernooiId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="ToernooiDBEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Prijs" EntityType="Self.Prijs" />
-    <EntitySet Name="Role" EntityType="Self.Role" />
     <EntitySet Name="Speler" EntityType="Self.Speler" />
     <EntitySet Name="Toernooi" EntityType="Self.Toernooi" />
-    <AssociationSet Name="FK_Prijs_Toernooi" Association="Self.FK_Prijs_Toernooi">
+    <EntitySet Name="ToernooiPrijs" EntityType="Self.ToernooiPrijs" />
+    <AssociationSet Name="FK_Prijs_Speler" Association="Self.FK_Prijs_Speler">
+      <End Role="Speler" EntitySet="Speler" />
+      <End Role="Prijs" EntitySet="Prijs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ToernooiPrijs_Prijs" Association="Self.FK_ToernooiPrijs_Prijs">
+      <End Role="Prijs" EntitySet="Prijs" />
+      <End Role="ToernooiPrijs" EntitySet="ToernooiPrijs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ToernooiPrijs_Toernooi" Association="Self.FK_ToernooiPrijs_Toernooi">
       <End Role="Toernooi" EntitySet="Toernooi" />
-      <End Role="Prijs" EntitySet="Prijs" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ToernooiInschrijven_Speler" Association="Self.FK_ToernooiInschrijven_Speler">
-      <End Role="Prijs" EntitySet="Prijs" />
-      <End Role="Speler" EntitySet="Speler" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ToernooiInschrijven_Role" Association="Self.FK_ToernooiInschrijven_Role">
-      <End Role="Speler" EntitySet="Speler" />
-      <End Role="Role" EntitySet="Role" />
+      <End Role="ToernooiPrijs" EntitySet="ToernooiPrijs" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

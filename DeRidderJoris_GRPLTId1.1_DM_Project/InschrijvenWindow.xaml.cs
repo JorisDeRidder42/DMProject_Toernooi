@@ -29,18 +29,17 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
         {
             //id ophalen en plaatsen in label
             Toernooi toernooi = DatabaseOperations.OphalenWedstrijdId();
-            List<Toernooi> toernooi1 = DatabaseOperations.OphalenPrijsId();
-            lblImageDatumTijdLabel.Content = "begint " + toernooi.startdatum.ToString("dd/MM/yyyy") + " | " + toernooi.CheckInuur.ToString("hh\\:mm");
-            lblImageLabel.Content = toernooi.Gamemode.Replace("-", " ");
+            //List<Toernooi> toernooi1 = DatabaseOperations.OphalenPrijsId();
+            lblImageDatumTijdLabel.Content = "begint " + toernooi.datum.ToString("dd/MM/yyyy") + " | " + toernooi.checkInuur.ToString("hh\\:mm");
+            lblImageLabel.Content = toernooi.gamemode.Replace("-", " ");
 
-            lblDatum.Content = toernooi.startdatum.ToString("dd / MM / yyyy");
-            lblTijd.Content = toernooi.CheckInuur.ToString("hh\\:mm");
-            lblEersteGame.Content = toernooi.Startuur.ToString("hh\\:mm");
+            lblDatum.Content = toernooi.datum.ToString("dd / MM / yyyy");
+            lblTijd.Content = toernooi.checkInuur.ToString("hh\\:mm");
+            lblEersteGame.Content = toernooi.startuur.ToString("hh\\:mm");
 
             lblLijnup.Content = toernooi.toernooiNaam.Substring(0, toernooi.toernooiNaam.LastIndexOf('_'));
             toernooi.toernooiNaam = toernooi.toernooiNaam.Replace("_", " ");
-            lblSpel.Content = toernooi.Gamemode.Replace("-", " ");
-            cmbRewards.ItemsSource = toernooi1[2].Prijs;
+            lblSpel.Content = toernooi.gamemode.Replace("-", " ");
         }
 
         private void btnAnnuleren_Click(object sender, RoutedEventArgs e)
