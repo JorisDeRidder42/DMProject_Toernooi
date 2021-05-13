@@ -10,6 +10,14 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Rank">
+      <EntityTypeMapping TypeName="ToernooiDBModel.Rank">
+        <MappingFragment StoreEntitySet="Rank">
+          <ScalarProperty Name="rankId" ColumnName="rankId" />
+          <ScalarProperty Name="ranknaam" ColumnName="ranknaam" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Speler">
       <EntityTypeMapping TypeName="ToernooiDBModel.Speler">
         <MappingFragment StoreEntitySet="Speler">
@@ -31,8 +39,8 @@
           <ScalarProperty Name="toernooiNaam" ColumnName="toernooiNaam" />
           <ScalarProperty Name="datum" ColumnName="datum" />
           <ScalarProperty Name="checkInuur" ColumnName="checkInuur" />
-          <ScalarProperty Name="startuur" ColumnName="startuur" />
-          <ScalarProperty Name="gamemode" ColumnName="gamemode" />
+          <ScalarProperty Name="startUur" ColumnName="startuur" />
+          <ScalarProperty Name="gameMode" ColumnName="gamemode" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -42,6 +50,15 @@
           <ScalarProperty Name="toernooiPrijsId" ColumnName="toernooiPrijsId" />
           <ScalarProperty Name="prijsId" ColumnName="prijsId" />
           <ScalarProperty Name="toernooiId" ColumnName="toernooiId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ToernooiRank">
+      <EntityTypeMapping TypeName="ToernooiDBModel.ToernooiRank">
+        <MappingFragment StoreEntitySet="ToernooiRank">
+          <ScalarProperty Name="toernooiRankId" ColumnName="toernooiRankId" />
+          <ScalarProperty Name="toernooiId" ColumnName="toernooiId" />
+          <ScalarProperty Name="rankId" ColumnName="rankId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

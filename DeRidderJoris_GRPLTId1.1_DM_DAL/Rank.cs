@@ -12,24 +12,17 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
     using System;
     using System.Collections.Generic;
     
-    public partial class Toernooi
+    public partial class Rank
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Toernooi()
+        public Rank()
         {
-            this.ToernooiPrijzen = new HashSet<ToernooiPrijs>();
             this.ToernooiRanks = new HashSet<ToernooiRank>();
         }
     
-        public int toernooiId { get; set; }
-        public string toernooiNaam { get; set; }
-        public System.DateTime datum { get; set; }
-        public System.TimeSpan checkInuur { get; set; }
-        public System.TimeSpan startUur { get; set; }
-        public string gameMode { get; set; }
+        public int rankId { get; set; }
+        public string ranknaam { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ToernooiPrijs> ToernooiPrijzen { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ToernooiRank> ToernooiRanks { get; set; }
     }

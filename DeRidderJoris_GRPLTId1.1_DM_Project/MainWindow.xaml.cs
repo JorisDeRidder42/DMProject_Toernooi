@@ -79,16 +79,16 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
             databaseWindow.Show();
         }
 
-        private void btnStarCraft_Click(object sender, RoutedEventArgs e)
+        private void btnCodWarzone_Click(object sender, RoutedEventArgs e)
         {
-            Helper.buttonSpel = lblStarCraft.Content.ToString();
+            Helper.buttonSpel = lblCODWZ.Content.ToString();
             DatabaseWindow databaseWindow = new DatabaseWindow();
             databaseWindow.Show();
         }
 
-        private void btnSuperSmash_Click(object sender, RoutedEventArgs e)
+        private void btnapexlegends_Click(object sender, RoutedEventArgs e)
         {
-            Helper.buttonSpel = lblSuperSmashBros.Content.ToString();
+            Helper.buttonSpel = lblApexLegends.Content.ToString();
             DatabaseWindow databaseWindow = new DatabaseWindow();
             databaseWindow.Show();
         }

@@ -76,7 +76,7 @@
                 <ImageBrush ImageSource="images/CSGO.jpg"/>
             </Button.Background>
         </Button>
-        <Label x:Name="lblCounterStrike" Content="Counter strike" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White" Margin="20"/>
+        <Label x:Name="lblCounterStrike" Content="Counter-strike" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White" Margin="20"/>
 
 
         <Button x:Name="btnDota" Grid.Column="1" Grid.Row="3" Width="120" Height="120" Margin="10" BorderThickness="0" Click="btnDota_Click">
@@ -84,20 +84,20 @@
                 <ImageBrush ImageSource="images/dota-logo.jpg"/>
             </Button.Background>
         </Button>
-        <Label x:Name="lblDota2" Content="Dota2" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White" Margin="20"/>
+        <Label x:Name="lblDota2" Content="Dota 2" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White" Margin="20"/>
 
-        <Button x:Name="btnStarCraft" Grid.Column="2" Grid.Row="3" Width="120" Height="120" Margin="10" BorderThickness="0" Click="btnStarCraft_Click" >
+        <Button x:Name="btnCodWarzone" Grid.Column="2" Grid.Row="3" Width="120" Height="120" Margin="10" BorderThickness="0" Click="btnCodWarzone_Click"  >
             <Button.Background>
-                <ImageBrush ImageSource="images/starcraft-logo.jpg"/>
+                <ImageBrush ImageSource="images/CallofdutyWarzone.png"/>
             </Button.Background>
         </Button>
-        <Label  x:Name="lblStarCraft" Content="Star craft 2" Grid.Column="2" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White" Margin="20"/>
+        <Label  x:Name="lblCODWZ" Content="Call of duty: Warzone" Grid.Column="2" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White" Margin="20"/>
 
-        <Button x:Name="btnSuperSmash" Grid.Column="3" Grid.Row="3" Width="120" Height="120" Margin="10" BorderThickness="0" Click="btnSuperSmash_Click" >
+        <Button x:Name="btnapexlegends" Grid.Column="3" Grid.Row="3" Width="120" Height="120" Margin="10" BorderThickness="0" Click="btnapexlegends_Click" >
             <Button.Background>
-                <ImageBrush ImageSource="images/supersmashbros-logo.jpg"/>
+                <ImageBrush ImageSource="images/apex-legends-icon.png"/>
             </Button.Background>
         </Button>
-        <Label x:Name="lblSuperSmashBros" Content="super smash bros" Grid.Column="3" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White" Margin="20"/>
+        <Label x:Name="lblApexLegends" Content="Apex Legends" Grid.Column="3" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White" Margin="20"/>
     </Grid>
 </Window>

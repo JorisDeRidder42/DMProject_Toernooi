@@ -26,8 +26,10 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
         }
     
         public virtual DbSet<Prijs> Prijs { get; set; }
+        public virtual DbSet<Rank> Rank { get; set; }
         public virtual DbSet<Speler> Speler { get; set; }
         public virtual DbSet<Toernooi> Toernooi { get; set; }
         public virtual DbSet<ToernooiPrijs> ToernooiPrijs { get; set; }
+        public virtual DbSet<ToernooiRank> ToernooiRank { get; set; }
     }
 }

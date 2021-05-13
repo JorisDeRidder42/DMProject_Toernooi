@@ -38,12 +38,12 @@
         <DataGrid x:Name="dataToernooi" SelectionChanged="dataToernooi_SelectionChanged" AutoGenerateColumns="False" Margin="5"
 	        Grid.Row="1" Grid.Column="0"  Grid.ColumnSpan="4" Grid.RowSpan="3" IsReadOnly="True" >
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding gamemode}" Header="Spel"/>
+                <DataGridTextColumn Binding="{Binding gameMode}" Header="Spel"/>
                     <!-- verwijder tijd met StringFormat=d  of pas bepaalde notatie aan dmv custom-->
                 <DataGridTextColumn Binding="{Binding datum, StringFormat=dd/MM/yyyy}" Header="Datum"/>
                 <DataGridTextColumn Binding="{Binding toernooiNaam}" Header="Naam van het toernooi"/>
                 <DataGridTextColumn Binding="{Binding checkInuur,StringFormat=hh\\:mm}" Header="Check in uur"/>
-                <DataGridTextColumn Binding="{Binding startuur,StringFormat=hh\\:mm}" Header="Start uur"/>
+                <DataGridTextColumn Binding="{Binding startUur,StringFormat=hh\\:mm}" Header="Start uur"/>
             </DataGrid.Columns>
         </DataGrid>
 

@@ -16,8 +16,8 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
             using (ToernooiDBEntities toernooiEntities = new ToernooiDBEntities())
             {
                 return toernooiEntities.Toernooi
-                    .Where(t => t.gamemode == Helper.buttonSpel)
-                    .OrderBy(t => t.toernooiNaam)
+                    .Where(t => t.gameMode == Helper.buttonSpel)
+                    .OrderBy(t => t.datum)
                     .ThenBy(t => t.checkInuur)
                      .ToList();
             }
@@ -31,5 +31,14 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
                     .SingleOrDefault();
             }
         }
+        //public static List <Toernooi> OphalenRanksPerId()
+        //{
+        //    using (ToernooiDBEntities toernooiEntities = new ToernooiDBEntities())
+        //    {
+        //        return toernooiEntities.Rank
+        //             .Where(t => t.ranknaam == Helper.buttonSpel)
+        //             .ToList();
+        //    }
+        //}
     }
 }
