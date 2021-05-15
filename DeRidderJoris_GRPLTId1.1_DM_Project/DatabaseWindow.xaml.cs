@@ -39,7 +39,7 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
         {
             Toernooi GeselecteerdeWedstrijd = dataToernooi.SelectedItem as Toernooi;
 
-            Helper.IdGame = GeselecteerdeWedstrijd.toernooiId;
+            Helper.IdGame = GeselecteerdeWedstrijd.toernooiID;
 
             InschrijvenWindow inschrijven = new InschrijvenWindow();
             inschrijven.Show();

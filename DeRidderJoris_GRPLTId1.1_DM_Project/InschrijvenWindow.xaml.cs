@@ -29,17 +29,19 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
         {
             //id ophalen en plaatsen in label
             Toernooi toernooi = DatabaseOperations.OphalenWedstrijdId();
-            //Toernooi ranking = DatabaseOperations.OphalenRanksPerId();
-            lblImageDatumTijdLabel.Content = "begint " + toernooi.datum.ToString("dd/MM/yyyy") + " | " + toernooi.checkInuur.ToString("hh\\:mm");
+            lblImageDatumTijdLabel.Content = "begint " + toernooi.datum.ToString("dd/MM/yyyy") + " | " + toernooi.checkInUur.ToString("hh\\:mm");
             lblImageLabel.Content = toernooi.gameMode.Replace("-", " ");
 
             lblDatum.Content = toernooi.datum.ToString("dd / MM / yyyy");
-            lblTijd.Content = toernooi.checkInuur.ToString("hh\\:mm");
+            lblTijd.Content = toernooi.checkInUur.ToString("hh\\:mm");
             lblEersteGame.Content = toernooi.startUur.ToString("hh\\:mm");
 
             lblLijnup.Content = toernooi.toernooiNaam.Substring(0, toernooi.toernooiNaam.LastIndexOf('_'));
             toernooi.toernooiNaam = toernooi.toernooiNaam.Replace("_", " ");
             lblSpel.Content = toernooi.gameMode.Replace("-", " ");
+
+            var rankings = DatabaseOperations.OphalenRanksPerId();
+            cmbRank.ItemsSource = rankings;
         }
 
         private void btnAnnuleren_Click(object sender, RoutedEventArgs e)
@@ -54,7 +56,6 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
 
         private void cmbRewards_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
         }
     }
 }

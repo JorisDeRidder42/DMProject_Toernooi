@@ -14,9 +14,9 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
     
     public partial class ToernooiRank
     {
-        public int toernooiRankId { get; set; }
-        public int toernooiId { get; set; }
-        public int rankId { get; set; }
+        public int ToernooirankID { get; set; }
+        public int ToernooiID { get; set; }
+        public int RankID { get; set; }
     
         public virtual Rank Rank { get; set; }
         public virtual Toernooi Toernooi { get; set; }

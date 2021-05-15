@@ -42,7 +42,7 @@
                     <!-- verwijder tijd met StringFormat=d  of pas bepaalde notatie aan dmv custom-->
                 <DataGridTextColumn Binding="{Binding datum, StringFormat=dd/MM/yyyy}" Header="Datum"/>
                 <DataGridTextColumn Binding="{Binding toernooiNaam}" Header="Naam van het toernooi"/>
-                <DataGridTextColumn Binding="{Binding checkInuur,StringFormat=hh\\:mm}" Header="Check in uur"/>
+                <DataGridTextColumn Binding="{Binding checkInUur,StringFormat=hh\\:mm}" Header="Check in uur"/>
                 <DataGridTextColumn Binding="{Binding startUur,StringFormat=hh\\:mm}" Header="Start uur"/>
             </DataGrid.Columns>
         </DataGrid>

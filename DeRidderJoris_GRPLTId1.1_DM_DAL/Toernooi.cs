@@ -21,10 +21,10 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
             this.ToernooiRanks = new HashSet<ToernooiRank>();
         }
     
-        public int toernooiId { get; set; }
+        public int toernooiID { get; set; }
         public string toernooiNaam { get; set; }
         public System.DateTime datum { get; set; }
-        public System.TimeSpan checkInuur { get; set; }
+        public System.TimeSpan checkInUur { get; set; }
         public System.TimeSpan startUur { get; set; }
         public string gameMode { get; set; }
     

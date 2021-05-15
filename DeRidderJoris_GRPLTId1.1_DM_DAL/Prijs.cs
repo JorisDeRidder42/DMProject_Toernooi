@@ -20,8 +20,8 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
             this.ToernooiPrijzen = new HashSet<ToernooiPrijs>();
         }
     
-        public int prijsId { get; set; }
-        public int spelerId { get; set; }
+        public int PrijsID { get; set; }
+        public int SpelerID { get; set; }
         public int PrijsPot { get; set; }
     
         public virtual Speler Spelers { get; set; }

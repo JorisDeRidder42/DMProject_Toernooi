@@ -18,7 +18,7 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
                 return toernooiEntities.Toernooi
                     .Where(t => t.gameMode == Helper.buttonSpel)
                     .OrderBy(t => t.datum)
-                    .ThenBy(t => t.checkInuur)
+                    .ThenBy(t => t.checkInUur)
                      .ToList();
             }
         }
@@ -27,18 +27,22 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
             using (ToernooiDBEntities toernooiEntities = new ToernooiDBEntities())
             {
                 return toernooiEntities.Toernooi
-                    .Where(t => t.toernooiId == Helper.IdGame)
+                    .Where(t => t.toernooiID == Helper.IdGame)
                     .SingleOrDefault();
             }
         }
-        //public static List <Toernooi> OphalenRanksPerId()
-        //{
-        //    using (ToernooiDBEntities toernooiEntities = new ToernooiDBEntities())
-        //    {
-        //        return toernooiEntities.Rank
-        //             .Where(t => t.ranknaam == Helper.buttonSpel)
-        //             .ToList();
-        //    }
-        //}
+        public static List<Rank> OphalenRanksPerId()
+        {
+            using (ToernooiDBEntities toernooiEntities = new ToernooiDBEntities())
+            {
+                var query = toernooiEntities.ToernooiRank
+                     .Where(t => t.ToernooiID == Helper.IdGame)
+                    .Include(r => r.Rank);
+                   var query2 = query
+                    .Select(r => r.Rank)
+                    .ToList();
+                return query2;
+            }
+        }
     }
 }
