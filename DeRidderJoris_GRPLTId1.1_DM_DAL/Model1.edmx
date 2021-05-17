@@ -155,20 +155,20 @@
       <Schema Namespace="ToernooiDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Prijs">
           <Key>
-            <PropertyRef Name="PrijsID" />
+            <PropertyRef Name="prijsID" />
           </Key>
-          <Property Name="PrijsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="SpelerID" Type="Int32" Nullable="false" />
-          <Property Name="PrijsPot" Type="Int32" Nullable="false" />
+          <Property Name="prijsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="spelerID" Type="Int32" Nullable="false" />
+          <Property Name="prijsPot" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Spelers" Relationship="Self.FK_Prijs_Speler" FromRole="Prijs" ToRole="Speler" />
           <NavigationProperty Name="ToernooiPrijzen" Relationship="Self.FK_ToernooiPrijs_Prijs" FromRole="Prijs" ToRole="ToernooiPrijs" />
         </EntityType>
         <EntityType Name="Rank">
           <Key>
-            <PropertyRef Name="RankID" />
+            <PropertyRef Name="rankID" />
           </Key>
-          <Property Name="RankID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Ranknaam" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="rankID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ranknaam" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="ToernooiRanks" Relationship="Self.FK_ToernooiRank_Rank" FromRole="Rank" ToRole="ToernooiRank" />
         </EntityType>
         <EntityType Name="Speler">
@@ -176,13 +176,13 @@
             <PropertyRef Name="spelerID" />
           </Key>
           <Property Name="spelerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Voornaam" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Achternaam" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Nicknaam" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Wachtwoord" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Geboortedatum" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="Geboorteplaats" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="voornaam" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="achternaam" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nicknaam" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="wachtwoord" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="geboortedatum" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="geboorteplaats" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Prijs" Relationship="Self.FK_Prijs_Speler" FromRole="Speler" ToRole="Prijs" />
         </EntityType>
         <EntityType Name="Toernooi">
@@ -200,21 +200,21 @@
         </EntityType>
         <EntityType Name="ToernooiPrijs">
           <Key>
-            <PropertyRef Name="ToernooiprijsID" />
+            <PropertyRef Name="toernooiprijsID" />
           </Key>
-          <Property Name="ToernooiprijsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="PrijsID" Type="Int32" Nullable="false" />
-          <Property Name="ToernooiID" Type="Int32" Nullable="false" />
+          <Property Name="toernooiprijsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="prijsID" Type="Int32" Nullable="false" />
+          <Property Name="toernooiID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Prijs" Relationship="Self.FK_ToernooiPrijs_Prijs" FromRole="ToernooiPrijs" ToRole="Prijs" />
           <NavigationProperty Name="Toernooi" Relationship="Self.FK_ToernooiPrijs_Toernooi" FromRole="ToernooiPrijs" ToRole="Toernooi" />
         </EntityType>
         <EntityType Name="ToernooiRank">
           <Key>
-            <PropertyRef Name="ToernooirankID" />
+            <PropertyRef Name="toernooirankID" />
           </Key>
-          <Property Name="ToernooirankID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ToernooiID" Type="Int32" Nullable="false" />
-          <Property Name="RankID" Type="Int32" Nullable="false" />
+          <Property Name="toernooirankID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="toernooiID" Type="Int32" Nullable="false" />
+          <Property Name="rankID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Rank" Relationship="Self.FK_ToernooiRank_Rank" FromRole="ToernooiRank" ToRole="Rank" />
           <NavigationProperty Name="Toernooi" Relationship="Self.FK_ToernooiRank_Toernooi" FromRole="ToernooiRank" ToRole="Toernooi" />
         </EntityType>
@@ -226,7 +226,7 @@
               <PropertyRef Name="spelerID" />
             </Principal>
             <Dependent Role="Prijs">
-              <PropertyRef Name="PrijsID" />
+              <PropertyRef Name="prijsID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -235,10 +235,10 @@
           <End Role="ToernooiPrijs" Type="Self.ToernooiPrijs" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Prijs">
-              <PropertyRef Name="PrijsID" />
+              <PropertyRef Name="prijsID" />
             </Principal>
             <Dependent Role="ToernooiPrijs">
-              <PropertyRef Name="PrijsID" />
+              <PropertyRef Name="prijsID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -247,10 +247,10 @@
           <End Role="ToernooiRank" Type="Self.ToernooiRank" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Rank">
-              <PropertyRef Name="RankID" />
+              <PropertyRef Name="rankID" />
             </Principal>
             <Dependent Role="ToernooiRank">
-              <PropertyRef Name="RankID" />
+              <PropertyRef Name="rankID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -262,7 +262,7 @@
               <PropertyRef Name="toernooiID" />
             </Principal>
             <Dependent Role="ToernooiPrijs">
-              <PropertyRef Name="ToernooiID" />
+              <PropertyRef Name="toernooiID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -274,7 +274,7 @@
               <PropertyRef Name="toernooiID" />
             </Principal>
             <Dependent Role="ToernooiRank">
-              <PropertyRef Name="ToernooiID" />
+              <PropertyRef Name="toernooiID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -315,17 +315,17 @@
           <EntitySetMapping Name="Prijs">
             <EntityTypeMapping TypeName="ToernooiDBModel.Prijs">
               <MappingFragment StoreEntitySet="Prijs">
-                <ScalarProperty Name="PrijsID" ColumnName="prijsId" />
-                <ScalarProperty Name="SpelerID" ColumnName="spelerId" />
-                <ScalarProperty Name="PrijsPot" ColumnName="PrijsPot" />
+                <ScalarProperty Name="prijsID" ColumnName="prijsId" />
+                <ScalarProperty Name="spelerID" ColumnName="spelerId" />
+                <ScalarProperty Name="prijsPot" ColumnName="PrijsPot" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Rank">
             <EntityTypeMapping TypeName="ToernooiDBModel.Rank">
               <MappingFragment StoreEntitySet="Rank">
-                <ScalarProperty Name="RankID" ColumnName="rankId" />
-                <ScalarProperty Name="Ranknaam" ColumnName="ranknaam" />
+                <ScalarProperty Name="rankID" ColumnName="rankId" />
+                <ScalarProperty Name="ranknaam" ColumnName="ranknaam" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -333,13 +333,13 @@
             <EntityTypeMapping TypeName="ToernooiDBModel.Speler">
               <MappingFragment StoreEntitySet="Speler">
                 <ScalarProperty Name="spelerID" ColumnName="spelerId" />
-                <ScalarProperty Name="Voornaam" ColumnName="voornaam" />
-                <ScalarProperty Name="Achternaam" ColumnName="achternaam" />
-                <ScalarProperty Name="Nicknaam" ColumnName="nicknaam" />
-                <ScalarProperty Name="Wachtwoord" ColumnName="wachtwoord" />
-                <ScalarProperty Name="Email" ColumnName="email" />
-                <ScalarProperty Name="Geboortedatum" ColumnName="geboortedatum" />
-                <ScalarProperty Name="Geboorteplaats" ColumnName="geboorteplaats" />
+                <ScalarProperty Name="voornaam" ColumnName="voornaam" />
+                <ScalarProperty Name="achternaam" ColumnName="achternaam" />
+                <ScalarProperty Name="nicknaam" ColumnName="nicknaam" />
+                <ScalarProperty Name="wachtwoord" ColumnName="wachtwoord" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="geboortedatum" ColumnName="geboortedatum" />
+                <ScalarProperty Name="geboorteplaats" ColumnName="geboorteplaats" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -358,18 +358,18 @@
           <EntitySetMapping Name="ToernooiPrijs">
             <EntityTypeMapping TypeName="ToernooiDBModel.ToernooiPrijs">
               <MappingFragment StoreEntitySet="ToernooiPrijs">
-                <ScalarProperty Name="ToernooiprijsID" ColumnName="toernooiPrijsId" />
-                <ScalarProperty Name="PrijsID" ColumnName="prijsId" />
-                <ScalarProperty Name="ToernooiID" ColumnName="toernooiId" />
+                <ScalarProperty Name="toernooiprijsID" ColumnName="toernooiPrijsId" />
+                <ScalarProperty Name="prijsID" ColumnName="prijsId" />
+                <ScalarProperty Name="toernooiID" ColumnName="toernooiId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ToernooiRank">
             <EntityTypeMapping TypeName="ToernooiDBModel.ToernooiRank">
               <MappingFragment StoreEntitySet="ToernooiRank">
-                <ScalarProperty Name="ToernooirankID" ColumnName="toernooiRankId" />
-                <ScalarProperty Name="ToernooiID" ColumnName="toernooiId" />
-                <ScalarProperty Name="RankID" ColumnName="rankId" />
+                <ScalarProperty Name="toernooirankID" ColumnName="toernooiRankId" />
+                <ScalarProperty Name="toernooiID" ColumnName="toernooiId" />
+                <ScalarProperty Name="rankID" ColumnName="rankId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

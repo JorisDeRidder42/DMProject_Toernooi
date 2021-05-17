@@ -84,3 +84,5 @@ D:\Project_DM\DM_Project\DeRidderJoris_GRPLTId1.1_DM_Project\bin\Debug\DeRidderJ
 D:\Project_DM\DM_Project\DeRidderJoris_GRPLTId1.1_DM_Project\bin\Debug\DeRidderJoris_GRPLTId1.1_DM_DAL.pdb
 D:\Project_DM\DM_Project\DeRidderJoris_GRPLTId1.1_DM_Project\bin\Debug\DeRidderJoris_GRPLTId1.1_DM_DAL.dll.config
 D:\Project_DM\DM_Project\DeRidderJoris_GRPLTId1.1_DM_Project\bin\Debug\System.Drawing.Common.dll
+D:\Project_DM\DM_Project\DeRidderJoris_GRPLTId1.1_DM_Project\bin\Debug\DeRidderJoris_GRPLTId1.1_DM_Models.dll
+D:\Project_DM\DM_Project\DeRidderJoris_GRPLTId1.1_DM_Project\bin\Debug\DeRidderJoris_GRPLTId1.1_DM_Models.pdb

@@ -20,9 +20,9 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
             this.ToernooiPrijzen = new HashSet<ToernooiPrijs>();
         }
     
-        public int PrijsID { get; set; }
-        public int SpelerID { get; set; }
-        public int PrijsPot { get; set; }
+        public int prijsID { get; set; }
+        public int spelerID { get; set; }
+        public int prijsPot { get; set; }
     
         public virtual Speler Spelers { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

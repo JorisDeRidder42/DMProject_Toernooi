@@ -142,6 +142,10 @@
       <Project>{BB76C8D0-0401-448B-B6C5-D6DBA5A67BFE}</Project>
       <Name>DeRidderJoris_GRPLTId1.1_DM_DAL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DeRidderJoris_GRPLTId1.1_DM_Models\DeRidderJoris_GRPLTId1.1_DM_Models.csproj">
+      <Project>{ba3816ef-2e2a-4ea5-9163-dd3d78cbe78c}</Project>
+      <Name>DeRidderJoris_GRPLTId1.1_DM_Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="banners\ApexLegends_SeasonBanner.jpg" />

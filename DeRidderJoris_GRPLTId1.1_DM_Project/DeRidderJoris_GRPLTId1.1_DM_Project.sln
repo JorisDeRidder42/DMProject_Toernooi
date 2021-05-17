@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeRidderJoris_GRPLTId1.1_DM
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeRidderJoris_GRPLTId1.1_DM_DAL", "..\DeRidderJoris_GRPLTId1.1_DM_DAL\DeRidderJoris_GRPLTId1.1_DM_DAL.csproj", "{BB76C8D0-0401-448B-B6C5-D6DBA5A67BFE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeRidderJoris_GRPLTId1.1_DM_Models", "..\DeRidderJoris_GRPLTId1.1_DM_Models\DeRidderJoris_GRPLTId1.1_DM_Models.csproj", "{BA3816EF-2E2A-4EA5-9163-DD3D78CBE78C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{BB76C8D0-0401-448B-B6C5-D6DBA5A67BFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB76C8D0-0401-448B-B6C5-D6DBA5A67BFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB76C8D0-0401-448B-B6C5-D6DBA5A67BFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA3816EF-2E2A-4EA5-9163-DD3D78CBE78C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA3816EF-2E2A-4EA5-9163-DD3D78CBE78C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA3816EF-2E2A-4EA5-9163-DD3D78CBE78C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA3816EF-2E2A-4EA5-9163-DD3D78CBE78C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

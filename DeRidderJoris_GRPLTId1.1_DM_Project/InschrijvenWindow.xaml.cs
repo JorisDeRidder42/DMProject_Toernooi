@@ -1,4 +1,5 @@
 ﻿using DeRidderJoris_GRPLTId1._1_DM_DAL;
+using DeRidderJoris_GRPLTId1._1_DM_Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,22 +41,89 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
             toernooi.toernooiNaam = toernooi.toernooiNaam.Replace("_", " ");
             lblSpel.Content = toernooi.gameMode.Replace("-", " ");
 
-            var rankings = DatabaseOperations.OphalenRanksPerId();
-            cmbRank.ItemsSource = rankings;
+            //cmbRank.ItemsSource = DatabaseOperations.OphalenRanksPerId();
         }
 
         private void btnAnnuleren_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            //alles txt en cmb boxen leegmaken
+            Wissen();
         }
 
         private void btnBewaren_Click(object sender, RoutedEventArgs e)
         {
-            
+            string foutmelding = Valideer("columnName");
+            if (string.IsNullOrWhiteSpace(foutmelding))
+            {
+                Rank rank = cmbRank.SelectedItem as Rank;
+                Speler speler = new Speler();
+
+                speler.voornaam = txtVoornaam.Text;
+                speler.achternaam = txtAchternaam.Text;
+                speler.nicknaam = txtNickName.Text;
+                speler.geboortedatum = txtGeboortedatum.DisplayDate;
+                speler.geboorteplaats = txtGeboortePlaats.Text;
+                speler.email = txtMail.Text;
+                speler.wachtwoord = FloatingPasswordBox.Password;
+
+                if (true)
+                {
+                    DatabaseOperations.OphalenWedstrijdId();
+                    Wissen();
+                }
+                else
+                {
+                    MessageBox.Show(foutmelding);
+                }
+            }
         }
 
         private void cmbRewards_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+
+        }
+        private void btnHome_Click(object sender, RoutedEventArgs e)
+        {
+            //terug naar vorige scherm
+            this.Close();
+        }
+        private void Wissen()
+        {
+            //maakt alles leeg
+            txtVoornaam.Text = "";
+            txtAchternaam.Text = "";
+            txtNickName.Text = "";
+            txtMail.Text = "";
+            txtGeboortePlaats.Text = "";
+            txtGeboortedatum.Text = "";
+            cmbRank.SelectedItem = "";
+            cmbPrijzen.SelectedItem = "";
+            FloatingPasswordBox.Clear();
+        }
+        private string Valideer(string columnName)
+        {
+            if (columnName == "cmbRank" && cmbRank.SelectedItem == null)
+            {
+                return "Selecteer een Rank!" + Environment.NewLine;
+            }
+            if (columnName == "Voornaam" && txtVoornaam.Text == null)
+            {
+                return "Gelieve uw voornaam in te geven!" + Environment.NewLine;
+            }
+            if (columnName == "Achternaam" && txtAchternaam.Text == null)
+            {
+                return "Gelieve uw achternaam in te geven!" + Environment.NewLine;
+            }
+            if (columnName == "Nicknaam" && txtNickName.Text == null)
+            {
+                return "Gelieve uw spelnaam in te geven!" + Environment.NewLine;
+            }
+            if (columnName == "Nicknaam" && txtMail.Text == null)
+            {
+                return "Gelieve uw email in te geven!" + Environment.NewLine;
+            }
+
+            return "";
         }
     }
 }

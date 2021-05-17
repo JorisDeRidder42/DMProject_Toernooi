@@ -9,8 +9,7 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
 {
     public static class DatabaseOperations
     {
-        // filteren van de database op gamemode enkel de toernooien van Fortnite worden getoond
-
+        // filteren van de database op gamemode enkel de toernooien van gekozen spel worden getoond
         public static List<Toernooi> OphalenGekozenSpel()
         {
             using (ToernooiDBEntities toernooiEntities = new ToernooiDBEntities())
@@ -22,6 +21,7 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
                      .ToList();
             }
         }
+        //gegevens van deze wedstrijd word in de labels geplaatst
         public static Toernooi OphalenWedstrijdId()
         {
             using (ToernooiDBEntities toernooiEntities = new ToernooiDBEntities())
@@ -31,18 +31,16 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
                     .SingleOrDefault();
             }
         }
-        public static List<Rank> OphalenRanksPerId()
-        {
-            using (ToernooiDBEntities toernooiEntities = new ToernooiDBEntities())
-            {
-                var query = toernooiEntities.ToernooiRank
-                     .Where(t => t.ToernooiID == Helper.IdGame)
-                    .Include(r => r.Rank);
-                   var query2 = query
-                    .Select(r => r.Rank)
-                    .ToList();
-                return query2;
-            }
-        }
+        //ophalen id van 1 game met alle ranks in combobox (werkt niet)
+        //public static List<Toernooi> OphalenRanksPerId()
+        //{
+        //    using (ToernooiDBEntities toernooiEntities = new ToernooiDBEntities())
+        //    {
+        //        return toernooiEntities.Toernooi
+        //            .Where(t => t.toernooiID == Helper.IdGame)
+        //            .Include(t =>t.ToernooiRanks.Select(sub => sub.Rank.ranknaam))
+        //            .ToList();
+        //    }
+        //}
     }
 }

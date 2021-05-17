@@ -4,17 +4,17 @@
     <EntitySetMapping Name="Prijs">
       <EntityTypeMapping TypeName="ToernooiDBModel.Prijs">
         <MappingFragment StoreEntitySet="Prijs">
-          <ScalarProperty Name="PrijsID" ColumnName="prijsId" />
-          <ScalarProperty Name="SpelerID" ColumnName="spelerId" />
-          <ScalarProperty Name="PrijsPot" ColumnName="PrijsPot" />
+          <ScalarProperty Name="prijsID" ColumnName="prijsId" />
+          <ScalarProperty Name="spelerID" ColumnName="spelerId" />
+          <ScalarProperty Name="prijsPot" ColumnName="PrijsPot" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Rank">
       <EntityTypeMapping TypeName="ToernooiDBModel.Rank">
         <MappingFragment StoreEntitySet="Rank">
-          <ScalarProperty Name="RankID" ColumnName="rankId" />
-          <ScalarProperty Name="Ranknaam" ColumnName="ranknaam" />
+          <ScalarProperty Name="rankID" ColumnName="rankId" />
+          <ScalarProperty Name="ranknaam" ColumnName="ranknaam" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -22,13 +22,13 @@
       <EntityTypeMapping TypeName="ToernooiDBModel.Speler">
         <MappingFragment StoreEntitySet="Speler">
           <ScalarProperty Name="spelerID" ColumnName="spelerId" />
-          <ScalarProperty Name="Voornaam" ColumnName="voornaam" />
-          <ScalarProperty Name="Achternaam" ColumnName="achternaam" />
-          <ScalarProperty Name="Nicknaam" ColumnName="nicknaam" />
-          <ScalarProperty Name="Wachtwoord" ColumnName="wachtwoord" />
-          <ScalarProperty Name="Email" ColumnName="email" />
-          <ScalarProperty Name="Geboortedatum" ColumnName="geboortedatum" />
-          <ScalarProperty Name="Geboorteplaats" ColumnName="geboorteplaats" />
+          <ScalarProperty Name="voornaam" ColumnName="voornaam" />
+          <ScalarProperty Name="achternaam" ColumnName="achternaam" />
+          <ScalarProperty Name="nicknaam" ColumnName="nicknaam" />
+          <ScalarProperty Name="wachtwoord" ColumnName="wachtwoord" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="geboortedatum" ColumnName="geboortedatum" />
+          <ScalarProperty Name="geboorteplaats" ColumnName="geboorteplaats" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -47,18 +47,18 @@
     <EntitySetMapping Name="ToernooiPrijs">
       <EntityTypeMapping TypeName="ToernooiDBModel.ToernooiPrijs">
         <MappingFragment StoreEntitySet="ToernooiPrijs">
-          <ScalarProperty Name="ToernooiprijsID" ColumnName="toernooiPrijsId" />
-          <ScalarProperty Name="PrijsID" ColumnName="prijsId" />
-          <ScalarProperty Name="ToernooiID" ColumnName="toernooiId" />
+          <ScalarProperty Name="toernooiprijsID" ColumnName="toernooiPrijsId" />
+          <ScalarProperty Name="prijsID" ColumnName="prijsId" />
+          <ScalarProperty Name="toernooiID" ColumnName="toernooiId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="ToernooiRank">
       <EntityTypeMapping TypeName="ToernooiDBModel.ToernooiRank">
         <MappingFragment StoreEntitySet="ToernooiRank">
-          <ScalarProperty Name="ToernooirankID" ColumnName="toernooiRankId" />
-          <ScalarProperty Name="ToernooiID" ColumnName="toernooiId" />
-          <ScalarProperty Name="RankID" ColumnName="rankId" />
+          <ScalarProperty Name="toernooirankID" ColumnName="toernooiRankId" />
+          <ScalarProperty Name="toernooiID" ColumnName="toernooiId" />
+          <ScalarProperty Name="rankID" ColumnName="rankId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

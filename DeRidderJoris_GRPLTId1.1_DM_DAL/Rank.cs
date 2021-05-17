@@ -20,8 +20,8 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
             this.ToernooiRanks = new HashSet<ToernooiRank>();
         }
     
-        public int RankID { get; set; }
-        public string Ranknaam { get; set; }
+        public int rankID { get; set; }
+        public string ranknaam { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ToernooiRank> ToernooiRanks { get; set; }
