@@ -38,7 +38,7 @@
             <materialDesign:PackIcon Kind="Home" Height="30" Width="30" />
         </Button>
         
-        <Image Name="ImageToernooi" Source="banners/Valorant.jpg" Stretch="Fill" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" ></Image>
+        <Image Name="ImageToernooi" Stretch="Fill" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4"></Image>
         <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" VerticalAlignment="Bottom" Margin="10" >
             <Label x:Name="lblImageDatumTijdLabel" Content="" Foreground ="White" />
             <Label x:Name="lblImageLabel" Content="" FontSize="20" Foreground="White" />

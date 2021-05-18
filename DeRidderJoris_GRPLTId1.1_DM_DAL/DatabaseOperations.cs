@@ -29,18 +29,34 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
                 return toernooiEntities.Toernooi
                     .Where(t => t.toernooiID == Helper.IdGame)
                     .SingleOrDefault();
+                //select Toernooi.toernooi
+                //where ToernooiID == Helper.IdGame
             }
         }
-        //ophalen id van 1 game met alle ranks in combobox (werkt niet)
-        //public static List<Toernooi> OphalenRanksPerId()
-        //{
-        //    using (ToernooiDBEntities toernooiEntities = new ToernooiDBEntities())
-        //    {
-        //        return toernooiEntities.Toernooi
-        //            .Where(t => t.toernooiID == Helper.IdGame)
-        //            .Include(t =>t.ToernooiRanks.Select(sub => sub.Rank.ranknaam))
-        //            .ToList();
-        //    }
-        //}
+        //ophalen id van 1 game met alle ranks in combobox(werkt niet)
+        public static List<Toernooi> OphalenRanksPerId()
+        {
+            using (ToernooiDBEntities toernooiEntities = new ToernooiDBEntities())
+            {
+                return toernooiEntities.Toernooi
+                    .Where(t => t.toernooiID == Helper.IdGame)
+                    .Include(t => t.ToernooiRanks.Select(sub => sub.Rank.ranknaam))
+                    .ToList();
+                //Select from Toernooi.toernooi
+                //where ToernooiID == IdGame
+                //ToernooiRanks JOIN ranknaam
+            }
+        }
+        public static List<Prijs> OphalenPrijzen()
+        {
+            using (ToernooiDBEntities toernooiEntities = new ToernooiDBEntities())
+            {
+                return toernooiEntities.Prijs
+                    .Where(p => p.prijsPot.ToString() == Helper.prijzen)
+                    .ToList();
+                    //select from toernooi.Prijs
+                    //where prijsPot == prijzen
+            }
+        }
     }
 }

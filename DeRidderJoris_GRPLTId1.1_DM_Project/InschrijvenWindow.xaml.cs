@@ -42,6 +42,14 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
             lblSpel.Content = toernooi.gameMode.Replace("-", " ");
 
             //cmbRank.ItemsSource = DatabaseOperations.OphalenRanksPerId();
+            cmbPrijzen.ItemsSource = DatabaseOperations.OphalenPrijzen();
+
+
+
+            //laad image
+            //ImageToernooi.Source = banners/valorant.jpg;
+
+
         }
 
         private void btnAnnuleren_Click(object sender, RoutedEventArgs e)
@@ -80,7 +88,7 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
 
         private void cmbRewards_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            
         }
         private void btnHome_Click(object sender, RoutedEventArgs e)
         {
