@@ -14,16 +14,15 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
     
     public partial class Speler
     {
-        public int spelerID { get; set; }
-        public string voornaam { get; set; }
-        public string achternaam { get; set; }
-        public string nicknaam { get; set; }
-        public string wachtwoord { get; set; }
+        public int spelerId { get; set; }
+        public string voorNaam { get; set; }
+        public string achterNaam { get; set; }
+        public string nickNaam { get; set; }
+        public string wachtWoord { get; set; }
         public string email { get; set; }
-        public System.DateTime geboortedatum { get; set; }
-        public string geboorteplaats { get; set; }
+        public System.DateTime geboorteDatum { get; set; }
+        public string geboortePlaats { get; set; }
     
         public virtual Prijs Prijs { get; set; }
-
     }
 }

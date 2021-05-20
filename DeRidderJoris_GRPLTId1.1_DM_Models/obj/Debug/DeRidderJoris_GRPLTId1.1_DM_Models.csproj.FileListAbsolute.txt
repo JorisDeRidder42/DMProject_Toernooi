@@ -10,3 +10,8 @@ D:\Project_DM\DM_Project\DeRidderJoris_GRPLTId1.1_DM_Models\obj\Debug\DeRidderJo
 D:\Project_DM\DM_Project\DeRidderJoris_GRPLTId1.1_DM_Models\obj\Debug\DeRidderJoris_GRPLTId1.1_DM_Models.csproj.CopyComplete
 D:\Project_DM\DM_Project\DeRidderJoris_GRPLTId1.1_DM_Models\obj\Debug\DeRidderJoris_GRPLTId1.1_DM_Models.dll
 D:\Project_DM\DM_Project\DeRidderJoris_GRPLTId1.1_DM_Models\obj\Debug\DeRidderJoris_GRPLTId1.1_DM_Models.pdb
+D:\Project_DM\DM_Project\DeRidderJoris_GRPLTId1.1_DM_Models\bin\Debug\DeRidderJoris_GRPLTId1.1_DM_Models.dll.config
+D:\Project_DM\DM_Project\DeRidderJoris_GRPLTId1.1_DM_Models\bin\Debug\EntityFramework.dll
+D:\Project_DM\DM_Project\DeRidderJoris_GRPLTId1.1_DM_Models\bin\Debug\EntityFramework.SqlServer.dll
+D:\Project_DM\DM_Project\DeRidderJoris_GRPLTId1.1_DM_Models\bin\Debug\EntityFramework.xml
+D:\Project_DM\DM_Project\DeRidderJoris_GRPLTId1.1_DM_Models\bin\Debug\EntityFramework.SqlServer.xml

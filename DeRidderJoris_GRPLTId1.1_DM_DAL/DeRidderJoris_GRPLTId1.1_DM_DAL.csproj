@@ -53,74 +53,77 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GameMode.cs">
+      <DependentUpon>ToernooiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GameModeRank.cs">
+      <DependentUpon>ToernooiModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Helper.cs" />
     <Compile Include="DatabaseOperations.cs" />
-    <Compile Include="Model1.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Prijs.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ToernooiModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rank.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ToernooiModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Speler.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ToernooiModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Toernooi.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ToernooiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ToernooiModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ToernooiModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ToernooiModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ToernooiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ToernooiModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ToernooiModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="ToernooiPrijs.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ToernooiRank.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ToernooiModel.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <EntityDeploy Include="Model1.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="Model1.edmx.diagram">
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
+    <EntityDeploy Include="ToernooiModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ToernooiModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="ToernooiModel.edmx.diagram">
+      <DependentUpon>ToernooiModel.edmx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Model1.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Model1.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DeRidderJoris_GRPLTId1.1_DM_Models\DeRidderJoris_GRPLTId1.1_DM_Models.csproj">
       <Project>{ba3816ef-2e2a-4ea5-9163-dd3d78cbe78c}</Project>
       <Name>DeRidderJoris_GRPLTId1.1_DM_Models</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ToernooiModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ToernooiModel.edmx</DependentUpon>
+      <LastGenOutput>ToernooiModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ToernooiModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ToernooiModel.edmx</DependentUpon>
+      <LastGenOutput>ToernooiModel.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

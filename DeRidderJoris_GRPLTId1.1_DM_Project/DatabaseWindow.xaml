@@ -32,7 +32,7 @@
                 <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-
+           <!-- label titel-->
         <Label Content="Kies in welk toernooi u wilt worden ingeschreven" FontFamily="Open Sans" FontSize="20" VerticalAlignment="Center" FontWeight="Bold" Grid.ColumnSpan="4" Grid.Row="0" Grid.Column="0" Margin="10"/>
 
         <DataGrid x:Name="dataToernooi" SelectionChanged="dataToernooi_SelectionChanged" AutoGenerateColumns="False" Margin="5"
@@ -46,7 +46,7 @@
                 <DataGridTextColumn Binding="{Binding startUur,StringFormat=hh\\:mm}" Header="Start uur"/>
             </DataGrid.Columns>
         </DataGrid>
-
+        <!-- CRUD operaties-->
         <Button x:Name="btnVerwijderen" Content="Verwijderen" Grid.Row="5" Grid.Column="0" Margin="5" Style="{StaticResource MaterialDesignRaisedAccentButton}" />
         <Button x:Name="btnInschrijvingAanpassen" Content="Inschrijving aanpassen" Grid.Row="5" Grid.Column="1" Margin="5" Style="{StaticResource MaterialDesignRaisedAccentButton}" />
         <Button x:Name="btnInschrijven" Content="Inschrijven" Grid.Row="5" Grid.Column="2" Margin="5" Click="btnToevoegen_Click"  />
