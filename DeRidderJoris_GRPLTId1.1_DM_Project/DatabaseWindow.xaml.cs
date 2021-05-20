@@ -63,7 +63,29 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
 
         private void btnVerwijderen_Click(object sender, RoutedEventArgs e)
         {
+            //string foutmelding = Valideer("columnName");
 
+            //if (string.IsNullOrWhiteSpace(foutmelding))
+            //{
+
+            //    Toernooi toernooi = dataToernooi.SelectedItem as Toernooi;
+            //    string toernooi_id = toernooi.toernooiID;
+
+            //    int ok = DatabaseOperations.VerwijderenWerknemer(employee);
+            //    if (ok > 0)
+            //    {
+            //        dataToernooi.ItemsSource = DatabaseOperations.OphalenWerknemersViaUitgeverID(pub_id);
+            //        Wissen();
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Toernooi is niet verwijderd!");
+            //    }
+            //}
+            //else
+            //{
+            //    MessageBox.Show(foutmelding);
+            //}
         }
     }
 }

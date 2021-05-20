@@ -28,7 +28,7 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            //id ophalen en plaatsen in label
+            //id ophalen van gekozen toernooi en plaatsen in labels
             Toernooi toernooi = DatabaseOperations.OphalenWedstrijdId();
             lblImageDatumTijdLabel.Content = "begint " + toernooi.datum.ToString("dd/MM/yyyy") + " | " + toernooi.checkInUur.ToString("hh\\:mm");
             lblImageLabel.Content = toernooi.gameMode.Replace("-", " ");
@@ -41,15 +41,41 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
             toernooi.toernooiNaam = toernooi.toernooiNaam.Replace("_", " ");
             lblSpel.Content = toernooi.gameMode.Replace("-", " ");
 
-            //cmbRank.ItemsSource = DatabaseOperations.OphalenRanksPerId();
+            Toernooi toernooiMetRanks = DatabaseOperations.OphalenToernooiMetRanks();
+            cmbRank.ItemsSource = toernooiMetRanks.ToernooiRanks;
+
+
             cmbPrijzen.ItemsSource = DatabaseOperations.OphalenPrijzen();
 
 
-
-            //laad image
-            //ImageToernooi.Source = banners/valorant.jpg;
-
-
+            //laad image a.d.h.v gekozen spel
+            switch (toernooi.gameMode)
+            {
+                case "Fortnite":
+                    ImageToernooi.Source = new BitmapImage(new Uri("banners/Fortnitebanner.jpg", UriKind.Relative));
+                    break;
+                case "Rocket-league":
+                    ImageToernooi.Source = new BitmapImage(new Uri("banners/rocket-leagueheader.jpg", UriKind.Relative));
+                    break;
+                case "League of legends":
+                    ImageToernooi.Source = new BitmapImage(new Uri("banners/Leagueoflegendsbanner.png", UriKind.Relative));
+                    break;
+                case "Valorant":
+                    ImageToernooi.Source = new BitmapImage(new Uri("banners/Valorant-header.jpg", UriKind.Relative));
+                    break;
+                case "Counter-strike":
+                    ImageToernooi.Source = new BitmapImage(new Uri("banners/CSGObanner.jpg", UriKind.Relative));
+                    break;
+                case "Dota 2":
+                    ImageToernooi.Source = new BitmapImage(new Uri("banners/dota2banner.jpg", UriKind.Relative));
+                    break;
+                case "Call of duty: Warzone":
+                    ImageToernooi.Source = new BitmapImage(new Uri("banners/warzonebanner.png", UriKind.Relative));
+                    break;
+                default:
+                    ImageToernooi.Source = new BitmapImage(new Uri("banners/apexbanner.jpg", UriKind.Relative));
+                    break;
+            }
         }
 
         private void btnAnnuleren_Click(object sender, RoutedEventArgs e)
@@ -74,15 +100,6 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
                 speler.email = txtMail.Text;
                 speler.wachtwoord = FloatingPasswordBox.Password;
 
-                if (true)
-                {
-                    DatabaseOperations.OphalenWedstrijdId();
-                    Wissen();
-                }
-                else
-                {
-                    MessageBox.Show(foutmelding);
-                }
             }
         }
 
@@ -126,7 +143,7 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
             {
                 return "Gelieve uw spelnaam in te geven!" + Environment.NewLine;
             }
-            if (columnName == "Nicknaam" && txtMail.Text == null)
+            if (columnName == "Email" && txtMail.Text == null)
             {
                 return "Gelieve uw email in te geven!" + Environment.NewLine;
             }

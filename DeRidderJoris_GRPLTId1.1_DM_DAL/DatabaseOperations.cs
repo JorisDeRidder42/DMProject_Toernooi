@@ -33,18 +33,18 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
                 //where ToernooiID == Helper.IdGame
             }
         }
-        //ophalen id van 1 game met alle ranks in combobox(werkt niet)
-        public static List<Toernooi> OphalenRanksPerId()
+        //ophalen id van 1 game met alle ranks in combobox
+        public static Toernooi OphalenToernooiMetRanks()
         {
             using (ToernooiDBEntities toernooiEntities = new ToernooiDBEntities())
             {
                 return toernooiEntities.Toernooi
                     .Where(t => t.toernooiID == Helper.IdGame)
-                    .Include(t => t.ToernooiRanks.Select(sub => sub.Rank.ranknaam))
-                    .ToList();
-                //Select from Toernooi.toernooi
-                //where ToernooiID == IdGame
-                //ToernooiRanks JOIN ranknaam
+                    .Include(t => t.ToernooiRanks.Select(sub => sub.Rank))
+                    .SingleOrDefault();
+                    //Select from Toernooi.toernooi
+                    //where ToernooiID == IdGame
+                    //ToernooiRanks JOIN ranknaam
             }
         }
         public static List<Prijs> OphalenPrijzen()
@@ -58,5 +58,23 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
                     //where prijsPot == prijzen
             }
         }
+        //public static int VerwijderenToernooi(Toernooi toernooi)
+        //{
+        //    try
+        //    {
+        //        using (ToernooiDBEntities toernooiDBEntities = new ToernooiDBEntities())
+        //        {
+
+        //            toernooiDBEntities.Entry(toernooi).State = EntityState.Deleted;
+        //            return toernooi.SaveChanges();
+
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        FileOperations.FoutLoggen(ex);
+        //        return 0;
+        //    }
+        //}
     }
 }

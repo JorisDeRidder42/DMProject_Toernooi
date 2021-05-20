@@ -148,22 +148,24 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="banners\ApexLegends_SeasonBanner.jpg" />
-    <Resource Include="banners\Call-of-Duty-Warzone-Banner.jpg" />
-    <Resource Include="banners\CSGObanner.jpg" />
-    <Resource Include="banners\dota2banner.jpg" />
-    <Resource Include="banners\lolbanner.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="images\apex-legends-icon.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="images\CallofdutyWarzone.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="banners\league-of-legends.jpg" />
-    <Resource Include="banners\rocket-league.jpg" />
-    <Resource Include="banners\Valorant.jpg" />
+    <Resource Include="banners\warzonebanner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="banners\apexbanner.jpg" />
+    <Resource Include="banners\CSGObanner.jpg" />
+    <Resource Include="banners\dota2banner.jpg" />
+    <Resource Include="banners\Leagueoflegendsbanner.png" />
+    <Resource Include="banners\rocket-leagueheader.jpg" />
+    <Resource Include="banners\Valorant-header.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="banners\Fortnitebanner.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets" Condition="Exists('packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets')" />

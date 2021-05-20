@@ -37,8 +37,10 @@
         ToolTip="MaterialDesignFloatingActionAccentButton" Width="50" Height="50" x:Name="btnHome" Click="btnHome_Click" >
             <materialDesign:PackIcon Kind="Home" Height="30" Width="30" />
         </Button>
-        
-        <Image Name="ImageToernooi" Stretch="Fill" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4"></Image>
+
+
+        <Image Name="ImageToernooi"  Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" Width="auto" Stretch="Fill"></Image>
+
         <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" VerticalAlignment="Bottom" Margin="10" >
             <Label x:Name="lblImageDatumTijdLabel" Content="" Foreground ="White" />
             <Label x:Name="lblImageLabel" Content="" FontSize="20" Foreground="White" />
