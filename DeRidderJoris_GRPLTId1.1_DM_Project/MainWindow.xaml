@@ -33,7 +33,10 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
+        <!-- Titel -->
         <Label Content="Inschrijven Toernooi" FontFamily="Open Sans" FontSize="20" VerticalAlignment="Center" FontWeight="Bold" Grid.ColumnSpan="4" Grid.Row="0" Grid.Column="0" Margin="10" Foreground="White"/>
+        
+        <!-- Afluit knop -->
         <Button
         Style="{StaticResource MaterialDesignFloatingActionAccentButton}" Grid.Column="3" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="10"
         ToolTip="MaterialDesignFloatingActionAccentButton" Width="50" Height="50" x:Name="btnAfsluiten" Click="btnAfsluiten_Click">
@@ -43,20 +46,21 @@
         <Border Grid.Column="0" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="4" Margin="10">
             <Label Content="Voor welk spel wil je je inschrijven?" FontFamily="Open Sans" FontSize="20" FontWeight="Bold" Foreground="White" VerticalAlignment="Top" Margin="20" HorizontalAlignment="Center"/>
         </Border>
-        <Button x:Name="btnFortnite" Grid.Column="0" Grid.Row="2" Width="120" Height="120" Margin="10" BorderThickness="0" Click="btnFortnite_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="images/fortnite-logo.jpg"/>
-            </Button.Background>
-        </Button>
-        <Label x:Name="lblFortnite" Content="Fortnite" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White" Margin="20"/>
-
-        <Button x:Name="btnRocketLeague" Grid.Column="1" Grid.Row="2" Width="120" Height="120" Margin="10" BorderThickness="0" Click="btnRocketLeague_Click">
+        
+          <!---Gekozen spel-->
+        <Button x:Name="btnRocketLeague" Grid.Column="0" Grid.Row="2" Width="120" Height="120" Margin="10" BorderThickness="0" Click="btnRocketLeague_Click">
             <Button.Background>
                 <ImageBrush ImageSource="images/rocket-league-logo.jpg"/>
             </Button.Background>
         </Button>
-        <Label x:Name="lblRocketLeague" Content="Rocket-league" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White" Margin="20"/>
-
+        <Label x:Name="lblRocketLeague" Content="Rocket-league" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White" Margin="20"/>
+        <Button x:Name="btnFortnite" Grid.Column="1" Grid.Row="2" Width="120" Height="120" Margin="10" BorderThickness="0" Click="btnFortnite_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="images/fortnite-logo.jpg"/>
+            </Button.Background>
+        </Button>
+        <Label x:Name="lblFortnite" Content="Fortnite" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White" Margin="20"/>
+        
         <Button x:Name="btnLeagueOfLegends" Grid.Column="2" Grid.Row="2" Width="120" Height="120" Margin="10" BorderThickness="0" Click="btnLeagueOfLegends_Click">
             <Button.Background>
                 <ImageBrush ImageSource="images/Leagueoflegends-icon.jpg"/>

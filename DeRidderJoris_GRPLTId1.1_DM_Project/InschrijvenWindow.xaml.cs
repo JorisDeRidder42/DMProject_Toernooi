@@ -30,26 +30,28 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
         {
             //id ophalen van gekozen toernooi en plaatsen in labels
             Toernooi toernooi = DatabaseOperations.OphalenWedstrijdId();
-            lblImageDatumTijdLabel.Content = "begint " + toernooi.datum.ToString("dd/MM/yyyy") + " | " + toernooi.checkInUur.ToString("hh\\:mm");
-            lblImageLabel.Content = toernooi.gameMode.Replace("-", " ");
+            lblImageDatumTijdLabel.Content = "begint " + toernooi.datum.ToString("dd/MM/yyyy") + " | " + toernooi.checkInuur.ToString("hh\\:mm");
+            lblImageLabel.Content = toernooi.toernooiNaam.Replace("-", " ");
 
             lblDatum.Content = toernooi.datum.ToString("dd / MM / yyyy");
-            lblTijd.Content = toernooi.checkInUur.ToString("hh\\:mm");
-            lblEersteGame.Content = toernooi.startUur.ToString("hh\\:mm");
+            lblTijd.Content = toernooi.checkInuur.ToString("hh\\:mm");
+            lblEersteGame.Content = toernooi.startuur.ToString("hh\\:mm");
 
             lblLijnup.Content = toernooi.toernooiNaam.Substring(0, toernooi.toernooiNaam.LastIndexOf('_'));
             toernooi.toernooiNaam = toernooi.toernooiNaam.Replace("_", " ");
-            lblSpel.Content = toernooi.gameMode.Replace("-", " ");
+            lblSpel.Content = toernooi.toernooiNaam.Replace("-", " ");
 
-            Toernooi toernooiMetRanks = DatabaseOperations.OphalenToernooiMetRanks();
-            cmbRank.ItemsSource = toernooiMetRanks.ToernooiRanks;
+            //List<ToernooiRank> toernooiMetRanks = DatabaseOperations.OphalenToernooiMetRanks();
+            //cmbRank.ItemsSource = toernooiMetRanks;
 
+            //Toernooi GeselecteerdeWedstrijd = dataToernooi.SelectedItem as Toernooi;
+            //Helper.IdGame = GeselecteerdeWedstrijd.toernooiID;
 
-            cmbPrijzen.ItemsSource = DatabaseOperations.OphalenPrijzen();
+            //cmbPrijzen.ItemsSource = DatabaseOperations.OphalenPrijzen();
 
 
             //laad image a.d.h.v gekozen spel
-            switch (toernooi.gameMode)
+            switch (toernooi.toernooiNaam)
             {
                 case "Fortnite":
                     ImageToernooi.Source = new BitmapImage(new Uri("banners/Fortnitebanner.jpg", UriKind.Relative));
@@ -92,13 +94,13 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
                 Rank rank = cmbRank.SelectedItem as Rank;
                 Speler speler = new Speler();
 
-                speler.voornaam = txtVoornaam.Text;
-                speler.achternaam = txtAchternaam.Text;
-                speler.nicknaam = txtNickName.Text;
-                speler.geboortedatum = txtGeboortedatum.DisplayDate;
-                speler.geboorteplaats = txtGeboortePlaats.Text;
+                speler.voorNaam = txtVoornaam.Text;
+                speler.achterNaam = txtAchternaam.Text;
+                speler.nickNaam = txtNickName.Text;
+                speler.geboorteDatum = txtGeboortedatum.DisplayDate;
+                speler.geboortePlaats = txtGeboortePlaats.Text;
                 speler.email = txtMail.Text;
-                speler.wachtwoord = FloatingPasswordBox.Password;
+                speler.wachtWoord = FloatingPasswordBox.Password;
 
             }
         }

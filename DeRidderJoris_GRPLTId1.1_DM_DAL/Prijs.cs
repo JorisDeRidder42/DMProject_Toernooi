@@ -17,15 +17,15 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Prijs()
         {
-            this.ToernooiPrijzen = new HashSet<ToernooiPrijs>();
+            this.ToernooiPrijs = new HashSet<ToernooiPrijs>();
         }
     
-        public int prijsID { get; set; }
-        public int spelerID { get; set; }
-        public int prijsPot { get; set; }
+        public int prijsId { get; set; }
+        public int spelerId { get; set; }
+        public int PrijsPot { get; set; }
     
-        public virtual Speler Spelers { get; set; }
+        public virtual Speler Speler { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ToernooiPrijs> ToernooiPrijzen { get; set; }
+        public virtual ICollection<ToernooiPrijs> ToernooiPrijs { get; set; }
     }
 }

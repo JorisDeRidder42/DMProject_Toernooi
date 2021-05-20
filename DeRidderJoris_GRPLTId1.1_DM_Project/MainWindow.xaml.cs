@@ -47,9 +47,6 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
             Helper.buttonSpel = lblRocketLeague.Content.ToString();
             DatabaseWindow databaseWindow = new DatabaseWindow();
             databaseWindow.Show();
-            //InschrijvenWindow inschrijvenWindow = new InschrijvenWindow();
-            //inschrijvenWindow.Show();
-
         }
 
         private void btnLeagueOfLegends_Click(object sender, RoutedEventArgs e)
