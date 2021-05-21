@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBToernooiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="GameMode">
+    <Key>
+      <PropertyRef Name="gameModeId" />
+    </Key>
+    <Property Name="gameModeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="gameModeNaam" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="GameModeRank" Relationship="Self.FK_GameModeRank_GameMode" FromRole="GameMode" ToRole="GameModeRank" />
+    <NavigationProperty Name="Toernooi" Relationship="Self.FK_Toernooi_GameMode" FromRole="GameMode" ToRole="Toernooi" />
+  </EntityType>
+  <EntityType Name="GameModeRank">
+    <Key>
+      <PropertyRef Name="gameModeRankId" />
+    </Key>
+    <Property Name="gameModeRankId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rankId" Type="Int32" Nullable="false" />
+    <Property Name="gameModeId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="GameMode" Relationship="Self.FK_GameModeRank_GameMode" FromRole="GameModeRank" ToRole="GameMode" />
+    <NavigationProperty Name="Rank" Relationship="Self.FK_GameModeRank_Rank" FromRole="GameModeRank" ToRole="Rank" />
+  </EntityType>
+  <EntityType Name="Prijs">
+    <Key>
+      <PropertyRef Name="prijsId" />
+    </Key>
+    <Property Name="prijsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="spelerId" Type="Int32" Nullable="false" />
+    <Property Name="PrijsPot" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Speler" Relationship="Self.FK_Prijs_Speler" FromRole="Prijs" ToRole="Speler" />
+    <NavigationProperty Name="ToernooiPrijs" Relationship="Self.FK_ToernooiPrijs_Prijs" FromRole="Prijs" ToRole="ToernooiPrijs" />
+  </EntityType>
+  <EntityType Name="Rank">
+    <Key>
+      <PropertyRef Name="rankId" />
+    </Key>
+    <Property Name="rankId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rankNaam" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="GameModeRank" Relationship="Self.FK_GameModeRank_Rank" FromRole="Rank" ToRole="GameModeRank" />
+  </EntityType>
+  <EntityType Name="Speler">
+    <Key>
+      <PropertyRef Name="spelerId" />
+    </Key>
+    <Property Name="spelerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="voorNaam" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="achterNaam" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nickNaam" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="wachtWoord" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="geboorteDatum" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="geboortePlaats" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Prijs" Relationship="Self.FK_Prijs_Speler" FromRole="Speler" ToRole="Prijs" />
+  </EntityType>
+  <EntityType Name="Toernooi">
+    <Key>
+      <PropertyRef Name="toernooiId" />
+    </Key>
+    <Property Name="toernooiId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="toernooiNaam" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="datum" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="checkInuur" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="startuur" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="gameModeId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="GameMode" Relationship="Self.FK_Toernooi_GameMode" FromRole="Toernooi" ToRole="GameMode" />
+    <NavigationProperty Name="ToernooiPrijs" Relationship="Self.FK_ToernooiPrijs_Toernooi" FromRole="Toernooi" ToRole="ToernooiPrijs" />
+  </EntityType>
+  <EntityType Name="ToernooiPrijs">
+    <Key>
+      <PropertyRef Name="toernooiPrijsId" />
+    </Key>
+    <Property Name="toernooiPrijsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="prijsId" Type="Int32" Nullable="false" />
+    <Property Name="toernooiId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Prijs" Relationship="Self.FK_ToernooiPrijs_Prijs" FromRole="ToernooiPrijs" ToRole="Prijs" />
+    <NavigationProperty Name="Toernooi" Relationship="Self.FK_ToernooiPrijs_Toernooi" FromRole="ToernooiPrijs" ToRole="Toernooi" />
+  </EntityType>
+  <Association Name="FK_GameModeRank_GameMode">
+    <End Role="GameMode" Type="Self.GameMode" Multiplicity="1" />
+    <End Role="GameModeRank" Type="Self.GameModeRank" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GameMode">
+        <PropertyRef Name="gameModeId" />
+      </Principal>
+      <Dependent Role="GameModeRank">
+        <PropertyRef Name="gameModeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Toernooi_GameMode">
+    <End Role="GameMode" Type="Self.GameMode" Multiplicity="1" />
+    <End Role="Toernooi" Type="Self.Toernooi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GameMode">
+        <PropertyRef Name="gameModeId" />
+      </Principal>
+      <Dependent Role="Toernooi">
+        <PropertyRef Name="gameModeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GameModeRank_Rank">
+    <End Role="Rank" Type="Self.Rank" Multiplicity="1" />
+    <End Role="GameModeRank" Type="Self.GameModeRank" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rank">
+        <PropertyRef Name="rankId" />
+      </Principal>
+      <Dependent Role="GameModeRank">
+        <PropertyRef Name="rankId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Prijs_Speler">
+    <End Role="Speler" Type="Self.Speler" Multiplicity="1" />
+    <End Role="Prijs" Type="Self.Prijs" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Speler">
+        <PropertyRef Name="spelerId" />
+      </Principal>
+      <Dependent Role="Prijs">
+        <PropertyRef Name="prijsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ToernooiPrijs_Prijs">
+    <End Role="Prijs" Type="Self.Prijs" Multiplicity="1" />
+    <End Role="ToernooiPrijs" Type="Self.ToernooiPrijs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Prijs">
+        <PropertyRef Name="prijsId" />
+      </Principal>
+      <Dependent Role="ToernooiPrijs">
+        <PropertyRef Name="prijsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ToernooiPrijs_Toernooi">
+    <End Role="Toernooi" Type="Self.Toernooi" Multiplicity="1" />
+    <End Role="ToernooiPrijs" Type="Self.ToernooiPrijs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Toernooi">
+        <PropertyRef Name="toernooiId" />
+      </Principal>
+      <Dependent Role="ToernooiPrijs">
+        <PropertyRef Name="toernooiId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DBToernooiEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="GameMode" EntityType="Self.GameMode" />
+    <EntitySet Name="GameModeRank" EntityType="Self.GameModeRank" />
+    <EntitySet Name="Prijs" EntityType="Self.Prijs" />
+    <EntitySet Name="Rank" EntityType="Self.Rank" />
+    <EntitySet Name="Speler" EntityType="Self.Speler" />
+    <EntitySet Name="Toernooi" EntityType="Self.Toernooi" />
+    <EntitySet Name="ToernooiPrijs" EntityType="Self.ToernooiPrijs" />
+    <AssociationSet Name="FK_GameModeRank_GameMode" Association="Self.FK_GameModeRank_GameMode">
+      <End Role="GameMode" EntitySet="GameMode" />
+      <End Role="GameModeRank" EntitySet="GameModeRank" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Toernooi_GameMode" Association="Self.FK_Toernooi_GameMode">
+      <End Role="GameMode" EntitySet="GameMode" />
+      <End Role="Toernooi" EntitySet="Toernooi" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GameModeRank_Rank" Association="Self.FK_GameModeRank_Rank">
+      <End Role="Rank" EntitySet="Rank" />
+      <End Role="GameModeRank" EntitySet="GameModeRank" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Prijs_Speler" Association="Self.FK_Prijs_Speler">
+      <End Role="Speler" EntitySet="Speler" />
+      <End Role="Prijs" EntitySet="Prijs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ToernooiPrijs_Prijs" Association="Self.FK_ToernooiPrijs_Prijs">
+      <End Role="Prijs" EntitySet="Prijs" />
+      <End Role="ToernooiPrijs" EntitySet="ToernooiPrijs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ToernooiPrijs_Toernooi" Association="Self.FK_ToernooiPrijs_Toernooi">
+      <End Role="Toernooi" EntitySet="Toernooi" />
+      <End Role="ToernooiPrijs" EntitySet="ToernooiPrijs" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

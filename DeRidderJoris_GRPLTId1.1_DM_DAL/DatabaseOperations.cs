@@ -29,6 +29,17 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
                     .SingleOrDefault();
             }
         }
+
+
+        //public static GameMode OphalenImageMetId()
+        //{
+        //    using (DBToernooiEntities toernooiEntities = new DBToernooiEntities())
+        //    {
+        //        return toernooiEntities.GameMode
+        //            .Where(t => t.gameModeNaam == Helper.IdGame)
+        //            .SingleOrDefault();
+        //    }
+        //}
         //ophalen id van 1 game met alle ranks in combobox
         //public static List<Rank> OphalenToernooiMetRanks()
         //{

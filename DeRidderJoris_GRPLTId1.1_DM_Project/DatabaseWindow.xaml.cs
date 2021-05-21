@@ -33,14 +33,14 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
 
         private void btnAnnuleren_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void dataToernooi_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Toernooi GeselecteerdeWedstrijd = dataToernooi.SelectedItem as Toernooi;
+            GameMode GeselecteerdeWedstrijd = dataToernooi.SelectedItem as GameMode;
 
-            Helper.IdGame = GeselecteerdeWedstrijd.toernooiId;
+            Helper.buttonSpel = GeselecteerdeWedstrijd.gameModeNaam;
 
             InschrijvenWindow inschrijven = new InschrijvenWindow();
             inschrijven.Show();
