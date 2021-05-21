@@ -17,13 +17,13 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Rank()
         {
-            this.GameModeRank = new HashSet<GameModeRank>();
+            this.GameModeRanks = new HashSet<GameModeRank>();
         }
     
         public int rankId { get; set; }
         public string rankNaam { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<GameModeRank> GameModeRank { get; set; }
+        public virtual ICollection<GameModeRank> GameModeRanks { get; set; }
     }
 }

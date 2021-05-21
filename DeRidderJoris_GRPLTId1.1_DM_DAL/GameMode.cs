@@ -17,16 +17,16 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public GameMode()
         {
-            this.GameModeRank = new HashSet<GameModeRank>();
-            this.Toernooi = new HashSet<Toernooi>();
+            this.GameModeRanks = new HashSet<GameModeRank>();
+            this.Toernooien = new HashSet<Toernooi>();
         }
     
         public int gameModeId { get; set; }
         public string gameModeNaam { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<GameModeRank> GameModeRank { get; set; }
+        public virtual ICollection<GameModeRank> GameModeRanks { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Toernooi> Toernooi { get; set; }
+        public virtual ICollection<Toernooi> Toernooien { get; set; }
     }
 }

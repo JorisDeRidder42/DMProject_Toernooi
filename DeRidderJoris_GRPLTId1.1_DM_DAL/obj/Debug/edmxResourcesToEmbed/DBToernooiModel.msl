@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DBToernooiModelStoreContainer" CdmEntityContainer="DBToernooiEntities">
+    <EntitySetMapping Name="GameMode">
+      <EntityTypeMapping TypeName="DBToernooiModel.GameMode">
+        <MappingFragment StoreEntitySet="GameMode">
+          <ScalarProperty Name="gameModeId" ColumnName="gameModeId" />
+          <ScalarProperty Name="gameModeNaam" ColumnName="gameModeNaam" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GameModeRank">
+      <EntityTypeMapping TypeName="DBToernooiModel.GameModeRank">
+        <MappingFragment StoreEntitySet="GameModeRank">
+          <ScalarProperty Name="gameModeRankId" ColumnName="gameModeRankId" />
+          <ScalarProperty Name="rankId" ColumnName="rankId" />
+          <ScalarProperty Name="gameModeId" ColumnName="gameModeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Prijs">
+      <EntityTypeMapping TypeName="DBToernooiModel.Prijs">
+        <MappingFragment StoreEntitySet="Prijs">
+          <ScalarProperty Name="prijsId" ColumnName="prijsId" />
+          <ScalarProperty Name="spelerId" ColumnName="spelerId" />
+          <ScalarProperty Name="PrijsPot" ColumnName="PrijsPot" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rank">
+      <EntityTypeMapping TypeName="DBToernooiModel.Rank">
+        <MappingFragment StoreEntitySet="Rank">
+          <ScalarProperty Name="rankId" ColumnName="rankId" />
+          <ScalarProperty Name="rankNaam" ColumnName="rankNaam" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Speler">
+      <EntityTypeMapping TypeName="DBToernooiModel.Speler">
+        <MappingFragment StoreEntitySet="Speler">
+          <ScalarProperty Name="spelerId" ColumnName="spelerId" />
+          <ScalarProperty Name="voornaam" ColumnName="voornaam" />
+          <ScalarProperty Name="achternaam" ColumnName="achternaam" />
+          <ScalarProperty Name="nicknaam" ColumnName="nicknaam" />
+          <ScalarProperty Name="wachtwoord" ColumnName="wachtwoord" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="geboortedatum" ColumnName="geboortedatum" />
+          <ScalarProperty Name="geboorteplaats" ColumnName="geboorteplaats" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Toernooi">
+      <EntityTypeMapping TypeName="DBToernooiModel.Toernooi">
+        <MappingFragment StoreEntitySet="Toernooi">
+          <ScalarProperty Name="toernooiId" ColumnName="toernooiId" />
+          <ScalarProperty Name="toernooiNaam" ColumnName="toernooiNaam" />
+          <ScalarProperty Name="datum" ColumnName="datum" />
+          <ScalarProperty Name="checkInuur" ColumnName="checkInuur" />
+          <ScalarProperty Name="startuur" ColumnName="startuur" />
+          <ScalarProperty Name="gameModeId" ColumnName="gameModeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ToernooiPrijs">
+      <EntityTypeMapping TypeName="DBToernooiModel.ToernooiPrijs">
+        <MappingFragment StoreEntitySet="ToernooiPrijs">
+          <ScalarProperty Name="toernooiPrijsId" ColumnName="toernooiPrijsId" />
+          <ScalarProperty Name="prijsId" ColumnName="prijsId" />
+          <ScalarProperty Name="toernooiId" ColumnName="toernooiId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

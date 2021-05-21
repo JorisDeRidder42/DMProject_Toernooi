@@ -11,6 +11,7 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
         public static string buttonSpel;
         public static int IdGame;
         public static int IdSpel;
+        public static string naamgame;
         public static string prijzen;
     }
   

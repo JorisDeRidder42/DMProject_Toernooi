@@ -5,7 +5,6 @@ D:\Project_DM\DM_Project\DeRidderJoris_GRPLTId1.1_DM_Models\bin\Debug\MaterialDe
 D:\Project_DM\DM_Project\DeRidderJoris_GRPLTId1.1_DM_Models\bin\Debug\MaterialDesignColors.pdb
 D:\Project_DM\DM_Project\DeRidderJoris_GRPLTId1.1_DM_Models\bin\Debug\MaterialDesignThemes.Wpf.pdb
 D:\Project_DM\DM_Project\DeRidderJoris_GRPLTId1.1_DM_Models\bin\Debug\MaterialDesignThemes.Wpf.xml
-D:\Project_DM\DM_Project\DeRidderJoris_GRPLTId1.1_DM_Models\obj\Debug\DeRidderJoris_GRPLTId1.1_DM_Models.csprojAssemblyReference.cache
 D:\Project_DM\DM_Project\DeRidderJoris_GRPLTId1.1_DM_Models\obj\Debug\DeRidderJoris_GRPLTId1.1_DM_Models.csproj.CoreCompileInputs.cache
 D:\Project_DM\DM_Project\DeRidderJoris_GRPLTId1.1_DM_Models\obj\Debug\DeRidderJoris_GRPLTId1.1_DM_Models.csproj.CopyComplete
 D:\Project_DM\DM_Project\DeRidderJoris_GRPLTId1.1_DM_Models\obj\Debug\DeRidderJoris_GRPLTId1.1_DM_Models.dll

@@ -49,35 +49,35 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
 
             //cmbPrijzen.ItemsSource = DatabaseOperations.OphalenPrijzen();
 
-
+            //GameMode gameMode = DatabaseOperations.OphalenImageMetId();
             //laad image a.d.h.v gekozen spel
-            switch (toernooi.toernooiNaam)
-            {
-                case "Fortnite":
-                    ImageToernooi.Source = new BitmapImage(new Uri("banners/Fortnitebanner.jpg", UriKind.Relative));
-                    break;
-                case "Rocket-league":
-                    ImageToernooi.Source = new BitmapImage(new Uri("banners/rocket-leagueheader.jpg", UriKind.Relative));
-                    break;
-                case "League of legends":
-                    ImageToernooi.Source = new BitmapImage(new Uri("banners/Leagueoflegendsbanner.png", UriKind.Relative));
-                    break;
-                case "Valorant":
-                    ImageToernooi.Source = new BitmapImage(new Uri("banners/Valorant-header.jpg", UriKind.Relative));
-                    break;
-                case "Counter-strike":
-                    ImageToernooi.Source = new BitmapImage(new Uri("banners/CSGObanner.jpg", UriKind.Relative));
-                    break;
-                case "Dota 2":
-                    ImageToernooi.Source = new BitmapImage(new Uri("banners/dota2banner.jpg", UriKind.Relative));
-                    break;
-                case "Call of duty: Warzone":
-                    ImageToernooi.Source = new BitmapImage(new Uri("banners/warzonebanner.png", UriKind.Relative));
-                    break;
-                default:
-                    ImageToernooi.Source = new BitmapImage(new Uri("banners/apexbanner.jpg", UriKind.Relative));
-                    break;
-            }
+            //switch (gameMode.gameModeNaam)
+            //{
+            //    case "Fortnite":
+            //        ImageToernooi.Source = new BitmapImage(new Uri("banners/Fortnitebanner.jpg", UriKind.Relative));
+            //        break;
+            //    case "Rocket-league":
+            //        ImageToernooi.Source = new BitmapImage(new Uri("banners/rocket-leagueheader.jpg", UriKind.Relative));
+            //        break;
+            //    case "League of legends":
+            //        ImageToernooi.Source = new BitmapImage(new Uri("banners/Leagueoflegendsbanner.png", UriKind.Relative));
+            //        break;
+            //    case "Valorant":
+            //        ImageToernooi.Source = new BitmapImage(new Uri("banners/Valorant-header.jpg", UriKind.Relative));
+            //        break;
+            //    case "Counter-strike":
+            //        ImageToernooi.Source = new BitmapImage(new Uri("banners/CSGObanner.jpg", UriKind.Relative));
+            //        break;
+            //    case "Dota 2":
+            //        ImageToernooi.Source = new BitmapImage(new Uri("banners/dota2banner.jpg", UriKind.Relative));
+            //        break;
+            //    case "Call of duty: Warzone":
+            //        ImageToernooi.Source = new BitmapImage(new Uri("banners/warzonebanner.png", UriKind.Relative));
+            //        break;
+            //    default:
+            //        ImageToernooi.Source = new BitmapImage(new Uri("banners/apexbanner.jpg", UriKind.Relative));
+            //        break;
+            //}
         }
 
         private void btnAnnuleren_Click(object sender, RoutedEventArgs e)
@@ -94,13 +94,13 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
                 Rank rank = cmbRank.SelectedItem as Rank;
                 Speler speler = new Speler();
 
-                speler.voorNaam = txtVoornaam.Text;
-                speler.achterNaam = txtAchternaam.Text;
-                speler.nickNaam = txtNickName.Text;
-                speler.geboorteDatum = txtGeboortedatum.DisplayDate;
-                speler.geboortePlaats = txtGeboortePlaats.Text;
+                speler.voornaam = txtVoornaam.Text;
+                speler.achternaam = txtAchternaam.Text;
+                speler.nicknaam = txtNickName.Text;
+                speler.geboortedatum = txtGeboortedatum.DisplayDate;
+                speler.geboorteplaats = txtGeboortePlaats.Text;
                 speler.email = txtMail.Text;
-                speler.wachtWoord = FloatingPasswordBox.Password;
+                speler.wachtwoord = FloatingPasswordBox.Password;
 
             }
         }
