@@ -28,7 +28,9 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            dataToernooi.ItemsSource = DatabaseOperations.OphalenGekozenSpel();
+            GameMode opgehaaldeGameMode = DatabaseOperations.OphalenGekozenSpel();
+            dataToernooi.ItemsSource = opgehaaldeGameMode.Toernooien;
+            lblTitle.Content = "Het opgehaalde spel is " + opgehaaldeGameMode.gameModeNaam;
         }
 
         private void btnAnnuleren_Click(object sender, RoutedEventArgs e)
@@ -38,9 +40,9 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
 
         private void dataToernooi_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            GameMode GeselecteerdeWedstrijd = dataToernooi.SelectedItem as GameMode;
+            Toernooi GeselecteerdeWedstrijd = dataToernooi.SelectedItem as Toernooi;
 
-            Helper.buttonSpel = GeselecteerdeWedstrijd.gameModeNaam;
+            Helper.IdGame = GeselecteerdeWedstrijd.toernooiId;
 
             InschrijvenWindow inschrijven = new InschrijvenWindow();
             inschrijven.Show();

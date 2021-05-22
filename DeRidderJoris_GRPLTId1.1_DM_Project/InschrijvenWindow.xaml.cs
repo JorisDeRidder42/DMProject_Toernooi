@@ -30,8 +30,10 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
         {
             //id ophalen van gekozen toernooi en plaatsen in labels
             Toernooi toernooi = DatabaseOperations.OphalenWedstrijdId();
+
+
             lblImageDatumTijdLabel.Content = "begint " + toernooi.datum.ToString("dd/MM/yyyy") + " | " + toernooi.checkInuur.ToString("hh\\:mm");
-            lblImageLabel.Content = toernooi.toernooiNaam.Replace("-", " ");
+            lblImageLabel.Content = toernooi.toernooiNaam.Substring(0, toernooi.toernooiNaam.LastIndexOf('_'));
 
             lblDatum.Content = toernooi.datum.ToString("dd / MM / yyyy");
             lblTijd.Content = toernooi.checkInuur.ToString("hh\\:mm");
@@ -39,45 +41,41 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
 
             lblLijnup.Content = toernooi.toernooiNaam.Substring(0, toernooi.toernooiNaam.LastIndexOf('_'));
             toernooi.toernooiNaam = toernooi.toernooiNaam.Replace("_", " ");
-            lblSpel.Content = toernooi.toernooiNaam.Replace("-", " ");
 
-            //List<ToernooiRank> toernooiMetRanks = DatabaseOperations.OphalenToernooiMetRanks();
-            //cmbRank.ItemsSource = toernooiMetRanks;
+            List<Rank> toernooiMetRanks = DatabaseOperations.OphalenToernooiMetRanks();
+            cmbRank.ItemsSource = toernooiMetRanks;
 
-            //Toernooi GeselecteerdeWedstrijd = dataToernooi.SelectedItem as Toernooi;
-            //Helper.IdGame = GeselecteerdeWedstrijd.toernooiID;
+            cmbPrijzen.ItemsSource = DatabaseOperations.OphalenPrijzen();
 
-            //cmbPrijzen.ItemsSource = DatabaseOperations.OphalenPrijzen();
-
-            //GameMode gameMode = DatabaseOperations.OphalenImageMetId();
+            Toernooi ophalenToernooi = DatabaseOperations.OphalenImageMetId();
             //laad image a.d.h.v gekozen spel
-            //switch (gameMode.gameModeNaam)
-            //{
-            //    case "Fortnite":
-            //        ImageToernooi.Source = new BitmapImage(new Uri("banners/Fortnitebanner.jpg", UriKind.Relative));
-            //        break;
-            //    case "Rocket-league":
-            //        ImageToernooi.Source = new BitmapImage(new Uri("banners/rocket-leagueheader.jpg", UriKind.Relative));
-            //        break;
-            //    case "League of legends":
-            //        ImageToernooi.Source = new BitmapImage(new Uri("banners/Leagueoflegendsbanner.png", UriKind.Relative));
-            //        break;
-            //    case "Valorant":
-            //        ImageToernooi.Source = new BitmapImage(new Uri("banners/Valorant-header.jpg", UriKind.Relative));
-            //        break;
-            //    case "Counter-strike":
-            //        ImageToernooi.Source = new BitmapImage(new Uri("banners/CSGObanner.jpg", UriKind.Relative));
-            //        break;
-            //    case "Dota 2":
-            //        ImageToernooi.Source = new BitmapImage(new Uri("banners/dota2banner.jpg", UriKind.Relative));
-            //        break;
-            //    case "Call of duty: Warzone":
-            //        ImageToernooi.Source = new BitmapImage(new Uri("banners/warzonebanner.png", UriKind.Relative));
-            //        break;
-            //    default:
-            //        ImageToernooi.Source = new BitmapImage(new Uri("banners/apexbanner.jpg", UriKind.Relative));
-            //        break;
-            //}
+            switch (ophalenToernooi.gameModeId)
+            {
+                case 1:
+                    ImageToernooi.Source = new BitmapImage(new Uri("banners/Rocket-League-Header.jpeg", UriKind.Relative));
+                    break;
+                case 2:
+                    ImageToernooi.Source = new BitmapImage(new Uri("banners/Fortnitebanner.jpg", UriKind.Relative));
+                    break;
+                case 3:
+                    ImageToernooi.Source = new BitmapImage(new Uri("banners/bannerLeague.png", UriKind.Relative));
+                    break;
+                case 4:
+                    ImageToernooi.Source = new BitmapImage(new Uri("banners/Valorant-header2.jpg", UriKind.Relative));
+                    break;
+                case 5:
+                    ImageToernooi.Source = new BitmapImage(new Uri("banners/CSGObanner.jpg", UriKind.Relative));
+                    break;
+                case 6:
+                    ImageToernooi.Source = new BitmapImage(new Uri("banners/dota2banner.jpg", UriKind.Relative));
+                    break;
+                case 7:
+                    ImageToernooi.Source = new BitmapImage(new Uri("banners/warzonebanner.png", UriKind.Relative));
+                    break;
+                default:
+                    ImageToernooi.Source = new BitmapImage(new Uri("banners/apexbanner.jpg", UriKind.Relative));
+                    break;
+            }
         }
 
         private void btnAnnuleren_Click(object sender, RoutedEventArgs e)
