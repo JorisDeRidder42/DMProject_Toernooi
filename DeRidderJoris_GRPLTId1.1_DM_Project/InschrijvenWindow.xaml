@@ -44,8 +44,8 @@
         
         <!-- Achtergrond voor labels -->
         <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" VerticalAlignment="Bottom" Margin="10" >
-            <Label x:Name="lblImageDatumTijdLabel" Content="" Foreground ="White" />
-            <Label x:Name="lblImageLabel" Content="" FontSize="20" Foreground="White" />
+            <Label x:Name="lblImageDatumTijdLabel" Content="" FontSize="15" Foreground ="White" />
+            <Label x:Name="lblImageLabel" Content="" FontSize="20" FontWeight="Bold" Foreground="White" />
         </StackPanel>
 
         <!-- Labels met informatie voor het bepaald toernooi -->
@@ -56,7 +56,6 @@
                     <Label x:Name="lblCheckIn" Content="Check in" FontWeight="Bold" FontFamily="Open Sans" Margin="5"/>
                     <Label x:Name="lblFirstGame" Content="Eerste spel" FontWeight="Bold" FontFamily="Open Sans" Margin="5"/>
                     <Label x:Name="lblLineUp" Content="Lineup" FontWeight="Bold" FontFamily="Open Sans" Margin="5"/>
-                    <Label x:Name="lblGame" Content="Spelmodus" FontWeight="Bold" FontFamily="Open Sans" Margin="5"/>
                     <Label x:Name="lblRank" Content="Ranking" FontWeight="Bold" FontFamily="Open Sans" Margin="5"/>
                 </StackPanel>
                 <StackPanel Orientation="Vertical">
@@ -64,7 +63,6 @@
                     <Label x:Name="lblTijd" Content="" Margin="5" FontFamily="Open Sans"/>
                     <Label x:Name="lblEersteGame" Content="" Margin="5" FontFamily="Open Sans"/>
                     <Label x:Name="lblLijnup" Content="" Margin="5" FontFamily="Open Sans"/>
-                    <Label x:Name="lblSpel" Content="" Margin="5" FontFamily="Open Sans"/>
                     <Label x:Name="lblRanking" Content="Enabled" Margin="5" FontFamily="Open Sans"/>
 
                 </StackPanel>
@@ -78,7 +76,7 @@
             </StackPanel>
         </Button>
         <!-- Prijzen combobox-->
-        <ComboBox Grid.Row="4" Margin="10" Background="#FFECECEC" DisplayMemberPath="PrijsPot" x:Name="cmbPrijzen" materialDesign:HintAssist.Hint="Prijzen" Style="{StaticResource MaterialDesignOutlinedComboBox}" SelectionChanged="cmbRewards_SelectionChanged" />
+        <ComboBox Grid.Row="4" Margin="10" Background="#FFECECEC" DisplayMemberPath="Prijs.PrijsPot" x:Name="cmbPrijzen" materialDesign:HintAssist.Hint="Prijzen" Style="{StaticResource MaterialDesignOutlinedComboBox}" SelectionChanged="cmbRewards_SelectionChanged" />
 
         <!-- CRUD operaties-->
         <Border Grid.Column="1" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="3" Margin="10,10,10,0" CornerRadius="20">

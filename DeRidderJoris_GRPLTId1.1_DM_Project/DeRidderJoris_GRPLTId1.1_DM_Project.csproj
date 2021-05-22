@@ -160,12 +160,16 @@
     <Resource Include="banners\apexbanner.jpg" />
     <Resource Include="banners\CSGObanner.jpg" />
     <Resource Include="banners\dota2banner.jpg" />
-    <Resource Include="banners\Leagueoflegendsbanner.png" />
-    <Resource Include="banners\rocket-leagueheader.jpg" />
-    <Resource Include="banners\Valorant-header.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="banners\Fortnitebanner.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="banners\bannerLeague.png" />
+    <Resource Include="banners\Valorant-header2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="banners\Rocket-League-Header.jpeg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets" Condition="Exists('packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets')" />
