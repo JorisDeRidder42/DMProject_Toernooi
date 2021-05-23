@@ -21,7 +21,7 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
             }   
         }
 
-        //gegevens van deze wedstrijd word in de labels geplaatst
+        //id ophalen van gekozen toernooi en de gegevens van dat toernooi plaatsen in labels
         public static Toernooi OphalenWedstrijdId()
         {
             using (DBToernooiEntities toernooiEntities = new DBToernooiEntities())
@@ -32,17 +32,7 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
             }
         }
 
-        public static GameMode OphalenGameModeId()
-        {
-            using (DBToernooiEntities toernooiEntities = new DBToernooiEntities())
-            {
-                return toernooiEntities.GameMode
-                    .Where(t => t.gameModeNaam == Helper.naamgame)
-                    .SingleOrDefault();
-            }
-        }
-
-
+        //afbeelding tonen d.m.v gamemodeid
         public static Toernooi OphalenImageMetId()
         {
             using (DBToernooiEntities toernooiEntities = new DBToernooiEntities())
@@ -59,7 +49,7 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
             using (DBToernooiEntities toernooiEntities = new DBToernooiEntities())
             {
                 return toernooiEntities.Rank
-                    .Where(t => t.rankNaam == Helper.naamgame)
+                    .Include(t => t.GameModeRanks)
                     .ToList();
             }
         }
@@ -69,6 +59,7 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
             {
                 return toernooiEntities.Prijs
                 .Where(p => p.PrijsPot.ToString() == Helper.prijzen)
+                .Include(p => p.ToernooiPrijs)
                 .ToList();
             }
         }

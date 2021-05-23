@@ -28,9 +28,8 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            //id ophalen van gekozen toernooi en plaatsen in labels
+            //id ophalen van gekozen toernooi en de gegevens van dat toernooi plaatsen in labels
             Toernooi toernooi = DatabaseOperations.OphalenWedstrijdId();
-
 
             lblImageDatumTijdLabel.Content = "begint " + toernooi.datum.ToString("dd/MM/yyyy") + " | " + toernooi.checkInuur.ToString("hh\\:mm");
             lblImageLabel.Content = toernooi.toernooiNaam.Substring(0, toernooi.toernooiNaam.LastIndexOf('_'));
@@ -42,10 +41,14 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
             lblLijnup.Content = toernooi.toernooiNaam.Substring(0, toernooi.toernooiNaam.LastIndexOf('_'));
             toernooi.toernooiNaam = toernooi.toernooiNaam.Replace("_", " ");
 
+            ////lijst van ranks ophalen
             List<Rank> toernooiMetRanks = DatabaseOperations.OphalenToernooiMetRanks();
             cmbRank.ItemsSource = toernooiMetRanks;
 
-            cmbPrijzen.ItemsSource = DatabaseOperations.OphalenPrijzen();
+            List<Prijs> toernooiMetPrijzen = DatabaseOperations.OphalenPrijzen();
+            cmbPrijzen.ItemsSource = toernooiMetPrijzen;
+
+
 
             Toernooi ophalenToernooi = DatabaseOperations.OphalenImageMetId();
             //laad image a.d.h.v gekozen spel

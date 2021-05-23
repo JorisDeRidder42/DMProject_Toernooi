@@ -8,11 +8,23 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
 {
     public static class Helper
     {
+        //ophalen gegevens dmv gamemodeNaam
         public static string buttonSpel;
+
+        //ophalen geselecteerde wedstrijd met toernooiId
         public static int IdGame;
-        public static int IdSpel;
+
+        //ophalen gamemodeId van het spel
+        public static int IdGameMode;
+
+        //ophalen naam van het spel
         public static string naamgame;
+
+        //ophalen prijzen
         public static string prijzen;
+
+        //ophalen naam van het rank
+        public static string naamRank;
     }
   
 }
