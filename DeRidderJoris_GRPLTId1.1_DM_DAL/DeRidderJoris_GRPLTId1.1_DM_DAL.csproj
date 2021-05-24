@@ -68,6 +68,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DBToernooiModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="FileOperations.cs" />
     <Compile Include="GameMode.cs">
       <DependentUpon>DBToernooiModel.tt</DependentUpon>
     </Compile>

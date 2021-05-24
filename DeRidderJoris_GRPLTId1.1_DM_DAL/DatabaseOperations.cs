@@ -9,8 +9,8 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
 {
     public static class DatabaseOperations
     {
-        // filteren van de database op gamemode enkel de toernooien van gekozen spel worden getoond
         public static GameMode OphalenGekozenSpel()
+
         {
             using (DBToernooiEntities toernooiEntities = new DBToernooiEntities())
             {
@@ -21,7 +21,21 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
             }   
         }
 
-        //gegevens van deze wedstrijd word in de labels geplaatst
+
+        public static List<Toernooi> OphalenGekozenSpelViaToernooiId()
+        {
+            using (DBToernooiEntities toernooiEntities = new DBToernooiEntities())
+            {
+                return toernooiEntities.Toernooi
+                    .Where(t => t.toernooiId == Helper.IdGame)
+                    .Include(t => t.GameMode)
+                    .OrderBy(t => t.datum)
+                  .ToList();
+            }
+        }
+
+
+        //id ophalen van gekozen toernooi en de gegevens van dat toernooi plaatsen in labels
         public static Toernooi OphalenWedstrijdId()
         {
             using (DBToernooiEntities toernooiEntities = new DBToernooiEntities())
@@ -32,17 +46,7 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
             }
         }
 
-        public static GameMode OphalenGameModeId()
-        {
-            using (DBToernooiEntities toernooiEntities = new DBToernooiEntities())
-            {
-                return toernooiEntities.GameMode
-                    .Where(t => t.gameModeNaam == Helper.naamgame)
-                    .SingleOrDefault();
-            }
-        }
-
-
+        //afbeelding tonen d.m.v gamemodeid
         public static Toernooi OphalenImageMetId()
         {
             using (DBToernooiEntities toernooiEntities = new DBToernooiEntities())
@@ -58,37 +62,62 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
         {
             using (DBToernooiEntities toernooiEntities = new DBToernooiEntities())
             {
-                return toernooiEntities.Rank
-                    .Where(t => t.rankNaam == Helper.naamgame)
-                    .ToList();
+                //filteren op GameModeId == enkel gekozen GameMode daar de Ranks van tonen
+                var query = toernooiEntities.Rank
+                    .Include(r => r.GameModeRanks);
+                return query.ToList();
+
             }
         }
+
         public static List<Prijs> OphalenPrijzen()
         {
             using (DBToernooiEntities toernooiEntities = new DBToernooiEntities())
             {
+                //filteren op toernooiId == enkel gekozen toernooi daar de prijzen van tonen
                 return toernooiEntities.Prijs
-                .Where(p => p.PrijsPot.ToString() == Helper.prijzen)
+                .Include(t => t.ToernooiPrijs)
                 .ToList();
             }
         }
-        //public static int VerwijderenToernooi(Toernooi toernooi)
-        //{
-        //    try
-        //    {
-        //        using (ToernooiDBEntities toernooiDBEntities = new ToernooiDBEntities())
-        //        {
 
-        //            toernooiDBEntities.Entry(toernooi).State = EntityState.Deleted;
-        //            return toernooi.SaveChanges();
+        public static int ToevoegenSpeler(Speler speler)
+        {
+            try
+            {
+                using (DBToernooiEntities toernooiEntities = new DBToernooiEntities())
+                {
 
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        FileOperations.FoutLoggen(ex);
-        //        return 0;
-        //    }
-        //}
+                    toernooiEntities.Speler.Add(speler);
+                    return toernooiEntities.SaveChanges();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                FileOperations.FoutLoggen(ex);
+                return 0;
+            }
+        }
+
+
+        public static int VerwijderenToernooi(Toernooi toernooi)
+        {
+            try
+            {
+                using (DBToernooiEntities toernooiEntities = new DBToernooiEntities())
+                {
+
+                    toernooiEntities.Entry(toernooi).State = EntityState.Deleted;
+                    return toernooiEntities.SaveChanges();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                FileOperations.FoutLoggen(ex);
+                return 0;
+            }
+        }
     }
 }

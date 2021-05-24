@@ -54,6 +54,7 @@
             </Button.Background>
         </Button>
         <Label x:Name="lblRocketLeague" Content="Rocket-league" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White" Margin="20"/>
+        
         <Button x:Name="btnFortnite" Grid.Column="1" Grid.Row="2" Width="120" Height="120" Margin="10" BorderThickness="0" Click="btnFortnite_Click">
             <Button.Background>
                 <ImageBrush ImageSource="images/fortnite-logo.jpg"/>
