@@ -21,7 +21,7 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
         public static string naamgame;
 
         //ophalen prijzen
-        public static string prijzen;
+        public static  int prijzen;
 
         //ophalen naam van het rank
         public static string naamRank;

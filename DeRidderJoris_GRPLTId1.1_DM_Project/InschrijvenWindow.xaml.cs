@@ -45,6 +45,7 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
             List<Rank> toernooiMetRanks = DatabaseOperations.OphalenToernooiMetRanks();
             cmbRank.ItemsSource = toernooiMetRanks;
 
+
             List<Prijs> toernooiMetPrijzen = DatabaseOperations.OphalenPrijzen();
             cmbPrijzen.ItemsSource = toernooiMetPrijzen;
 

@@ -9,8 +9,6 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
 {
     public static class DatabaseOperations
     {
-        // filteren van de database op gamemode enkel de toernooien van gekozen spel worden getoond
-        //filteren op datum?
         public static GameMode OphalenGekozenSpel()
 
         {
@@ -64,19 +62,21 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
         {
             using (DBToernooiEntities toernooiEntities = new DBToernooiEntities())
             {
-                return toernooiEntities.Rank
-                    .Include(t => t.GameModeRanks)
-                    //filteren op gameModeId == enkel gekozen spel daar ranks van tonen
-                    .ToList();
+                //filteren op GameModeId == enkel gekozen GameMode daar de Ranks van tonen
+                var query = toernooiEntities.Rank
+                    .Include(r => r.GameModeRanks);
+                return query.ToList();
+
             }
         }
+
         public static List<Prijs> OphalenPrijzen()
         {
             using (DBToernooiEntities toernooiEntities = new DBToernooiEntities())
             {
-                return toernooiEntities.Prijs
-                .Include(p => p.ToernooiPrijs)
                 //filteren op toernooiId == enkel gekozen toernooi daar de prijzen van tonen
+                return toernooiEntities.Prijs
+                .Include(t => t.ToernooiPrijs)
                 .ToList();
             }
         }
