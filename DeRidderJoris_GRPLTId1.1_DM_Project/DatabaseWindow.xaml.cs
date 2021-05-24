@@ -33,6 +33,33 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
             lblTitle.Content = "Het opgehaalde spel is " + opgehaaldeGameMode.gameModeNaam;
         }
 
+        private void btnVerwijderen_Click(object sender, RoutedEventArgs e)
+        {
+            string foutmelding = Valideer("Toernooi");
+
+            if (string.IsNullOrWhiteSpace(foutmelding))
+            {
+
+                Toernooi toernooi = dataToernooi.SelectedItem as Toernooi;
+                int toernooi_id = toernooi.toernooiId;
+
+                int ok = DatabaseOperations.VerwijderenToernooi(toernooi);
+                if (ok > 0)
+                {
+                    dataToernooi.ItemsSource = DatabaseOperations.OphalenGekozenSpelViaToernooiId();
+                }
+                else
+                {
+                    MessageBox.Show("Toernooi is niet verwijderd!");
+                }
+            }
+            else
+            {
+                MessageBox.Show(foutmelding);
+            }
+        }
+
+
         private void btnAnnuleren_Click(object sender, RoutedEventArgs e)
         {
             Close();
@@ -46,12 +73,22 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
 
             InschrijvenWindow inschrijven = new InschrijvenWindow();
             inschrijven.Show();
+
         }
 
-        private void btnToevoegen_Click(object sender, RoutedEventArgs e)
+        private void btnInschrijven_Click(object sender, RoutedEventArgs e)
         {
-            InschrijvenWindow inschrijven = new InschrijvenWindow();
-            inschrijven.Show();
+            Toernooi GeselecteerdeWedstrijd = dataToernooi.SelectedItem as Toernooi;
+
+            if (GeselecteerdeWedstrijd != null)
+            {
+                InschrijvenWindow inschrijven = new InschrijvenWindow();
+                inschrijven.Show();
+            }
+            else
+            {
+                MessageBox.Show("Gelieve een toernooi te selecteren!", "Foutmelding");
+            }
         }
 
         private string Valideer(string columnName)
@@ -63,31 +100,9 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
             return "";
         }
 
-        private void btnVerwijderen_Click(object sender, RoutedEventArgs e)
+        private void btnInschrijvingAanpassen_Click(object sender, RoutedEventArgs e)
         {
-        //    string foutmelding = Valideer("columnName");
 
-        //    if (string.IsNullOrWhiteSpace(foutmelding))
-        //    {
-
-        //        Toernooi toernooi = dataToernooi.SelectedItem as Toernooi;
-        //        string toernooi_id = toernooi.toernooiID;
-
-        //        int ok = DatabaseOperations.VerwijderenWerknemer(employee);
-        //        if (ok > 0)
-        //        {
-        //            dataToernooi.ItemsSource = DatabaseOperations.OphalenWerknemersViaUitgeverID(pub_id);
-        //            Wissen();
-        //        }
-        //        else
-        //        {
-        //            MessageBox.Show("Toernooi is niet verwijderd!");
-        //        }
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show(foutmelding);
-        //    }
         }
     }
 }

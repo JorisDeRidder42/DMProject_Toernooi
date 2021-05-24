@@ -11,6 +11,11 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Models
     {
         public abstract string this[string columnName] { get; }
 
+        public bool IsGeldig()
+        {
+            return string.IsNullOrWhiteSpace(Error);
+        }
+
         public string Error
         {
             get
@@ -30,10 +35,6 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Models
                 }
                 return foutmeldingen;
             }
-        }
-        public bool IsGeldig()
-        {
-            return string.IsNullOrWhiteSpace(Error);
         }
     }
 }

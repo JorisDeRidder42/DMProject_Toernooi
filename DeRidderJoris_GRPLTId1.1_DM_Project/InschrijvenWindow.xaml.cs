@@ -93,8 +93,8 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
             if (string.IsNullOrWhiteSpace(foutmelding))
             {
                 Rank rank = cmbRank.SelectedItem as Rank;
-                Speler speler = new Speler();
 
+                Speler speler = new Speler();
                 speler.voornaam = txtVoornaam.Text;
                 speler.achternaam = txtAchternaam.Text;
                 speler.nicknaam = txtNickName.Text;
@@ -103,12 +103,11 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
                 speler.email = txtMail.Text;
                 speler.wachtwoord = FloatingPasswordBox.Password;
 
+                //if (speler.IsGeldig())
+                //{
+                //    int oke = DatabaseOperations.
+                //}
             }
-        }
-
-        private void cmbRewards_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            
         }
         private void btnHome_Click(object sender, RoutedEventArgs e)
         {
@@ -152,6 +151,11 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
             }
 
             return "";
+        }
+
+        private void btnVerwijderen_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

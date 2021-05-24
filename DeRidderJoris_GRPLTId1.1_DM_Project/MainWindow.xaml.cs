@@ -31,20 +31,18 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
         {
             App.Current.Shutdown();
         }
-        private void btnFortnite_Click(object sender, RoutedEventArgs e)
+
+        private void btnRocketLeague_Click(object sender, RoutedEventArgs e)
         {
-            Helper.buttonSpel = lblFortnite.Content.ToString();
+            // roept klasse op voor het lezen welke button het is
+            Helper.buttonSpel = lblRocketLeague.Content.ToString();
             DatabaseWindow databaseWindow = new DatabaseWindow();
             databaseWindow.Show();
         }
 
-        private void btnRocketLeague_Click(object sender, RoutedEventArgs e)
+        private void btnFortnite_Click(object sender, RoutedEventArgs e)
         {
-            // image laten laden uit de DAL laag
-            // pad in code behind zetten
-
-            // roept klasse op voor het lezen welke button het is
-            Helper.buttonSpel = lblRocketLeague.Content.ToString();
+            Helper.buttonSpel = lblFortnite.Content.ToString();
             DatabaseWindow databaseWindow = new DatabaseWindow();
             databaseWindow.Show();
         }

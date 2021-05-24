@@ -31,7 +31,7 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
-        
+
         <!-- Terugkeer knop -->
         <Button
         Style="{StaticResource MaterialDesignFloatingActionButton}" Grid.Column="3" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="10" Panel.ZIndex="3"
@@ -41,7 +41,7 @@
 
         <!-- Toernooi banner -->
         <Image Name="ImageToernooi"  Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" Width="auto" Stretch="Fill"></Image>
-        
+
         <!-- Achtergrond voor labels -->
         <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" VerticalAlignment="Bottom" Margin="10" >
             <Label x:Name="lblImageDatumTijdLabel" Content="" FontSize="15" Foreground ="White" />
@@ -76,7 +76,7 @@
             </StackPanel>
         </Button>
         <!-- Prijzen combobox-->
-        <ComboBox Grid.Row="4" Margin="10" Background="#FFECECEC" DisplayMemberPath="PrijsPot" x:Name="cmbPrijzen" materialDesign:HintAssist.Hint="Prijzen" Style="{StaticResource MaterialDesignOutlinedComboBox}" SelectionChanged="cmbRewards_SelectionChanged" />
+        <ComboBox Grid.Row="4" Margin="10" Background="#FFECECEC" DisplayMemberPath="PrijsPot" x:Name="cmbPrijzen" materialDesign:HintAssist.Hint="Prijzen" Style="{StaticResource MaterialDesignOutlinedComboBox}" />
 
         <!-- CRUD operaties-->
         <Border Grid.Column="1" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="3" Margin="10,10,10,0" CornerRadius="20">
@@ -93,7 +93,7 @@
         <TextBox x:Name="txtAchternaam" Grid.Row="1" Grid.Column="2" materialDesign:HintAssist.Hint="Achternaam" Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalAlignment="Center" Margin="20"  />
         <TextBox x:Name="txtNickName" Grid.Row="1" Grid.Column="3" materialDesign:HintAssist.Hint="Nickname" Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalAlignment="Center" Margin="20"  />
 
-       
+
         <PasswordBox x:Name="FloatingPasswordBox" Grid.Row="2" Grid.Column="1" materialDesign:HintAssist.Hint="Password" materialDesign:HintAssist.Foreground="Red" materialDesign:TextFieldAssist.UnderlineBrush="Red" Style="{StaticResource MaterialDesignOutlinedPasswordBox}" VerticalAlignment="Center" Margin="20"   />
         <!-- combobox ranks -->
         <ComboBox x:Name="cmbRank" DisplayMemberPath="rankNaam" Grid.Row="2" Grid.Column="3" Margin="20" materialDesign:HintAssist.Hint="Rank" Style="{StaticResource MaterialDesignOutlinedComboBox}"></ComboBox>
@@ -102,9 +102,9 @@
         <DatePicker x:Name="txtGeboortedatum" Grid.Row="3" Grid.Column="1" Margin="20" materialDesign:HintAssist.Hint="Geboortedatum" Style="{StaticResource MaterialDesignOutlinedDatePicker}"/>
         <TextBox x:Name="txtGeboortePlaats" Grid.Row="3" Grid.Column="2" materialDesign:HintAssist.Hint="Geboorteplaats" Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalAlignment="Center" Margin="20"  />
         <!-- CRUD operaties-->
-        <Button x:Name="btnBewaren" Content="Bewaren" Grid.Row="4" Grid.Column="1" Margin="20" VerticalAlignment="Bottom"  Style="{StaticResource MaterialDesignRaisedAccentButton}" Click="btnBewaren_Click"/>
+        <Button x:Name="btnBewaren" Content="Bewaren" Grid.Row="4" Grid.Column="1" Margin="20" VerticalAlignment="Bottom"  Style="{StaticResource MaterialDesignRaisedAccentButton}" Click="btnBewaren_Click" IsCancel="True"/>
         <Button x:Name="btnAnnuleren" Content="Annuleren" Grid.Row="4" Grid.Column="2" Margin="20" VerticalAlignment="Bottom" Click="btnAnnuleren_Click"/>
-        <Button x:Name="btnVerwijderen" Content="Verwijderen" Grid.Row="4" Grid.Column="3" Margin="5" Style="{StaticResource MaterialDesignRaisedAccentButton}" />
+        <Button x:Name="btnVerwijderen" Content="Inschrijving verwijderen" Grid.Row="4" Grid.Column="3" Margin="5,20" Style="{StaticResource MaterialDesignRaisedAccentButton}" Click="btnVerwijderen_Click" />
     </Grid>
 </Window>
  
