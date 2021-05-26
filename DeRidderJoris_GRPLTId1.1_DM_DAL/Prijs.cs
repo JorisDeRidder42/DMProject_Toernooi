@@ -22,7 +22,7 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
     
         public int prijsId { get; set; }
         public int spelerId { get; set; }
-        public int PrijsPot { get; set; }
+        public int prijsPot { get; set; }
     
         public virtual Speler Speler { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

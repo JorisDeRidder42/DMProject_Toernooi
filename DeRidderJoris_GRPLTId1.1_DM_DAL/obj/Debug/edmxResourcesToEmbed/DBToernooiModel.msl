@@ -23,7 +23,7 @@
         <MappingFragment StoreEntitySet="Prijs">
           <ScalarProperty Name="prijsId" ColumnName="prijsId" />
           <ScalarProperty Name="spelerId" ColumnName="spelerId" />
-          <ScalarProperty Name="PrijsPot" ColumnName="PrijsPot" />
+          <ScalarProperty Name="prijsPot" ColumnName="PrijsPot" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -1,5 +1,4 @@
 ﻿using DeRidderJoris_GRPLTId1._1_DM_DAL;
-using DeRidderJoris_GRPLTId1._1_DM_Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,12 +41,12 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
             toernooi.toernooiNaam = toernooi.toernooiNaam.Replace("_", " ");
 
             ////lijst van ranks ophalen
-            List<Rank> toernooiMetRanks = DatabaseOperations.OphalenToernooiMetRanks();
-            cmbRank.ItemsSource = toernooiMetRanks;
+            GameMode toernooiMetRanks = DatabaseOperations.OphalenToernooiMetRanks();
+            cmbRank.ItemsSource = toernooiMetRanks.GameModeRanks;
 
 
-            List<Prijs> toernooiMetPrijzen = DatabaseOperations.OphalenPrijzen();
-            cmbPrijzen.ItemsSource = toernooiMetPrijzen;
+            Toernooi toernooiMetPrijzen = DatabaseOperations.OphalenPrijzenMetToernooiId();
+            cmbPrijzen.ItemsSource = toernooiMetPrijzen.ToernooiPrijs;
 
 
 
@@ -90,10 +89,12 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
 
         private void btnBewaren_Click(object sender, RoutedEventArgs e)
         {
-            string foutmelding = Valideer("columnName");
+            string foutmelding = Valideer("cmbRank");
+            foutmelding += Valideer("cmbPrijzen");
             if (string.IsNullOrWhiteSpace(foutmelding))
             {
                 Rank rank = cmbRank.SelectedItem as Rank;
+                Prijs prijs = cmbPrijzen.SelectedItem as Prijs;
 
                 Speler speler = new Speler();
                 speler.voornaam = txtVoornaam.Text;
@@ -104,9 +105,9 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
                 speler.email = txtMail.Text;
                 speler.wachtwoord = FloatingPasswordBox.Password;
 
-                //if (speler.IsGeldig())
+                //if (Speler.IsGeldig())
                 //{
-                //    int oke = DatabaseOperations.
+
                 //}
             }
         }
@@ -124,8 +125,8 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
             txtMail.Text = "";
             txtGeboortePlaats.Text = "";
             txtGeboortedatum.Text = "";
-            cmbRank.SelectedItem = "";
-            cmbPrijzen.SelectedItem = "";
+            cmbRank.SelectedItem = -1;
+            cmbPrijzen.SelectedItem = -1;
             FloatingPasswordBox.Clear();
         }
         private string Valideer(string columnName)
@@ -150,13 +151,17 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
             {
                 return "Gelieve uw email in te geven!" + Environment.NewLine;
             }
+            if (columnName == "cmbPrijzen" && cmbRank.SelectedItem == null)
+            {
+                return "Selecteer een prijs!" + Environment.NewLine;
+            }
 
             return "";
         }
 
         private void btnVerwijderen_Click(object sender, RoutedEventArgs e)
         {
-
+            //speler verwijderen
         }
     }
 }

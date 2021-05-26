@@ -18,7 +18,7 @@ namespace DeRidderJoris_GRPLTId1._1_DM_UnitTests
             //Act
             gekozenSpel = "Rocket-League";
             //Assert
-            Assert.AreEqual("Rocket-League", gekozenSpel.ToString());
+            Assert.AreEqual("Rocket-League", gekozenSpel);
         }
 
 
@@ -26,7 +26,7 @@ namespace DeRidderJoris_GRPLTId1._1_DM_UnitTests
         public void GekozenToernooi_haaldatavanGekozenToernooiOpdmvToernooiId()
         {
             //Arrange 
-            int toernooiId = Helper.IdGame;
+            int toernooiId = Helper.IdToernooi;
 
             //Act
             toernooiId = 12;

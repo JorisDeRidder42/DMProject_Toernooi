@@ -1,5 +1,4 @@
 ﻿using DeRidderJoris_GRPLTId1._1_DM_DAL;
-using DeRidderJoris_GRPLTId1._1_DM_Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,11 +41,14 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
 
                 Toernooi toernooi = dataToernooi.SelectedItem as Toernooi;
                 int toernooi_id = toernooi.toernooiId;
+                
 
                 int ok = DatabaseOperations.VerwijderenToernooi(toernooi);
+
                 if (ok > 0)
                 {
                     dataToernooi.ItemsSource = DatabaseOperations.OphalenGekozenSpelViaToernooiId();
+                    Wissen();
                 }
                 else
                 {
@@ -59,20 +61,20 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
             }
         }
 
-
         private void btnAnnuleren_Click(object sender, RoutedEventArgs e)
         {
+            Wissen();
             Close();
         }
 
         private void dataToernooi_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Toernooi GeselecteerdeWedstrijd = dataToernooi.SelectedItem as Toernooi;
+            Toernooi geselecteerdeWedstrijd = dataToernooi.SelectedItem as Toernooi;
 
-            Helper.IdGame = GeselecteerdeWedstrijd.toernooiId;
+            Helper.IdToernooi = geselecteerdeWedstrijd.toernooiId;
 
-            InschrijvenWindow inschrijven = new InschrijvenWindow();
-            inschrijven.Show();
+            Helper.IdGameMode = geselecteerdeWedstrijd.gameModeId;
+
 
         }
 
@@ -103,6 +105,48 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
         private void btnInschrijvingAanpassen_Click(object sender, RoutedEventArgs e)
         {
 
+            string foutmelding = Valideer("Toernooi");
+            if (string.IsNullOrWhiteSpace(foutmelding))
+            {
+
+                Toernooi toernooi = dataToernooi.SelectedItem as Toernooi;
+
+                toernooi.gameModeId = int.Parse(txtGameId.Text);
+                toernooi.toernooiNaam = txtSpelmodus.Text;
+                toernooi.datum = DateTime.Parse(txtdata.Text);
+                toernooi.checkInuur = TimeSpan.Parse(txtCheckuur.Text);
+
+                if (toernooi.IsGeldig())
+                {
+                    int ok = DatabaseOperations.AanpassenToernooi(toernooi);
+                    if (ok > 0)
+                    {
+                        dataToernooi.ItemsSource = DatabaseOperations.OphalenToernooienViaToernooiId(toernooi.toernooiId);
+                        Wissen();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Toernooi is niet aangepast!");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show(toernooi.Error);
+                }
+
+            }
+            else
+            {
+                MessageBox.Show(foutmelding);
+            }
+        }
+
+        private void Wissen()
+        {
+            txtGameId.Text = "";
+            txtSpelmodus.Text = "";
+            txtdata.Text = "";
+            txtCheckuur.Text = "";
         }
     }
 }

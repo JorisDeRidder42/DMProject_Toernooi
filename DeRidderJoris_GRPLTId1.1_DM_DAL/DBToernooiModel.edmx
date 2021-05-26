@@ -202,7 +202,7 @@
           </Key>
           <Property Name="prijsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="spelerId" Type="Int32" Nullable="false" />
-          <Property Name="PrijsPot" Type="Int32" Nullable="false" />
+          <Property Name="prijsPot" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Speler" Relationship="Self.FK_Prijs_Speler" FromRole="Prijs" ToRole="Speler" />
           <NavigationProperty Name="ToernooiPrijs" Relationship="Self.FK_ToernooiPrijs_Prijs" FromRole="Prijs" ToRole="ToernooiPrijs" />
         </EntityType>
@@ -384,7 +384,7 @@
               <MappingFragment StoreEntitySet="Prijs">
                 <ScalarProperty Name="prijsId" ColumnName="prijsId" />
                 <ScalarProperty Name="spelerId" ColumnName="spelerId" />
-                <ScalarProperty Name="PrijsPot" ColumnName="PrijsPot" />
+                <ScalarProperty Name="prijsPot" ColumnName="PrijsPot" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

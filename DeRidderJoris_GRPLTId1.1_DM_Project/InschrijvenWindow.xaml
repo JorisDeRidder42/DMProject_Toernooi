@@ -76,7 +76,7 @@
             </StackPanel>
         </Button>
         <!-- Prijzen combobox-->
-        <ComboBox Grid.Row="4" Margin="10" Background="#FFECECEC" DisplayMemberPath="PrijsPot" x:Name="cmbPrijzen" materialDesign:HintAssist.Hint="Prijzen" Style="{StaticResource MaterialDesignOutlinedComboBox}" />
+        <ComboBox Grid.Row="4" Margin="10" Background="#FFECECEC" DisplayMemberPath="Prijzen.prijsPot" x:Name="cmbPrijzen" materialDesign:HintAssist.Hint="Prijzen" Style="{StaticResource MaterialDesignOutlinedComboBox}" />
 
         <!-- CRUD operaties-->
         <Border Grid.Column="1" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="3" Margin="10,10,10,0" CornerRadius="20">
@@ -96,7 +96,7 @@
 
         <PasswordBox x:Name="FloatingPasswordBox" Grid.Row="2" Grid.Column="1" materialDesign:HintAssist.Hint="Password" materialDesign:HintAssist.Foreground="Red" materialDesign:TextFieldAssist.UnderlineBrush="Red" Style="{StaticResource MaterialDesignOutlinedPasswordBox}" VerticalAlignment="Center" Margin="20"   />
         <!-- combobox ranks -->
-        <ComboBox x:Name="cmbRank" DisplayMemberPath="rankNaam" Grid.Row="2" Grid.Column="3" Margin="20" materialDesign:HintAssist.Hint="Rank" Style="{StaticResource MaterialDesignOutlinedComboBox}"></ComboBox>
+        <ComboBox x:Name="cmbRank" DisplayMemberPath="Rank.rankNaam" Grid.Row="2" Grid.Column="3" Margin="20" materialDesign:HintAssist.Hint="Rank" Style="{StaticResource MaterialDesignOutlinedComboBox}"></ComboBox>
         <TextBox x:Name="txtMail" Grid.Row="2" Grid.Column="2" materialDesign:HintAssist.Hint="E-mail" Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalAlignment="Center" Margin="20"  />
 
         <DatePicker x:Name="txtGeboortedatum" Grid.Row="3" Grid.Column="1" Margin="20" materialDesign:HintAssist.Hint="Geboortedatum" Style="{StaticResource MaterialDesignOutlinedDatePicker}"/>
