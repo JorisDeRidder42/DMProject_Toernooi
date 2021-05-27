@@ -47,8 +47,13 @@
                 <DataGridTextColumn Binding="{Binding startuur,StringFormat=hh\\:mm}" Header="Start uur"/>
             </DataGrid.Columns>
         </DataGrid>
+            <!--textbox voor aanpassen-->
+        <TextBox x:Name="txtGameId"  materialDesign:HintAssist.Hint="GameId" Grid.Row="4" Grid.Column="0" Margin="5" />
+        <TextBox x:Name="txtSpelmodus"  materialDesign:HintAssist.Hint="Spelmodus" Grid.Row="4" Grid.Column="1" Margin="5" />
+        <TextBox x:Name="txtdata"  materialDesign:HintAssist.Hint="Datum" Grid.Row="4" Grid.Column="2" Margin="5" />
+        <TextBox x:Name="txtCheckuur" materialDesign:HintAssist.Hint="Check in Uur" Grid.Row="4" Grid.Column="3" Margin="5"/>
         <!-- CRUD operaties-->
-        <Button x:Name="btnVerwijderen" Content="Toernooi Verwijderen" Grid.Row="5" Grid.Column="0" Margin="5" Style="{StaticResource MaterialDesignRaisedAccentButton}" />
+        <Button x:Name="btnVerwijderen" Content="Toernooi Verwijderen" Grid.Row="5" Grid.Column="0" Margin="5" Style="{StaticResource MaterialDesignRaisedAccentButton}" Click="btnVerwijderen_Click" />
         <Button x:Name="btnInschrijvingAanpassen" Content="Inschrijving aanpassen" Grid.Row="5" Grid.Column="1" Margin="5" Style="{StaticResource MaterialDesignRaisedAccentButton}" Click="btnInschrijvingAanpassen_Click" />
         <Button x:Name="btnInschrijven" Content="Inschrijven" Grid.Row="5" Grid.Column="2" Margin="5" Click="btnInschrijven_Click"  />
         <Button x:Name="btnAnnuleren" Content="Annuleren" Grid.Row="5" Grid.Column="3" Margin="5" Click="btnAnnuleren_Click"/>

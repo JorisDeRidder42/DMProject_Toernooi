@@ -77,6 +77,7 @@
     </Compile>
     <Compile Include="Helper.cs" />
     <Compile Include="DatabaseOperations.cs" />
+    <Compile Include="Partials\Toernooi.cs" />
     <Compile Include="Prijs.cs">
       <DependentUpon>DBToernooiModel.tt</DependentUpon>
     </Compile>

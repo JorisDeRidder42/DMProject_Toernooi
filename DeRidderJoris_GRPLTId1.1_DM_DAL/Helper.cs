@@ -12,7 +12,7 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
         public static string buttonSpel;
 
         //ophalen geselecteerde wedstrijd met toernooiId
-        public static int IdGame;
+        public static int IdToernooi;
 
         //ophalen gamemodeId van het spel
         public static int IdGameMode;
