@@ -17,7 +17,7 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Toernooi()
         {
-            this.ToernooiPrijs = new HashSet<ToernooiPrijs>();
+            this.ToernooiPrijzen = new HashSet<ToernooiPrijs>();
         }
     
         public int toernooiId { get; set; }
@@ -27,8 +27,8 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
         public System.TimeSpan startuur { get; set; }
         public int gameModeId { get; set; }
     
-        public virtual GameMode GameMode { get; set; }
+        public virtual GameMode GameModes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ToernooiPrijs> ToernooiPrijs { get; set; }
+        public virtual ICollection<ToernooiPrijs> ToernooiPrijzen { get; set; }
     }
 }

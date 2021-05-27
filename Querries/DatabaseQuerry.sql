@@ -69,7 +69,7 @@ CREATE TABLE ToernooiInschrijven.Prijs
 (
 	[prijsId] int IDENTITY(1,1) NOT NULL,
 	spelerId int NOT NULL,
-	PrijsPot int NOT NULL,
+	prijsPot int NOT NULL,
 	CONSTRAINT PK_Prijs PRIMARY KEY (prijsId),
 	CONSTRAINT FK_Prijs_Speler FOREIGN KEY (prijsId) REFERENCES ToernooiInschrijven.Speler(spelerId)
 )
@@ -295,7 +295,7 @@ INSERT INTO ToernooiInschrijven.GameModeRank (gameModeId, rankId)
 	(3,8),
 	(3,9),
 	(3,10),
-	-- valorant
+-- valorant
 	(4,1),
 	(4,2),
     (4,3),
@@ -346,24 +346,29 @@ INSERT INTO ToernooiInschrijven.GameModeRank (gameModeId, rankId)
 	(8,7);
 
 INSERT INTO ToernooiInschrijven.Prijs(PrijsPot, spelerId)
-	VALUES (20000,1),
-	(10000,2),
-	(100000,3),
-	(100000,4),
-	(10000,5);
+	VALUES (10000,1),
+	(8000,2),
+	(6000,3),
+	(4000,4),
+	(2000,5);
 
 INSERT INTO ToernooiInschrijven.ToernooiPrijs(prijsId, toernooiId)
-	VALUES (1,5),
+	VALUES (1,1),
+	(2,1),
+	(3,1),
+	(1,2),
+	(2,2),
+	(3,2),
+	(1,3),
+	(2,3),
+	(3,3),
+	(1,4),
+	(2,4),
+	(3,4),
+	(1,5),
 	(2,5),
 	(3,5),
-	(4,5),
-	(5,5),
-	(1,6),
-	(2,6),
-	(3,6),
-	(4,6),
-	(5,6),
-	(4,32),
+	(1,11),
 	(1,12),
 	(1,13),
 	(1,14),
@@ -384,5 +389,4 @@ INSERT INTO ToernooiInschrijven.ToernooiPrijs(prijsId, toernooiId)
 	(1,29),
 	(1,30),
 	(1,31),
-	(1,32),
-	(1,36);
+	(1,32);

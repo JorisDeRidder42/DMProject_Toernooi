@@ -21,11 +21,11 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
                 {
                     return "toernooiNaam is een verplicht veld!";
                 }
-                if (columnName == "datum" && datum != null)
+                if (columnName == "datum" && datum == null)
                 {
                     return "datum is een verplicht veld!";
                 }
-                if (columnName == "checkInuur" && checkInuur != null)
+                if (columnName == "checkInuur" && checkInuur == null)
                 {
                     return "checkInuur is een verplicht veld!";
                 }

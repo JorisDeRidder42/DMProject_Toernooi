@@ -63,7 +63,7 @@
                     <Label x:Name="lblTijd" Content="" Margin="5" FontFamily="Open Sans"/>
                     <Label x:Name="lblEersteGame" Content="" Margin="5" FontFamily="Open Sans"/>
                     <Label x:Name="lblLijnup" Content="" Margin="5" FontFamily="Open Sans"/>
-                    <Label x:Name="lblRanking" Content="Enabled" Margin="5" FontFamily="Open Sans"/>
+                    <Label x:Name="lblRanking" Content="Alle ranks" Margin="5" FontFamily="Open Sans"/>
 
                 </StackPanel>
             </StackPanel>
@@ -76,7 +76,7 @@
             </StackPanel>
         </Button>
         <!-- Prijzen combobox-->
-        <ComboBox Grid.Row="4" Margin="10" Background="#FFECECEC" DisplayMemberPath="Prijzen.prijsPot" x:Name="cmbPrijzen" materialDesign:HintAssist.Hint="Prijzen" Style="{StaticResource MaterialDesignOutlinedComboBox}" />
+        <ComboBox Grid.Row="4" Margin="10" Background="#FFECECEC" DisplayMemberPath="Prijs.prijsPot" x:Name="cmbPrijzen" materialDesign:HintAssist.Hint="Prijzen" Style="{StaticResource MaterialDesignOutlinedComboBox}" />
 
         <!-- CRUD operaties-->
         <Border Grid.Column="1" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="3" Margin="10,10,10,0" CornerRadius="20">
@@ -104,7 +104,7 @@
         <!-- CRUD operaties-->
         <Button x:Name="btnBewaren" Content="Bewaren" Grid.Row="4" Grid.Column="1" Margin="20" VerticalAlignment="Bottom"  Style="{StaticResource MaterialDesignRaisedAccentButton}" Click="btnBewaren_Click" IsCancel="True"/>
         <Button x:Name="btnAnnuleren" Content="Annuleren" Grid.Row="4" Grid.Column="2" Margin="20" VerticalAlignment="Bottom" Click="btnAnnuleren_Click"/>
-        <Button x:Name="btnVerwijderen" Content="Inschrijving verwijderen" Grid.Row="4" Grid.Column="3" Margin="5,20" Style="{StaticResource MaterialDesignRaisedAccentButton}" Click="btnVerwijderen_Click" />
+        <Button x:Name="btnVerwijderen" Content="Spelers uitschrijven" Grid.Row="4" Grid.Column="3" Margin="5,20" Style="{StaticResource MaterialDesignRaisedAccentButton}" Click="btnVerwijderen_Click" />
     </Grid>
 </Window>
  

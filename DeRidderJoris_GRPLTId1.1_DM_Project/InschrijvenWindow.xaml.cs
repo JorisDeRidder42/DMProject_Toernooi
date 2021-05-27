@@ -40,18 +40,18 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
             lblLijnup.Content = toernooi.toernooiNaam.Substring(0, toernooi.toernooiNaam.LastIndexOf('_'));
             toernooi.toernooiNaam = toernooi.toernooiNaam.Replace("_", " ");
 
-            ////lijst van ranks ophalen
+            ////per gamemode de verschillende ranks ophalen
             GameMode toernooiMetRanks = DatabaseOperations.OphalenToernooiMetRanks();
             cmbRank.ItemsSource = toernooiMetRanks.GameModeRanks;
 
-
+            ////per toernooi de verschillende prijzen ophalen
             Toernooi toernooiMetPrijzen = DatabaseOperations.OphalenPrijzenMetToernooiId();
-            cmbPrijzen.ItemsSource = toernooiMetPrijzen.ToernooiPrijs;
+            cmbPrijzen.ItemsSource = toernooiMetPrijzen.ToernooiPrijzen;
 
-
-
+            ////per gamemodeid de afbeelding ophalen
             Toernooi ophalenToernooi = DatabaseOperations.OphalenImageMetId();
-            //laad image a.d.h.v gekozen spel
+
+            //laad image a.d.h.v gekozen gamemodeid
             switch (ophalenToernooi.gameModeId)
             {
                 case 1:
@@ -87,10 +87,11 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
             Wissen();
         }
 
+        //Speler inschrijven
         private void btnBewaren_Click(object sender, RoutedEventArgs e)
         {
             string foutmelding = Valideer("cmbRank");
-            foutmelding += Valideer("cmbPrijzen");
+
             if (string.IsNullOrWhiteSpace(foutmelding))
             {
                 Rank rank = cmbRank.SelectedItem as Rank;
@@ -105,12 +106,38 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
                 speler.email = txtMail.Text;
                 speler.wachtwoord = FloatingPasswordBox.Password;
 
-                //if (Speler.IsGeldig())
-                //{
+                if (speler.IsGeldig())
+                {
+                    int ok = DatabaseOperations.ToevoegenSpeler(speler);
+                    if (ok > 0)
+                    {
+                        Wissen();
+                        MessageBox.Show("U bent ingeschreven!", "Melding", MessageBoxButton.OK, MessageBoxImage.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("U bent niet ingeschreven!", "Foutmelding", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show(speler.Error);
+                }
 
-                //}
+            }
+            else
+            {
+                MessageBox.Show(foutmelding);
             }
         }
+
+        //Speler uitschrijven
+        private void btnVerwijderen_Click(object sender, RoutedEventArgs e)
+        {
+            SpelerWindow spelerWindow = new SpelerWindow();
+            spelerWindow.Show();
+        }
+
         private void btnHome_Click(object sender, RoutedEventArgs e)
         {
             //terug naar vorige scherm
@@ -125,8 +152,8 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
             txtMail.Text = "";
             txtGeboortePlaats.Text = "";
             txtGeboortedatum.Text = "";
-            cmbRank.SelectedItem = -1;
-            cmbPrijzen.SelectedItem = -1;
+            cmbRank.SelectedIndex = -1;
+            cmbPrijzen.SelectedIndex = -1;
             FloatingPasswordBox.Clear();
         }
         private string Valideer(string columnName)
@@ -151,17 +178,7 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
             {
                 return "Gelieve uw email in te geven!" + Environment.NewLine;
             }
-            if (columnName == "cmbPrijzen" && cmbRank.SelectedItem == null)
-            {
-                return "Selecteer een prijs!" + Environment.NewLine;
-            }
-
             return "";
-        }
-
-        private void btnVerwijderen_Click(object sender, RoutedEventArgs e)
-        {
-            //speler verwijderen
         }
     }
 }

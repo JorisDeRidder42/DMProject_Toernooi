@@ -38,6 +38,7 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
 
             if (string.IsNullOrWhiteSpace(foutmelding))
             {
+
                 Toernooi toernooi = dataToernooi.SelectedItem as Toernooi;
 
                 int ok = DatabaseOperations.VerwijderenToernooi(toernooi);
@@ -46,10 +47,11 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
                 {
                     dataToernooi.ItemsSource = DatabaseOperations.OphalenGekozenSpelViaToernooiId();
                     Wissen();
+                    MessageBox.Show("Het toernooi is ", "Melding", MessageBoxButton.OK, MessageBoxImage.Information) ;
                 }
                 else
                 {
-                    MessageBox.Show("Toernooi is niet verwijderd!");
+                    MessageBox.Show("Toernooi is niet verwijderd!","Foutmelding", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
             else
@@ -66,38 +68,24 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
 
         private void dataToernooi_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Toernooi geselecteerdeWedstrijd = dataToernooi.SelectedItem as Toernooi;
-
-            Helper.IdToernooi = geselecteerdeWedstrijd.toernooiId;
-
-            Helper.IdGameMode = geselecteerdeWedstrijd.gameModeId;
-
-
-        }
-
-        private void btnInschrijven_Click(object sender, RoutedEventArgs e)
-        {
-            Toernooi GeselecteerdeWedstrijd = dataToernooi.SelectedItem as Toernooi;
-
-            if (GeselecteerdeWedstrijd != null)
+         
+            if (dataToernooi.SelectedItem != null)
             {
-                InschrijvenWindow inschrijven = new InschrijvenWindow();
-                inschrijven.Show();
-            }
-            else
-            {
-                MessageBox.Show("Gelieve een toernooi te selecteren!", "Foutmelding");
+                Toernooi geselecteerdeWedstrijd = dataToernooi.SelectedItem as Toernooi;
+                Helper.IdToernooi = geselecteerdeWedstrijd.toernooiId;
+
+                Helper.IdGameMode = geselecteerdeWedstrijd.gameModeId;
+
+                if (dataToernooi.SelectedItem is Toernooi toernooi)
+                {
+                    txtSpelmodus.Text = toernooi.toernooiNaam;
+                    txtdata.Text = toernooi.datum.ToString("dd/MM/yyyy");
+                    txtCheckuur.Text = toernooi.checkInuur.ToString("hh\\:mm");
+                    txtstartuur.Text = toernooi.startuur.ToString("hh\\:mm");
+                }
             }
         }
 
-        private string Valideer(string columnName)
-        {
-            if (columnName == "Toernooi" && dataToernooi.SelectedItem == null)
-            {
-                return "selecteer een Toernooi om te verwijderen!\n";
-            }
-            return "";
-        }
 
         private void btnInschrijvingAanpassen_Click(object sender, RoutedEventArgs e)
         {
@@ -105,25 +93,25 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
             string foutmelding = Valideer("Toernooi");
             if (string.IsNullOrWhiteSpace(foutmelding))
             {
-
                 Toernooi toernooi = dataToernooi.SelectedItem as Toernooi;
 
-                toernooi.gameModeId = int.Parse(txtGameId.Text);
                 toernooi.toernooiNaam = txtSpelmodus.Text;
                 toernooi.datum = DateTime.Parse(txtdata.Text);
                 toernooi.checkInuur = TimeSpan.Parse(txtCheckuur.Text);
+                toernooi.startuur = TimeSpan.Parse(txtstartuur.Text);
 
                 if (toernooi.IsGeldig())
                 {
                     int ok = DatabaseOperations.AanpassenToernooi(toernooi);
                     if (ok > 0)
                     {
-                        dataToernooi.ItemsSource = DatabaseOperations.OphalenToernooienViaToernooiId();
+                        dataToernooi.ItemsSource = DatabaseOperations.OphalenToernooienViaToernooiId(toernooi.toernooiId);
                         Wissen();
+                        MessageBox.Show("Toernooi is aangepast!", "Melding", MessageBoxButton.OK, MessageBoxImage.Information);
                     }
                     else
                     {
-                        MessageBox.Show("Toernooi is niet aangepast!");
+                        MessageBox.Show("Toernooi is niet aangepast!", "Foutmelding", MessageBoxButton.OK, MessageBoxImage.Error);
                     }
                 }
                 else
@@ -138,12 +126,36 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
             }
         }
 
+        private void btnInschrijven_Click(object sender, RoutedEventArgs e)
+        {
+            Toernooi GeselecteerdeWedstrijd = dataToernooi.SelectedItem as Toernooi;
+
+            if (GeselecteerdeWedstrijd != null)
+            {
+                InschrijvenWindow inschrijven = new InschrijvenWindow();
+                inschrijven.Show();
+            }
+            else
+            {
+                MessageBox.Show("Gelieve een toernooi te selecteren!", "Foutmelding", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
         private void Wissen()
         {
-            txtGameId.Text = "";
             txtSpelmodus.Text = "";
             txtdata.Text = "";
             txtCheckuur.Text = "";
+            txtstartuur.Text = "";
+        }
+
+        private string Valideer(string columnName)
+        {
+            if (columnName == "Toernooi" && dataToernooi.SelectedItem == null)
+            {
+                return "selecteer een Toernooi om te verwijderen!\n";
+            }
+            return "";
         }
     }
 }

@@ -18,7 +18,7 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
         public int prijsId { get; set; }
         public int toernooiId { get; set; }
     
-        public virtual Prijs Prijzen { get; set; }
-        public virtual Toernooi Toernooien { get; set; }
+        public virtual Prijs Prijs { get; set; }
+        public virtual Toernooi Toernooi { get; set; }
     }
 }

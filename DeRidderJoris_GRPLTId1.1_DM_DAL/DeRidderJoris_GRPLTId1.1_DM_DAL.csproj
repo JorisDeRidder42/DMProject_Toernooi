@@ -53,56 +53,57 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DBToernooiModel.Context.cs">
+    <Compile Include="DBToernooiEntities.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DBToernooiModel.Context.tt</DependentUpon>
+      <DependentUpon>DBToernooiEntities.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="DBToernooiModel.cs">
+    <Compile Include="DBToernooiEntities.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DBToernooiModel.tt</DependentUpon>
+      <DependentUpon>DBToernooiEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="DBToernooiModel.Designer.cs">
+    <Compile Include="DBToernooiEntities.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DBToernooiModel.edmx</DependentUpon>
+      <DependentUpon>DBToernooiEntities.edmx</DependentUpon>
     </Compile>
     <Compile Include="FileOperations.cs" />
     <Compile Include="GameMode.cs">
-      <DependentUpon>DBToernooiModel.tt</DependentUpon>
+      <DependentUpon>DBToernooiEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="GameModeRank.cs">
-      <DependentUpon>DBToernooiModel.tt</DependentUpon>
+      <DependentUpon>DBToernooiEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Helper.cs" />
     <Compile Include="DatabaseOperations.cs" />
+    <Compile Include="Partials\Speler.cs" />
     <Compile Include="Partials\Toernooi.cs" />
     <Compile Include="Prijs.cs">
-      <DependentUpon>DBToernooiModel.tt</DependentUpon>
+      <DependentUpon>DBToernooiEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rank.cs">
-      <DependentUpon>DBToernooiModel.tt</DependentUpon>
+      <DependentUpon>DBToernooiEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Speler.cs">
-      <DependentUpon>DBToernooiModel.tt</DependentUpon>
+      <DependentUpon>DBToernooiEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Toernooi.cs">
-      <DependentUpon>DBToernooiModel.tt</DependentUpon>
+      <DependentUpon>DBToernooiEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="ToernooiPrijs.cs">
-      <DependentUpon>DBToernooiModel.tt</DependentUpon>
+      <DependentUpon>DBToernooiEntities.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <EntityDeploy Include="DBToernooiModel.edmx">
+    <EntityDeploy Include="DBToernooiEntities.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DBToernooiModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>DBToernooiEntities.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="DBToernooiModel.edmx.diagram">
-      <DependentUpon>DBToernooiModel.edmx</DependentUpon>
+    <None Include="DBToernooiEntities.edmx.diagram">
+      <DependentUpon>DBToernooiEntities.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
@@ -116,15 +117,15 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DBToernooiModel.Context.tt">
+    <Content Include="DBToernooiEntities.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DBToernooiModel.edmx</DependentUpon>
-      <LastGenOutput>DBToernooiModel.Context.cs</LastGenOutput>
+      <DependentUpon>DBToernooiEntities.edmx</DependentUpon>
+      <LastGenOutput>DBToernooiEntities.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="DBToernooiModel.tt">
+    <Content Include="DBToernooiEntities.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DBToernooiModel.edmx</DependentUpon>
-      <LastGenOutput>DBToernooiModel.cs</LastGenOutput>
+      <DependentUpon>DBToernooiEntities.edmx</DependentUpon>
+      <LastGenOutput>DBToernooiEntities.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

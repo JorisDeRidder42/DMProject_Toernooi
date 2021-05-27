@@ -1,0 +1,53 @@
+﻿<Window x:Class="DeRidderJoris_GRPLTId1._1_DM_Project.SpelerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DeRidderJoris_GRPLTId1._1_DM_Project"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="SpelerWindow" Height="450" Width="800" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition  Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <!-- label titel-->
+            <Label x:Name="lblTitle" Content="Welke speler wilt u uitschrijven" FontFamily="Open Sans" FontSize="20" VerticalAlignment="Center" FontWeight="Bold" Grid.ColumnSpan="4" Grid.Row="0" Grid.Column="0" Margin="10"/>
+
+        <DataGrid x:Name="dataSpeler" SelectionChanged="dataSpeler_SelectionChanged" AutoGenerateColumns="False" Margin="5"
+	        Grid.Row="1" Grid.Column="0"  Grid.ColumnSpan="4" Grid.RowSpan="3" IsReadOnly="True" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding voornaam}" Header="Voornaam"/>
+                <DataGridTextColumn Binding="{Binding achternaam}" Header ="Achternaam"/>
+                <DataGridTextColumn Binding="{Binding nicknaam}" Header ="Nicknaam"/>
+                <DataGridTextColumn Binding="{Binding email}" Header="Email"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <!--textbox voor aanpassen-->
+        <TextBox x:Name="txtvoornaam"  materialDesign:HintAssist.Hint="Voornaam" Grid.Row="4" Grid.Column="0" Margin="5" />
+        <TextBox x:Name="txtachternaam"  materialDesign:HintAssist.Hint="Achternaam" Grid.Row="4" Grid.Column="1" Margin="5" />
+        <TextBox x:Name="txtnicknaam" materialDesign:HintAssist.Hint="Nicknaam" Grid.Row="4" Grid.Column="2" Margin="5"/>
+        <TextBox x:Name="txtemail" materialDesign:HintAssist.Hint="Email" Grid.Row="4" Grid.Column="3" Margin="5"/>
+        <!-- CRUD operaties-->
+            <Button x:Name="btnSVerwijderen" Content="Speler Verwijderen" Grid.Row="5" Grid.Column="0" Margin="5" Style="{StaticResource MaterialDesignRaisedAccentButton}" Click="btnSVerwijderen_Click" />
+        <Button x:Name="btnSAanpassen" Content="Speler aanpassen" Grid.Row="5" Grid.Column="1" Margin="5" Style="{StaticResource MaterialDesignRaisedAccentButton}" Click="btnSAanpassen_Click" />
+        <Button x:Name="btnSAnnuleren" Content="Annuleren" Grid.Row="5" Grid.Column="3" Margin="5" Click="btnSAnnuleren_Click" />
+        </Grid>
+</Window>
