@@ -16,7 +16,10 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
             {
                 return toernooiEntities.GameMode
                     .Where(t => t.gameModeNaam == Helper.buttonSpel)
-                    //orderby datum van toernooien
+                    .Include(t => t.Toernooien)
+                    //.OrderBy(t => t.Toernooien)
+                    //.ThenBy(t => t.Toernooien.Select(sub => sub.datum))
+                    //.OrderBy(t =>t.Toernooien.Select(sub => sub.datum))
                   .SingleOrDefault();
             }   
         }
@@ -141,13 +144,13 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
         }
 
         //gekozen toernooiOphalen
-        public static List<Toernooi> OphalenToernooienViaToernooiId(int toernooiID)
+        public static List<Toernooi> OphalenToernooienViaToernooiId()
         {
             using (DBToernooiEntities toernooiEntities = new DBToernooiEntities())
             {
                 return toernooiEntities.Toernooi
                     .Include(x => x.GameMode)
-                    .Where(x => x.toernooiId == toernooiID)
+                    .Where(x => x.toernooiId == Helper.IdToernooi)
                     .OrderBy(x => x.datum)
                     .ThenBy(x => x.startuur)
                     .ToList();

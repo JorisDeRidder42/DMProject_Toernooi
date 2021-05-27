@@ -29,7 +29,7 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
         {
             GameMode opgehaaldeGameMode = DatabaseOperations.OphalenGekozenSpel();
             dataToernooi.ItemsSource = opgehaaldeGameMode.Toernooien;
-            lblTitle.Content = "Het opgehaalde spel is " + opgehaaldeGameMode.gameModeNaam;
+            lblTitle.Content = "Het gekozen spel is " + opgehaaldeGameMode.gameModeNaam;
         }
 
         private void btnVerwijderen_Click(object sender, RoutedEventArgs e)
@@ -38,10 +38,7 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
 
             if (string.IsNullOrWhiteSpace(foutmelding))
             {
-
                 Toernooi toernooi = dataToernooi.SelectedItem as Toernooi;
-                int toernooi_id = toernooi.toernooiId;
-                
 
                 int ok = DatabaseOperations.VerwijderenToernooi(toernooi);
 
@@ -121,7 +118,7 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
                     int ok = DatabaseOperations.AanpassenToernooi(toernooi);
                     if (ok > 0)
                     {
-                        dataToernooi.ItemsSource = DatabaseOperations.OphalenToernooienViaToernooiId(toernooi.toernooiId);
+                        dataToernooi.ItemsSource = DatabaseOperations.OphalenToernooienViaToernooiId();
                         Wissen();
                     }
                     else
