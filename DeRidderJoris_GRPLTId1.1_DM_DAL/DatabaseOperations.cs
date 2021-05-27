@@ -21,8 +21,6 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
                     //.ThenBy(t => t.Toernooien.Select(sub => sub.datum))
                     //.OrderBy(t =>t.Toernooien.Select(sub => sub.datum))
                   .SingleOrDefault();
-
-
             }   
         }
 
@@ -67,10 +65,10 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
             using (DBToernooiEntities toernooiEntities = new DBToernooiEntities())
             {
                 //filteren op GameModeId == enkel gekozen GameMode daar de Ranks van tonen
-                var query = toernooiEntities.GameMode
+                return toernooiEntities.GameMode
                     .Where(r => r.gameModeId == Helper.IdGameMode)
-                    .Include(r => r.GameModeRanks.Select(sub => sub.Rank));
-                return query.SingleOrDefault();
+                    .Include(r => r.GameModeRanks.Select(sub => sub.Rank))
+                    .SingleOrDefault();
             }
         }
 

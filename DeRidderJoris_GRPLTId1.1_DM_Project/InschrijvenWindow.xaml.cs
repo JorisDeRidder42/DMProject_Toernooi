@@ -112,7 +112,7 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
                     if (ok > 0)
                     {
                         Wissen();
-                        MessageBox.Show("U bent ingeschreven!", "Melding", MessageBoxButton.OK, MessageBoxImage.Information);
+                        MessageBox.Show($"U bent ingeschreven!\n voor het toernooi" , "Melding", MessageBoxButton.OK, MessageBoxImage.Information);
                     }
                     else
                     {

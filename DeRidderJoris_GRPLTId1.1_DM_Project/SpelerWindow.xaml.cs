@@ -50,7 +50,7 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
         //speler uitschrijven
         private void btnSVerwijderen_Click(object sender, RoutedEventArgs e)
         {
-            string foutmelding = Valideer("Speler");
+            string foutmelding = ValideerVerwijderen("Speler");
 
             if (string.IsNullOrWhiteSpace(foutmelding))
             {
@@ -132,7 +132,15 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
         {
             if (columnName == "Speler" && dataSpeler.SelectedItem == null)
             {
-                return "selecteer een Speler om te verwijderen!\n";
+                return "selecteer een Speler om aan te passen\n";
+            }
+            return "";
+        }
+        private string ValideerVerwijderen(string columnName)
+        {
+            if (columnName == "Speler" && dataSpeler.SelectedItem == null)
+            {
+                return "selecteer een Speler om te verwijderen\n";
             }
             return "";
         }

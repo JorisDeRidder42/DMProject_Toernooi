@@ -34,7 +34,7 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
 
         private void btnVerwijderen_Click(object sender, RoutedEventArgs e)
         {
-            string foutmelding = Valideer("Toernooi");
+            string foutmelding = ValideerVerwijderen("Toernooi");
 
             if (string.IsNullOrWhiteSpace(foutmelding))
             {
@@ -47,7 +47,7 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
                 {
                     dataToernooi.ItemsSource = DatabaseOperations.OphalenGekozenSpelViaToernooiId();
                     Wissen();
-                    MessageBox.Show("Het toernooi is ", "Melding", MessageBoxButton.OK, MessageBoxImage.Information) ;
+                    MessageBox.Show("Het toernooi is verwijderd!", "Melding", MessageBoxButton.OK, MessageBoxImage.Information) ;
                 }
                 else
                 {
@@ -149,11 +149,19 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
             txtstartuur.Text = "";
         }
 
-        private string Valideer(string columnName)
+        private string ValideerVerwijderen(string columnName)
         {
             if (columnName == "Toernooi" && dataToernooi.SelectedItem == null)
             {
                 return "selecteer een Toernooi om te verwijderen!\n";
+            }
+            return "";
+        }
+        private string Valideer(string columnName)
+        {
+            if (columnName == "Toernooi" && dataToernooi.SelectedItem == null)
+            {
+                return "selecteer een Toernooi om aan te passen!\n";
             }
             return "";
         }
