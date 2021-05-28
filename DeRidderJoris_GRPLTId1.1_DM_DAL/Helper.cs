@@ -20,9 +20,10 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
         //ophalen prijzen
         public static  int prijzen;
 
-        //ophalen naam van het rank
-        public static string naamRank;
+        //ophalen gameModeid van rank
+        public static int IdRank;
 
+        //ophalen geselecteerde speler met spelerId
         public static int IdSpeler;
     }
   

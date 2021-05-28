@@ -105,7 +105,7 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
                     int ok = DatabaseOperations.AanpassenToernooi(toernooi);
                     if (ok > 0)
                     {
-                        dataToernooi.ItemsSource = DatabaseOperations.OphalenToernooienViaToernooiId(toernooi.toernooiId);
+                        dataToernooi.ItemsSource = DatabaseOperations.OphalenToernooienViaToernooiId();
                         Wissen();
                         MessageBox.Show("Toernooi is aangepast!", "Melding", MessageBoxButton.OK, MessageBoxImage.Information);
                     }

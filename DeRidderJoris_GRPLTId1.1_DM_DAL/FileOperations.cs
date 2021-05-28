@@ -13,7 +13,6 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
         {
             using (StreamWriter writer = new StreamWriter("foutenbestand.txt", true))
             {
-
                 writer.WriteLine(DateTime.Now.ToString("HH:mm:ss tt"));
                 writer.WriteLine(fout.GetType().Name);
                 writer.WriteLine(fout.Message);

@@ -26,7 +26,7 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
         }
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            List<Speler> opgehaaldeSpeler = DatabaseOperations.OphalenSpelers();
+            List<Speler> opgehaaldeSpeler = DatabaseOperations.OphalenSpelerViaSpelerId();
             dataSpeler.ItemsSource = opgehaaldeSpeler;
         }
 
