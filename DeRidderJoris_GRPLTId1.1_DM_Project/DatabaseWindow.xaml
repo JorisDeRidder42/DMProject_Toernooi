@@ -30,11 +30,17 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
-                <ColumnDefinition/>
+            <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
            <!-- label titel-->
         <Label x:Name="lblTitle" Content="Kies in welk toernooi u wilt worden ingeschreven" FontFamily="Open Sans" FontSize="20" VerticalAlignment="Center" FontWeight="Bold" Grid.ColumnSpan="4" Grid.Row="0" Grid.Column="0" Margin="10"/>
+
+        <Button
+        Style="{StaticResource MaterialDesignFloatingActionButton}" Grid.Column="3" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="10"
+        ToolTip="MaterialDesignFloatingActionAccentButton" Width="50" Height="50" x:Name="btnTAfsluiten" Click="btnTAfsluiten_Click" >
+            <materialDesign:PackIcon Kind="House" Height="30" Width="30" />
+        </Button>
 
         <DataGrid x:Name="dataToernooi" SelectionChanged="dataToernooi_SelectionChanged" AutoGenerateColumns="False" Margin="5"
 	        Grid.Row="1" Grid.Column="0"  Grid.ColumnSpan="4" Grid.RowSpan="3" IsReadOnly="True" >
@@ -49,12 +55,12 @@
             <!--textbox voor aanpassen-->
         <TextBox x:Name="txtSpelmodus"  materialDesign:HintAssist.Hint="Spelmodus" Grid.Row="4" Grid.Column="0" Margin="5" />
         <TextBox x:Name="txtdata"  materialDesign:HintAssist.Hint="Datum" Grid.Row="4" Grid.Column="1" Margin="5" />
-        <TextBox x:Name="txtCheckuur" materialDesign:HintAssist.Hint="Check in Uur" Grid.Row="4" Grid.Column="2" Margin="5"/>
+        <TextBox x:Name="txtcheckuur" materialDesign:HintAssist.Hint="Check in Uur" Grid.Row="4" Grid.Column="2" Margin="5"/>
         <TextBox x:Name="txtstartuur" materialDesign:HintAssist.Hint="Start uur" Grid.Row="4" Grid.Column="3" Margin="5"/>
         <!-- CRUD operaties-->
-        <Button x:Name="btnVerwijderen" Content="Toernooi Verwijderen" Grid.Row="5" Grid.Column="0" Margin="5" Style="{StaticResource MaterialDesignRaisedAccentButton}" Click="btnVerwijderen_Click" />
-        <Button x:Name="btnInschrijvingAanpassen" Content="Inschrijving aanpassen" Grid.Row="5" Grid.Column="1" Margin="5" Style="{StaticResource MaterialDesignRaisedAccentButton}" Click="btnInschrijvingAanpassen_Click" />
-        <Button x:Name="btnInschrijven" Content="Inschrijven" Grid.Row="5" Grid.Column="2" Margin="5" Click="btnInschrijven_Click"  />
-        <Button x:Name="btnAnnuleren" Content="Annuleren" Grid.Row="5" Grid.Column="3" Margin="5" Click="btnAnnuleren_Click"/>
+        <Button x:Name="btnVerwijderen" Content="Verwijderen" Grid.Row="5" Grid.Column="0" Margin="5" Style="{StaticResource MaterialDesignRaisedAccentButton}" Click="btnVerwijderen_Click" />
+        <Button x:Name="btnAanpassen" Content="Aanpassen" Grid.Row="5" Grid.Column="1" Margin="5" Style="{StaticResource MaterialDesignRaisedAccentButton}" Click="btnAanpassen_Click" />
+        <Button x:Name="btnToevoegen" Content="Toevoegen" Grid.Row="5" Grid.Column="2" Margin="5" Style="{StaticResource MaterialDesignRaisedAccentButton}" Click="btnToevoegen_Click" />
+        <Button x:Name="btnInschrijven" Content="Inschrijven" Grid.Row="5" Grid.Column="3" Margin="5" Click="btnInschrijven_Click"/>
     </Grid>
 </Window>

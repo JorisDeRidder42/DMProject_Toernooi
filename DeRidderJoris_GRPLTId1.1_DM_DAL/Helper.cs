@@ -17,9 +17,6 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
         //ophalen gamemodeId van het spel
         public static int IdGameMode;
 
-        //ophalen prijzen
-        public static  int prijzen;
-
         //ophalen gameModeid van rank
         public static int IdRank;
 

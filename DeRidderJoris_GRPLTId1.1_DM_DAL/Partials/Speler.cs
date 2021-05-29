@@ -15,30 +15,45 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
             {
                 if (columnName == "voornaam" && string.IsNullOrWhiteSpace(voornaam))
                 {
-                    return "voornaam is een verplicht veld!";
+                    return "Voornaam is een verplicht veld!\n";
                 }
                 if (columnName == "achternaam" && string.IsNullOrWhiteSpace(achternaam))
                 {
-                    return "achternaam is een verplicht veld!";
+                    return "Achternaam is een verplicht veld!\n";
                 }
                 if (columnName == "nicknaam" && string.IsNullOrWhiteSpace(nicknaam))
                 {
-                    return "nicknaam is een verplicht veld!";
+                    return "Nicknaam is een verplicht veld!\n";
                 }
                 if (columnName == "wachtwoord" && string.IsNullOrWhiteSpace(wachtwoord))
                 {
-                    return "wachtwoord is een verplicht veld!";
+                    return "Wachtwoord is een verplicht veld!\n";
                 }
                 if (columnName == "email" && string.IsNullOrWhiteSpace(email))
                 {
-                    return "email is een verplicht veld!";
+                    return "Email is een verplicht veld!\n";
+                }
+                if (columnName == "geboortedatum" && geboortedatum > DateTime.Now)
+                {
+                    return "Gelieve een andere datum te selecteren!\n";
                 }
                 if (columnName == "geboorteplaats" && string.IsNullOrWhiteSpace(geboorteplaats))
                 {
-                    return "geboorteplaats is een verplicht veld!";
+                    return "Geboorteplaats is een verplicht veld!\n";
                 }
                 return "";
             }
+        }
+        public override bool Equals(object obj)
+        {
+            return obj is Speler speler &&
+                voornaam == speler.voornaam &&
+                achternaam == speler.achternaam &&
+                nicknaam == speler.nicknaam;
+        }
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
         }
     }
 }

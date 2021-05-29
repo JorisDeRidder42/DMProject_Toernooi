@@ -13,24 +13,31 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
         {
             get
             {
-                if (columnName == "toernooiId" && toernooiId <= 0)
-                {
-                    return "toernooiId is een verplicht veld!";
-                }
                 if (columnName == "toernooiNaam" && string.IsNullOrWhiteSpace(toernooiNaam))
                 {
-                    return "toernooiNaam is een verplicht veld!";
+                    return "toernooiNaam is een verplicht veld!\n";
                 }
                 if (columnName == "datum" && datum == null)
                 {
-                    return "datum is een verplicht veld!";
+                    return "datum is een verplicht veld!\n";
                 }
                 if (columnName == "checkInuur" && checkInuur == null)
                 {
-                    return "checkInuur is een verplicht veld!";
+                    return "checkInuur is een verplicht veld!\n";
                 }
                 return "";
             }
+        }
+        public override bool Equals(object obj)
+        {
+            return obj is Toernooi toernooi &&
+                toernooiId == toernooi.toernooiId &&
+                toernooiNaam == toernooi.toernooiNaam;
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
         }
     }
 }

@@ -41,8 +41,16 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
             toernooi.toernooiNaam = toernooi.toernooiNaam.Replace("_", " ");
 
             ////per gamemode de verschillende ranks ophalen
-            GameMode toernooiMetRanks = DatabaseOperations.OphalenToernooiMetRanks();
-            cmbRank.ItemsSource = toernooiMetRanks.GameModeRanks;
+            //GameMode toernooiMetRanks = DatabaseOperations.OphalenToernooiMetRanks();
+            //cmbRank.ItemsSource = toernooiMetRanks.GameModeRanks;
+
+            List<Rank> ranks = DatabaseOperations.OphalengameRanks();
+            cmbRank.ItemsSource = ranks;
+
+
+            //////per gamemode de verschillende ranks ophalen
+            //List<GameModeRank> toernooiMetRanks = DatabaseOperations.OphalenToernooiMetRanks2();
+            //cmbRank.ItemsSource = toernooiMetRanks;
 
             ////per toernooi de verschillende prijzen ophalen
             Toernooi toernooiMetPrijzen = DatabaseOperations.OphalenPrijzenMetToernooiId();
@@ -85,9 +93,10 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
         {
             //alles txt en cmb boxen leegmaken
             Wissen();
+            Close();
         }
-
-        //Speler inschrijven
+            
+            
         private void btnBewaren_Click(object sender, RoutedEventArgs e)
         {
             string foutmelding = Valideer("cmbRank");
@@ -116,7 +125,8 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
                     }
                     else
                     {
-                        MessageBox.Show("U bent niet ingeschreven!", "Foutmelding", MessageBoxButton.OK, MessageBoxImage.Error);
+                        MessageBox.Show("U bent niet ingeschreven er is iets fout!", "Foutmelding", MessageBoxButton.OK, MessageBoxImage.Error);
+
                     }
                 }
                 else
@@ -141,7 +151,7 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
         private void btnHome_Click(object sender, RoutedEventArgs e)
         {
             //terug naar vorige scherm
-            this.Close();
+            Close();
         }
         private void Wissen()
         {
@@ -162,21 +172,9 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
             {
                 return "Selecteer een Rank!" + Environment.NewLine;
             }
-            if (columnName == "Voornaam" && txtVoornaam.Text == null)
+            if (!DateTime.TryParse(txtGeboortedatum.Text, out var gdatumm))
             {
-                return "Gelieve uw voornaam in te geven!" + Environment.NewLine;
-            }
-            if (columnName == "Achternaam" && txtAchternaam.Text == null)
-            {
-                return "Gelieve uw achternaam in te geven!" + Environment.NewLine;
-            }
-            if (columnName == "Nicknaam" && txtNickName.Text == null)
-            {
-                return "Gelieve uw spelnaam in te geven!" + Environment.NewLine;
-            }
-            if (columnName == "Email" && txtMail.Text == null)
-            {
-                return "Gelieve uw email in te geven!" + Environment.NewLine;
+                return "deze datum is niet geldig!\n";
             }
             return "";
         }

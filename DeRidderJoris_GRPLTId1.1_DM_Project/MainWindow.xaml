@@ -15,8 +15,8 @@
         Title="MainWindow" Height="650" Width="800">
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-            <GradientStop Color="#FF173780" Offset="0"/>
-            <GradientStop Color="#FF2D6DFF" Offset="1"/>
+            <GradientStop Color="#FF521FAC" Offset="0"/>
+            <GradientStop Color="#FF673AB7" Offset="1"/>
         </LinearGradientBrush>
     </Window.Background>
     <Grid>
@@ -34,7 +34,7 @@
         </Grid.RowDefinitions>
 
         <!-- Titel -->
-        <Label Content="Inschrijven Toernooi" FontFamily="Open Sans" FontSize="20" VerticalAlignment="Center" FontWeight="Bold" Grid.ColumnSpan="4" Grid.Row="0" Grid.Column="0" Margin="10" Foreground="White"/>
+        <Label Content="Inschrijven voor een toernooi" FontFamily="Open Sans" FontSize="20" VerticalAlignment="Center" FontWeight="Bold" Grid.ColumnSpan="4" Grid.Row="0" Grid.Column="0" Margin="10" Foreground="White"/>
         
         <!-- Afluit knop -->
         <Button
@@ -53,7 +53,7 @@
                 <ImageBrush ImageSource="images/rocket-league-logo.jpg"/>
             </Button.Background>
         </Button>
-        <Label x:Name="lblRocketLeague" Content="Rocket-league" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White" Margin="20"/>
+        <Label x:Name="lblRocketLeague" Content="Rocket League" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White" Margin="20" FontFamily="Open-sans"/>
         
         <Button x:Name="btnFortnite" Grid.Column="1" Grid.Row="2" Width="120" Height="120" Margin="10" BorderThickness="0" Click="btnFortnite_Click">
             <Button.Background>

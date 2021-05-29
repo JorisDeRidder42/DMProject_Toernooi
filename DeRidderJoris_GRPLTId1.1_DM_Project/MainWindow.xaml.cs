@@ -36,55 +36,52 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
         {
             // roept klasse op voor het lezen welke button het is
             Helper.buttonSpel = lblRocketLeague.Content.ToString();
-            DatabaseWindow databaseWindow = new DatabaseWindow();
-            databaseWindow.Show();
+            OpenSchermDatabaseWindow();
         }
 
         private void btnFortnite_Click(object sender, RoutedEventArgs e)
         {
             Helper.buttonSpel = lblFortnite.Content.ToString();
-            DatabaseWindow databaseWindow = new DatabaseWindow();
-            databaseWindow.Show();
+            OpenSchermDatabaseWindow();
         }
 
         private void btnLeagueOfLegends_Click(object sender, RoutedEventArgs e)
         {
             Helper.buttonSpel = lblLeagueOfLegends.Content.ToString();
-            DatabaseWindow databaseWindow = new DatabaseWindow();
-            databaseWindow.Show();
+            OpenSchermDatabaseWindow();
         }
 
         private void btnValorant_Click(object sender, RoutedEventArgs e)
         {
             Helper.buttonSpel = lblLValorant.Content.ToString();
-            DatabaseWindow databaseWindow = new DatabaseWindow();
-            databaseWindow.Show();
+            OpenSchermDatabaseWindow();
         }
 
         private void btnCSGO_Click(object sender, RoutedEventArgs e)
         {
             Helper.buttonSpel = lblCounterStrike.Content.ToString();
-            DatabaseWindow databaseWindow = new DatabaseWindow();
-            databaseWindow.Show();
+            OpenSchermDatabaseWindow();
         }
 
         private void btnDota_Click(object sender, RoutedEventArgs e)
         {
             Helper.buttonSpel = lblDota2.Content.ToString();
-            DatabaseWindow databaseWindow = new DatabaseWindow();
-            databaseWindow.Show();
+            OpenSchermDatabaseWindow();
         }
 
         private void btnCodWarzone_Click(object sender, RoutedEventArgs e)
         {
             Helper.buttonSpel = lblCODWZ.Content.ToString();
-            DatabaseWindow databaseWindow = new DatabaseWindow();
-            databaseWindow.Show();
+            OpenSchermDatabaseWindow();
         }
 
         private void btnapexlegends_Click(object sender, RoutedEventArgs e)
         {
             Helper.buttonSpel = lblApexLegends.Content.ToString();
+            OpenSchermDatabaseWindow();
+        }
+        private void OpenSchermDatabaseWindow()
+        {
             DatabaseWindow databaseWindow = new DatabaseWindow();
             databaseWindow.Show();
         }

@@ -17,7 +17,6 @@
 --	DROP TABLE ToernooiInschrijven.GameModeRank
 ----IF OBJECT_ID('ToernooiInschrijven.GameMode') IS NOT NULL
 --	DROP TABLE ToernooiInschrijven.GameMode
-
 --GO
 
 -- DROP + CREATE SCHEMA
@@ -33,14 +32,16 @@ CREATE TABLE ToernooiInschrijven.[Rank]
 	[rankId] int IDENTITY(1,1) NOT NULL,
 	rankNaam varchar(40) NOT NULL,
 	CONSTRAINT PK_Rank PRIMARY KEY (rankId)
-)
+); 
+GO
 
 CREATE TABLE ToernooiInschrijven.GameMode
 (
 	[gameModeId] int IDENTITY(1,1) NOT NULL,
 	gameModeNaam varchar(40) NOT NULL,
 	CONSTRAINT PK_GameMode PRIMARY KEY (gameModeId)
-)
+); 
+GO
 
 CREATE TABLE ToernooiInschrijven.GameModeRank
 (
@@ -48,9 +49,10 @@ CREATE TABLE ToernooiInschrijven.GameModeRank
 	rankId int NOT NULL,
 	gameModeId int NOT NULL,
 	CONSTRAINT PK_GameModeRank PRIMARY KEY (gameModeRankId),
-	CONSTRAINT FK_GameModeRank_Rank FOREIGN KEY (rankId) REFERENCES ToernooiInschrijven.[rank](rankId),
-	CONSTRAINT FK_GameModeRank_GameMode FOREIGN KEY (gameModeId) REFERENCES ToernooiInschrijven.GameMode(gameModeId)
-)
+	CONSTRAINT FK1_GameModeRank_Rank FOREIGN KEY (rankId) REFERENCES ToernooiInschrijven.[rank](rankId),
+	CONSTRAINT FK2_GameModeRank_GameMode FOREIGN KEY (gameModeId) REFERENCES ToernooiInschrijven.GameMode(gameModeId)
+); 
+GO
 
 CREATE TABLE ToernooiInschrijven.Speler
 (
@@ -63,7 +65,8 @@ CREATE TABLE ToernooiInschrijven.Speler
 	geboortedatum date NOT NULL,
 	geboorteplaats varchar(30) NULL,
 	CONSTRAINT PK_Speler PRIMARY KEY (spelerId)
-)
+); 
+GO
 
 CREATE TABLE ToernooiInschrijven.Prijs
 (
@@ -71,8 +74,9 @@ CREATE TABLE ToernooiInschrijven.Prijs
 	spelerId int NOT NULL,
 	prijsPot int NOT NULL,
 	CONSTRAINT PK_Prijs PRIMARY KEY (prijsId),
-	CONSTRAINT FK_Prijs_Speler FOREIGN KEY (prijsId) REFERENCES ToernooiInschrijven.Speler(spelerId)
-)
+	CONSTRAINT FK3_Prijs_Speler FOREIGN KEY (prijsId) REFERENCES ToernooiInschrijven.Speler(spelerId)
+); 
+GO
 
 CREATE TABLE ToernooiInschrijven.Toernooi
 (
@@ -83,8 +87,9 @@ CREATE TABLE ToernooiInschrijven.Toernooi
 	startuur time NOT NULL,
 	gameModeId int NOT NULL,
 	CONSTRAINT PK_Toernooi PRIMARY KEY (toernooiId),
-	CONSTRAINT FK_Toernooi_GameMode FOREIGN KEY (gameModeId) REFERENCES ToernooiInschrijven.GameMode(gameModeId)
-)
+	CONSTRAINT FK4_Toernooi_GameMode FOREIGN KEY (gameModeId) REFERENCES ToernooiInschrijven.GameMode(gameModeId)
+); 
+GO
 
 CREATE TABLE ToernooiInschrijven.ToernooiPrijs
 (
@@ -92,14 +97,15 @@ CREATE TABLE ToernooiInschrijven.ToernooiPrijs
 	prijsId int NOT NULL,
 	toernooiId int NOT NULL,
 	CONSTRAINT PK_ToernooiPrijs PRIMARY KEY (toernooiPrijsId),
-	CONSTRAINT FK_ToernooiPrijs_Toernooi FOREIGN KEY (toernooiId) REFERENCES ToernooiInschrijven.Toernooi(toernooiId),
-	CONSTRAINT FK_ToernooiPrijs_Prijs FOREIGN KEY (prijsId) REFERENCES ToernooiInschrijven.Prijs(prijsId)
-)
+	CONSTRAINT FK5_ToernooiPrijs_Toernooi FOREIGN KEY (toernooiId) REFERENCES ToernooiInschrijven.Toernooi(toernooiId) ON DELETE CASCADE,
+	CONSTRAINT FK6_ToernooiPrijs_Prijs FOREIGN KEY (prijsId) REFERENCES ToernooiInschrijven.Prijs(prijsId)
+); 
+GO
 
 --- CODE INSERT
 SET IDENTITY_INSERT ToernooiInschrijven.GameMode OFF
 INSERT INTO ToernooiInschrijven.GameMode
-	VALUES ('Rocket-league'),
+	VALUES ('Rocket League'),
 	 ('Fortnite'),
 	 ('League of legends'),
 	 ('Valorant'),
@@ -388,5 +394,4 @@ INSERT INTO ToernooiInschrijven.ToernooiPrijs(prijsId, toernooiId)
 	(1,28),
 	(1,29),
 	(1,30),
-	(1,31),
-	(1,32);
+	(1,31);

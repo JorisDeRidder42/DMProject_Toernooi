@@ -80,6 +80,9 @@
     <Compile Include="SpelerWindow.xaml.cs">
       <DependentUpon>SpelerWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ToernooiAanmakenWindow.xaml.cs">
+      <DependentUpon>ToernooiAanmakenWindow.xaml</DependentUpon>
+    </Compile>
     <Page Include="DatabaseWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -107,6 +110,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="SpelerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ToernooiAanmakenWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -1,0 +1,41 @@
+﻿<Window x:Class="DeRidderJoris_GRPLTId1._1_DM_Project.ToernooiAanmakenWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DeRidderJoris_GRPLTId1._1_DM_Project"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="ToernooiAanmakenWindow" Height="450" Width="800" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Textfield -->
+        <TextBox x:Name="txttspelmodus" Grid.Row="0" Grid.Column="1" materialDesign:HintAssist.Hint="ToernooiNaam" Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalAlignment="Center" Margin="20" Foreground="#FF521FAC" SelectionBrush="#FF0078D7" BorderBrush="#FF673AB7" />
+        <DatePicker x:Name="txttdatum" Grid.Row="0" Grid.Column="2" Margin="20" materialDesign:HintAssist.Hint="Datum" Style="{StaticResource MaterialDesignOutlinedDatePicker}" BorderBrush="#FF673AB7" Foreground="#FF673AB7"/>
+        <TextBox x:Name="txttcheckinuur" Grid.Row="0" Grid.Column="3" materialDesign:HintAssist.Hint="Check in uur" Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalAlignment="Center" Margin="20" BorderBrush="#FF673AB7" Foreground="#FF521FAC"  />
+
+        <TextBox x:Name="txttstartuur" Grid.Row="1" Grid.Column="1" materialDesign:HintAssist.Hint="Start uur" Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalAlignment="Center" Margin="20" BorderBrush="#FF673AB7" Foreground="#FF521FAC"  />
+        <ComboBox x:Name="cmbGameModeId" DisplayMemberPath="gameModeId" Grid.Row="1" Grid.Column="2" Margin="20" materialDesign:HintAssist.Hint="GameModeId"  Style="{StaticResource MaterialDesignOutlinedComboBox}" VerticalAlignment="Center" Foreground="Red" BorderBrush="Red"/>
+       
+        <!-- Buttons-->
+        <Button x:Name="btntBewaren" Content="Toernooi bewaren" Grid.Row="4" Grid.Column="1" Margin="20" VerticalAlignment="Bottom"  Style="{StaticResource MaterialDesignRaisedAccentButton}" Click="btntBewaren_Click"/>
+        <Button x:Name="btntAnnuleren" Content="Annuleren" Grid.Row="4" Grid.Column="2" Margin="20" VerticalAlignment="Bottom" Click="btntAnnuleren_Click"/>
+    </Grid>
+</Window>
