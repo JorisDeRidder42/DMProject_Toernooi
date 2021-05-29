@@ -47,12 +47,13 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
         }
 
         //ophalen gameModeid van gekozen game met alle ranks in een combobox
-        public static GameMode OphalenToernooiMetRanks()
+        public static GameMode OphalenGameModeMetRanks()
         {
             using (DBToernooiEntities toernooiEntities = new DBToernooiEntities())
             {
                 var query = toernooiEntities.GameMode
-                    .Include(r => r.GameModeRanks.Select(sub => sub.Rank));
+                     .Where(r => r.gameModeId == Helper.IdGameMode)
+                     .Include(r => r.GameModeRanks.Select(sub => sub.Rank));
                     return query .SingleOrDefault();
             }
         }

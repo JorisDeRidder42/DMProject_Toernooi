@@ -40,12 +40,12 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
             lblLijnup.Content = toernooi.toernooiNaam.Substring(0, toernooi.toernooiNaam.LastIndexOf('_'));
             toernooi.toernooiNaam = toernooi.toernooiNaam.Replace("_", " ");
 
-            ////per gamemode de verschillende ranks ophalen
-            //GameMode toernooiMetRanks = DatabaseOperations.OphalenToernooiMetRanks();
-            //cmbRank.ItemsSource = toernooiMetRanks.GameModeRanks;
+            //per gamemode de verschillende ranks ophalen
+            GameMode toernooiMetRanks = DatabaseOperations.OphalenGameModeMetRanks();
+            cmbRank.ItemsSource = toernooiMetRanks.GameModeRanks;
 
-            List<Rank> ranks = DatabaseOperations.OphalengameRanks();
-            cmbRank.ItemsSource = ranks;
+            //List<Rank> ranks = DatabaseOperations.OphalengameRanks();
+            //cmbRank.ItemsSource = ranks;
 
 
             //////per gamemode de verschillende ranks ophalen

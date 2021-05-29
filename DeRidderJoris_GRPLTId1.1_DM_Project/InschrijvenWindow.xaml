@@ -89,7 +89,7 @@
 
         <PasswordBox x:Name="FloatingPasswordBox" Grid.Row="2" Grid.Column="1" materialDesign:HintAssist.Hint="Password" materialDesign:HintAssist.Foreground="Red" materialDesign:TextFieldAssist.UnderlineBrush="Red" Style="{StaticResource MaterialDesignOutlinedPasswordBox}" VerticalAlignment="Center" Margin="20" BorderBrush="Red" Foreground="Red" CaretBrush="Red"   />
         <!-- combobox ranks -->
-        <ComboBox x:Name="cmbRank" DisplayMemberPath="rankNaam" Grid.Row="2" Grid.Column="3" Margin="20" materialDesign:HintAssist.Hint="Rank" Style="{StaticResource MaterialDesignOutlinedComboBox}" BorderBrush="Red" Foreground="Red" Background="{x:Null}"></ComboBox>
+        <ComboBox x:Name="cmbRank" DisplayMemberPath="Rank.rankNaam" Grid.Row="2" Grid.Column="3" Margin="20" materialDesign:HintAssist.Hint="Rank" Style="{StaticResource MaterialDesignOutlinedComboBox}" BorderBrush="Red" Foreground="Red" Background="{x:Null}"></ComboBox>
         <TextBox x:Name="txtMail" Grid.Row="2" Grid.Column="2" materialDesign:HintAssist.Hint="E-mail" Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalAlignment="Center" Margin="20" BorderBrush="#FF673AB7" Foreground="#FF673AB7"  />
 
         <DatePicker x:Name="txtGeboortedatum" Grid.Row="3" Grid.Column="1" Margin="20" materialDesign:HintAssist.Hint="Geboortedatum" Style="{StaticResource MaterialDesignOutlinedDatePicker}" BorderBrush="#FF673AB7" Foreground="#FF673AB7"/>
