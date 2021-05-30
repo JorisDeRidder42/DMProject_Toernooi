@@ -330,26 +330,27 @@ INSERT INTO ToernooiInschrijven.GameModeRank (gameModeId, rankId)
 	(5,55),
 	(5,56),
 	(5,57),
+	(5,58),
 -- dota 2
-	(6,58),
 	(6,59),
-    (6,60),
-	(6,61),
+	(6,60),
+    (6,61),
 	(6,62),
 	(6,63),
 	(6,64),
 	(6,65),
 	(6,66),
+	(6,67),
 -- warzone
-	(7,67),
+	(7,68),
 -- apex legends
-	(8,68),
 	(8,69),
 	(8,70),
 	(8,71),
 	(8,72),
 	(8,73),
-	(8,74);
+	(8,74),
+	(8,75);
 
 INSERT INTO ToernooiInschrijven.Prijs(PrijsPot, spelerId)
 	VALUES (10000,1),

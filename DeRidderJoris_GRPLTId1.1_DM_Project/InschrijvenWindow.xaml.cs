@@ -44,14 +44,6 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
             GameMode toernooiMetRanks = DatabaseOperations.OphalenGameModeMetRanks();
             cmbRank.ItemsSource = toernooiMetRanks.GameModeRanks;
 
-            //List<Rank> ranks = DatabaseOperations.OphalengameRanks();
-            //cmbRank.ItemsSource = ranks;
-
-
-            //////per gamemode de verschillende ranks ophalen
-            //List<GameModeRank> toernooiMetRanks = DatabaseOperations.OphalenToernooiMetRanks2();
-            //cmbRank.ItemsSource = toernooiMetRanks;
-
             ////per toernooi de verschillende prijzen ophalen
             Toernooi toernooiMetPrijzen = DatabaseOperations.OphalenPrijzenMetToernooiId();
             cmbPrijzen.ItemsSource = toernooiMetPrijzen.ToernooiPrijzen;

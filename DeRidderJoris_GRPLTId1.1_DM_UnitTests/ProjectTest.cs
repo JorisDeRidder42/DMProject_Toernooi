@@ -2,7 +2,6 @@
 using System;
 using DeRidderJoris_GRPLTId1;
 using DeRidderJoris_GRPLTId1._1_DM_DAL;
-using DeRidderJoris_GRPLTId1._1_DM_Models;
 
 namespace DeRidderJoris_GRPLTId1._1_DM_UnitTests
 {
@@ -10,28 +9,38 @@ namespace DeRidderJoris_GRPLTId1._1_DM_UnitTests
     public class ProjectTest
     {
         [TestMethod]
-        public void buttonSpel_IsGelijkAanGekozenSpel()
+        public void ControllerenofdeInformatiekloptVanGameMode()
         {
-            //Arrange 
-            string gekozenSpel = Helper.buttonSpel;
+            {
+                //Arrange
+                GameMode gameMode = new GameMode();
 
-            //Act
-            gekozenSpel = "Rocket-League";
-            //Assert
-            Assert.AreEqual("Rocket-League", gekozenSpel);
+                //Act
+                gameMode.gameModeNaam = "Rocket league";
+                gameMode.gameModeId = 1;
+
+                //Assert
+                Assert.AreEqual("Rocket league", gameMode.gameModeNaam);
+                Assert.AreEqual(1, gameMode.gameModeId);
+            }
+
         }
 
-
         [TestMethod]
-        public void GekozenToernooi_haaldatavanGekozenToernooiOpdmvToernooiId()
-        {
-            //Arrange 
-            int toernooiId = Helper.IdToernooi;
+        public void ControllerenofdeInformatieKloptVanRank()
+        { 
+            {
+                //Arrange
+                Rank rank = new Rank();
 
-            //Act
-            toernooiId = 12;
-            //Assert
-            Assert.AreEqual(12, toernooiId);
+                //Act
+                rank.rankId = 1;
+                rank.rankNaam = "Unranked";
+
+                //Assert
+                Assert.AreEqual("Unranked", rank.rankNaam);
+                Assert.AreEqual(1, rank.rankId);
+            }
         }
     }
 }
