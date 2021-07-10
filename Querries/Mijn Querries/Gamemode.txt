@@ -1,0 +1,15 @@
+GameMode ==> Toernooi
+naam		ID
+gamemodeid	naam
+		datum
+		checkinuur
+		uur
+		
+GameMode ==> GameModeRank
+gameModeId	gameModeRankId
+gameModeNaam	rankId
+		gamemodeId
+
+GameModeRank ==> Rank
+gameModeNaam	 ranknaam
+gameModeId	rankid
