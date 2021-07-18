@@ -21,21 +21,23 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
             <RowDefinition />
             <RowDefinition />
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
 
+        <Label x:Name="lblTitle" Content="Hier kan men een toernooi toevoegen" FontFamily="Open Sans" FontSize="20" VerticalAlignment="Center" FontWeight="Bold" Grid.ColumnSpan="4" Grid.Row="0" Grid.Column="0" Margin="10"/>
         <!-- Textfield -->
-        <TextBox x:Name="txttspelmodus" Grid.Row="0" Grid.Column="1" materialDesign:HintAssist.Hint="ToernooiNaam" Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalAlignment="Center" Margin="20" Foreground="#FF521FAC" SelectionBrush="#FF0078D7" BorderBrush="#FF673AB7" />
-        <DatePicker x:Name="txttdatum" Grid.Row="0" Grid.Column="2" Margin="20" materialDesign:HintAssist.Hint="Datum" Style="{StaticResource MaterialDesignOutlinedDatePicker}" BorderBrush="#FF673AB7" Foreground="#FF673AB7"/>
-        <TextBox x:Name="txttcheckinuur" Grid.Row="0" Grid.Column="3" materialDesign:HintAssist.Hint="Check in uur" Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalAlignment="Center" Margin="20" BorderBrush="#FF673AB7" Foreground="#FF521FAC"  />
+        <TextBox x:Name="txttspelmodus" Grid.Row="1" Grid.Column="1" materialDesign:HintAssist.Hint="ToernooiNaam" Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalAlignment="Center" Margin="20" Foreground="#FF521FAC" SelectionBrush="#FF0078D7" BorderBrush="#FF673AB7" />
+        <DatePicker x:Name="txttdatum" Grid.Row="1" Grid.Column="2" Margin="20" materialDesign:HintAssist.Hint="Datum" Style="{StaticResource MaterialDesignOutlinedDatePicker}" BorderBrush="#FF673AB7" Foreground="#FF673AB7"/>
+        <TextBox x:Name="txttcheckinuur" Grid.Row="1" Grid.Column="3" materialDesign:HintAssist.Hint="Check in uur" Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalAlignment="Center" Margin="20" BorderBrush="#FF673AB7" Foreground="#FF521FAC"  />
 
-        <TextBox x:Name="txttstartuur" Grid.Row="1" Grid.Column="1" materialDesign:HintAssist.Hint="Start uur" Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalAlignment="Center" Margin="20" BorderBrush="#FF673AB7" Foreground="#FF521FAC"  />
-        <ComboBox x:Name="cmbGameModeId" DisplayMemberPath="gameModeId" Grid.Row="1" Grid.Column="2" Margin="20" materialDesign:HintAssist.Hint="GameModeId"  Style="{StaticResource MaterialDesignOutlinedComboBox}" VerticalAlignment="Center" Foreground="Red" BorderBrush="Red"/>
+        <TextBox x:Name="txttstartuur" Grid.Row="2" Grid.Column="1" materialDesign:HintAssist.Hint="Start uur" Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalAlignment="Center" Margin="20" BorderBrush="#FF673AB7" Foreground="#FF521FAC"  />
+        <ComboBox x:Name="cmbGameModeId" DisplayMemberPath="gameModeId" Grid.Row="2" Grid.Column="2" Margin="20" materialDesign:HintAssist.Hint="GameModeId"  Style="{StaticResource MaterialDesignOutlinedComboBox}" VerticalAlignment="Center" Foreground="Red" BorderBrush="Red"/>
        
         <!-- Buttons-->
-        <Button x:Name="btntBewaren" Content="Toernooi bewaren" Grid.Row="4" Grid.Column="1" Margin="20" VerticalAlignment="Bottom"  Style="{StaticResource MaterialDesignRaisedAccentButton}" Click="btntBewaren_Click"/>
-        <Button x:Name="btntAnnuleren" Content="Annuleren" Grid.Row="4" Grid.Column="2" Margin="20" VerticalAlignment="Bottom" Click="btntAnnuleren_Click"/>
+        <Button x:Name="btntBewaren" Content="Toernooi bewaren" Grid.Row="3" Grid.Column="1" Margin="20" VerticalAlignment="Bottom"  Style="{StaticResource MaterialDesignRaisedAccentButton}" Click="btntBewaren_Click"/>
+        <Button x:Name="btntAnnuleren" Content="Annuleren" Grid.Row="3" Grid.Column="2" Margin="20" VerticalAlignment="Bottom" Click="btntAnnuleren_Click"/>
     </Grid>
 </Window>

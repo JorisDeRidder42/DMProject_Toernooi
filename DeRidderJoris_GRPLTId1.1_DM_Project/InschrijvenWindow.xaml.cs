@@ -80,15 +80,6 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
                     break;
             }
         }
-
-        private void btnAnnuleren_Click(object sender, RoutedEventArgs e)
-        {
-            //alles txt en cmb boxen leegmaken
-            Wissen();
-            Close();
-        }
-            
-            
         private void btnBewaren_Click(object sender, RoutedEventArgs e)
         {
             string foutmelding = Valideer("cmbRank");
@@ -113,7 +104,16 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
                     if (ok > 0)
                     {
                         Wissen();
-                        MessageBox.Show($"U bent ingeschreven!\n voor het toernooi" , "Melding", MessageBoxButton.OK, MessageBoxImage.Information);
+                        if (MessageBox.Show("U bent ingeschreven!\n Wilt u zich opnieuw inschrijven voor een toernooi?", "Melding", MessageBoxButton.YesNo, MessageBoxImage.Question)== MessageBoxResult.Yes)
+                        {
+                            MainWindow mainWindow = new MainWindow();
+                            mainWindow.Show();
+                            this.Close();
+                        }
+                        //MessageBox.Show("U bent ingeschreven!\n Wilt u zich opnieuw inschrijven voor een toernooi?", "Melding", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                        btnVerwijderen.IsEnabled = true;
+                 
+
                     }
                     else
                     {
@@ -136,15 +136,11 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
         //Speler uitschrijven
         private void btnVerwijderen_Click(object sender, RoutedEventArgs e)
         {
+            //openen van het spelerswindow
             SpelerWindow spelerWindow = new SpelerWindow();
             spelerWindow.Show();
         }
 
-        private void btnHome_Click(object sender, RoutedEventArgs e)
-        {
-            //terug naar vorige scherm
-            Close();
-        }
         private void Wissen()
         {
             //maakt alles leeg
@@ -169,6 +165,14 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
                 return "deze datum is niet geldig!\n";
             }
             return "";
+        }
+
+        private void btnAfsluiten_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Owner = this;
+            this.Hide();
+            mainWindow.ShowDialog();
         }
     }
 }

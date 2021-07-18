@@ -12,38 +12,39 @@
         TextOptions.TextFormattingMode="Ideal" 
         TextOptions.TextRenderingMode="Auto"        
         FontFamily="{DynamicResource MaterialDesignFont}"
-       Title="TeamWindow" Height="650" Width="800" Loaded="Window_Loaded">
-        <!--Closes window with button-->
-        <Window.CommandBindings>
+       Title="DatabaseWindow" Height="650" Width="800" Loaded="Window_Loaded">
+    <!--Closes window with button-->
+    <Window.CommandBindings>
         <CommandBinding Command="ApplicationCommands.Close"
                         Executed="btnAnnuleren_Click"/>
-        </Window.CommandBindings>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="auto"/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition  Height="auto"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+    </Window.CommandBindings>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition  Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="53*"/>
+            <ColumnDefinition Width="145*"/>
+            <ColumnDefinition Width="198*"/>
+            <ColumnDefinition Width="198*"/>
+            <ColumnDefinition Width="198*"/>
         </Grid.ColumnDefinitions>
-           <!-- label titel-->
-        <Label x:Name="lblTitle" Content="Kies in welk toernooi u wilt worden ingeschreven" FontFamily="Open Sans" FontSize="20" VerticalAlignment="Center" FontWeight="Bold" Grid.ColumnSpan="4" Grid.Row="0" Grid.Column="0" Margin="10"/>
+        <!-- label titel-->
+        <Label x:Name="lblTitle" Content="Kies in welk toernooi u wilt worden ingeschreven" FontFamily="Open Sans" FontSize="20" VerticalAlignment="Center" FontWeight="Bold" Grid.ColumnSpan="5" Grid.Row="0" Grid.Column="0" Margin="10,18"/>
 
         <Button
-        Style="{StaticResource MaterialDesignFloatingActionButton}" Grid.Column="3" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="10"
+        Style="{StaticResource MaterialDesignFloatingActionButton}" Grid.Column="4" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,10,10,0"
         ToolTip="MaterialDesignFloatingActionAccentButton" Width="50" Height="50" x:Name="btnTAfsluiten" Click="btnTAfsluiten_Click" >
             <materialDesign:PackIcon Kind="House" Height="30" Width="30" />
         </Button>
 
         <DataGrid x:Name="dataToernooi" SelectionChanged="dataToernooi_SelectionChanged" AutoGenerateColumns="False" Margin="5"
-	        Grid.Row="1" Grid.Column="0"  Grid.ColumnSpan="4" Grid.RowSpan="3" IsReadOnly="True" >
+	        Grid.Row="1" Grid.Column="0"  Grid.ColumnSpan="5" Grid.RowSpan="3" IsReadOnly="True" >
             <DataGrid.Columns>
                 <!-- verwijder tijd met StringFormat=d  of pas bepaalde notatie aan dmv custom-->
                 <DataGridTextColumn Binding="{Binding toernooiNaam}" Header="Spelmodus"/>
@@ -52,15 +53,15 @@
                 <DataGridTextColumn Binding="{Binding startuur,StringFormat=hh\\:mm}" Header="Start uur"/>
             </DataGrid.Columns>
         </DataGrid>
-            <!--textbox voor aanpassen-->
-        <TextBox x:Name="txtSpelmodus"  materialDesign:HintAssist.Hint="Spelmodus" Grid.Row="4" Grid.Column="0" Margin="5" />
-        <TextBox x:Name="txtdata"  materialDesign:HintAssist.Hint="Datum" Grid.Row="4" Grid.Column="1" Margin="5" />
-        <TextBox x:Name="txtcheckuur" materialDesign:HintAssist.Hint="Check in Uur" Grid.Row="4" Grid.Column="2" Margin="5"/>
-        <TextBox x:Name="txtstartuur" materialDesign:HintAssist.Hint="Start uur" Grid.Row="4" Grid.Column="3" Margin="5"/>
+        <!--textbox voor aanpassen-->
+        <TextBox x:Name="txtSpelmodus"  materialDesign:HintAssist.Hint="Spelmodus" Grid.Row="4" Grid.Column="0" Margin="5" Grid.ColumnSpan="2" />
+        <TextBox x:Name="txtdata"  materialDesign:HintAssist.Hint="Datum" Grid.Row="4" Grid.Column="2" Margin="5" />
+        <TextBox x:Name="txtcheckuur" materialDesign:HintAssist.Hint="Check in Uur" Grid.Row="4" Grid.Column="3" Margin="5"/>
+        <TextBox x:Name="txtstartuur" materialDesign:HintAssist.Hint="Start uur" Grid.Row="4" Grid.Column="4" Margin="5"/>
         <!-- CRUD operaties-->
-        <Button x:Name="btnVerwijderen" Content="Verwijderen" Grid.Row="5" Grid.Column="0" Margin="5" Style="{StaticResource MaterialDesignRaisedAccentButton}" Click="btnVerwijderen_Click" />
-        <Button x:Name="btnAanpassen" Content="Aanpassen" Grid.Row="5" Grid.Column="1" Margin="5" Style="{StaticResource MaterialDesignRaisedAccentButton}" Click="btnAanpassen_Click" />
-        <Button x:Name="btnToevoegen" Content="Toevoegen" Grid.Row="5" Grid.Column="2" Margin="5" Style="{StaticResource MaterialDesignRaisedAccentButton}" Click="btnToevoegen_Click" />
-        <Button x:Name="btnInschrijven" Content="Inschrijven" Grid.Row="5" Grid.Column="3" Margin="5" Click="btnInschrijven_Click"/>
+        <Button x:Name="btnVerwijderen" Content="Toernooi Verwijderen" Grid.Row="5" Grid.Column="0" Margin="5" Style="{StaticResource MaterialDesignRaisedAccentButton}" Click="btnVerwijderen_Click" Grid.ColumnSpan="2" />
+        <Button x:Name="btnAanpassen" Content="Toernooi Aanpassen" Grid.Row="5" Grid.Column="2" Margin="5" Style="{StaticResource MaterialDesignRaisedAccentButton}" Click="btnAanpassen_Click" />
+        <Button x:Name="btnToevoegen" Content="Toernooi Toevoegen" Grid.Row="5" Grid.Column="3" Margin="5" Style="{StaticResource MaterialDesignRaisedAccentButton}" Click="btnToevoegen_Click" />
+        <Button x:Name="btnInschrijven" Content="Inschrijven" Grid.Row="5" Grid.Column="4" Margin="5" Click="btnInschrijven_Click"/>
     </Grid>
 </Window>

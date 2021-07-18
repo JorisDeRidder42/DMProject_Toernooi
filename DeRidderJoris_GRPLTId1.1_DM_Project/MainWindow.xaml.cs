@@ -84,6 +84,7 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
         {
             DatabaseWindow databaseWindow = new DatabaseWindow();
             databaseWindow.Show();
+            this.Close();
         }
     }
 }

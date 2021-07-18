@@ -144,5 +144,10 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
             }
             return "";
         }
+
+        private void btnSInschrijven_Click(object sender, RoutedEventArgs e)
+        {
+           
+        }
     }
 }

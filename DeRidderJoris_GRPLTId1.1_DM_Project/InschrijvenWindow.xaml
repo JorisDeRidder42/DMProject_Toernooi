@@ -12,10 +12,6 @@
         TextOptions.TextRenderingMode="Auto"
         FontFamily="{DynamicResource MaterialDesignFont}"
         Title="InschrijvenWindow" Height="650" Width="800" Loaded="Window_Loaded"  >
-    <Window.CommandBindings>
-        <CommandBinding Command="ApplicationCommands.Close"
-                        Executed="btnAnnuleren_Click"/>
-    </Window.CommandBindings>
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -34,6 +30,11 @@
 
         <!-- Toernooi banner -->
         <Image Name="ImageToernooi"  Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" Width="auto" Stretch="Fill"></Image>
+        <Button
+        Style="{StaticResource MaterialDesignFloatingActionButton}" Grid.Column="3" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="10"
+        ToolTip="MaterialDesignFloatingActionAccentButton" Width="50" Height="50" x:Name="btnAfsluiten" Click="btnAfsluiten_Click">
+            <materialDesign:PackIcon Kind="Home" Height="30" Width="30" />
+        </Button>
 
         <!-- Achtergrond voor labels -->
         <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" VerticalAlignment="Bottom" Margin="10" >
@@ -94,10 +95,10 @@
 
         <DatePicker x:Name="txtGeboortedatum" Grid.Row="3" Grid.Column="1" Margin="20" materialDesign:HintAssist.Hint="Geboortedatum" Style="{StaticResource MaterialDesignOutlinedDatePicker}" BorderBrush="#FF673AB7" Foreground="#FF673AB7"/>
         <TextBox x:Name="txtGeboortePlaats" Grid.Row="3" Grid.Column="2" materialDesign:HintAssist.Hint="Geboorteplaats" Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalAlignment="Center" Margin="20" BorderBrush="#FF673AB7" Foreground="#FF673AB7"  />
+
         <!-- CRUD operaties-->
-        <Button x:Name="btnBewaren" Content="Bewaren" Grid.Row="4" Grid.Column="1" Margin="20" VerticalAlignment="Bottom"  Style="{StaticResource MaterialDesignRaisedAccentButton}" Click="btnBewaren_Click" IsCancel="True"/>
-        <Button x:Name="btnAnnuleren" Content="Annuleren" Grid.Row="4" Grid.Column="2" Margin="20" VerticalAlignment="Bottom" Click="btnAnnuleren_Click"/>
-        <Button x:Name="btnVerwijderen" Content="Spelers uitschrijven" Grid.Row="4" Grid.Column="3" Margin="5,20" Style="{StaticResource MaterialDesignRaisedAccentButton}" Click="btnVerwijderen_Click" />
+        <Button x:Name="btnBewaren" Content="Speler Bewaren" Grid.Row="4" Grid.Column="1" Margin="20" VerticalAlignment="Bottom"  Style="{StaticResource MaterialDesignRaisedAccentButton}" Click="btnBewaren_Click" IsCancel="True"/>
+        <Button x:Name="btnVerwijderen" Content="Speler uitschrijven" Grid.Row="4" Grid.Column="2" Margin="5,20" Style="{StaticResource MaterialDesignRaisedAccentButton}" Click="btnVerwijderen_Click" IsEnabled="False" />
     </Grid>
 </Window>
  

@@ -48,6 +48,7 @@
         <!-- CRUD operaties-->
             <Button x:Name="btnSVerwijderen" Content="Speler Verwijderen" Grid.Row="5" Grid.Column="0" Margin="5" Style="{StaticResource MaterialDesignRaisedAccentButton}" Click="btnSVerwijderen_Click" />
         <Button x:Name="btnSAanpassen" Content="Speler aanpassen" Grid.Row="5" Grid.Column="1" Margin="5" Style="{StaticResource MaterialDesignRaisedAccentButton}" Click="btnSAanpassen_Click" />
+        <Button x:Name="btnSInschrijven" Content="Inschrijven" Grid.Row="5" Grid.Column="2" Margin="5" Click="btnSInschrijven_Click" />
         <Button x:Name="btnSAnnuleren" Content="Annuleren" Grid.Row="5" Grid.Column="3" Margin="5" Click="btnSAnnuleren_Click" />
         </Grid>
 </Window>
