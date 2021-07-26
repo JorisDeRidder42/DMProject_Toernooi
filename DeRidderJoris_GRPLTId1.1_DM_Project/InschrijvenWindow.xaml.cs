@@ -156,13 +156,20 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
         }
         private string Valideer(string columnName)
         {
+            DateTime datumNu = DateTime.Now;
+            datumNu = datumNu.AddYears(-16);
+
             if (columnName == "cmbRank" && cmbRank.SelectedItem == null)
             {
                 return "Selecteer een Rank!" + Environment.NewLine;
             }
-            if (!DateTime.TryParse(txtGeboortedatum.Text, out var gdatumm))
+             if (!DateTime.TryParse(txtGeboortedatum.Text, out DateTime gdatum))
             {
                 return "deze datum is niet geldig!\n";
+            }
+            if (gdatum > datumNu)
+            {
+                return "Enkel voor 16+!\n";
             }
             return "";
         }
