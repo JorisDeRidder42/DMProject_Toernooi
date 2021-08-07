@@ -100,6 +100,7 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
 
                 if (speler.IsGeldig())
                 {
+
                     int ok = DatabaseOperations.ToevoegenSpeler(speler);
                     if (ok > 0)
                     {
@@ -110,8 +111,7 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
                             mainWindow.Show();
                             this.Close();
                         }
-                        //MessageBox.Show("U bent ingeschreven!\n Wilt u zich opnieuw inschrijven voor een toernooi?", "Melding", MessageBoxButton.YesNo, MessageBoxImage.Question);
-                        btnVerwijderen.IsEnabled = true;
+                         btnVerwijderen.IsEnabled = true;
                  
 
                     }
@@ -163,7 +163,7 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Project
             {
                 return "Selecteer een Rank!" + Environment.NewLine;
             }
-             if (!DateTime.TryParse(txtGeboortedatum.Text, out DateTime gdatum))
+            if (!DateTime.TryParse(txtGeboortedatum.Text, out DateTime gdatum))
             {
                 return "deze datum is niet geldig!\n";
             }
