@@ -8,6 +8,8 @@ namespace DeRidderJoris_GRPLTId1._1_DM_UnitTests
     [TestClass]
     public class ProjectTest
     {
+
+        //controle of gamemode 1 == rocket league
         [TestMethod]
         public void ControllerenofdeInformatiekloptVanGameMode()
         {
@@ -26,6 +28,7 @@ namespace DeRidderJoris_GRPLTId1._1_DM_UnitTests
 
         }
 
+        //controle of gamemode 1 == unranked
         [TestMethod]
         public void ControllerenofdeInformatieKloptVanRank()
         { 

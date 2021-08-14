@@ -70,6 +70,7 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
             }
         }
 
+        //ophalen van de gamemodes
         public static List<GameMode> OphalengameModeIds()
         {
             using (DBToernooiEntities toernooiEntities = new DBToernooiEntities())
@@ -102,6 +103,7 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
             }
         }
 
+        //toevoegen van de speler
         public static int ToevoegenSpeler(Speler speler)
         {
             try
@@ -120,7 +122,7 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
                 return 0;
             }
         }
-
+        //verwijderen van de speler
         public static int VerwijderenSpeler(Speler speler)
         {
             try
@@ -140,6 +142,7 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
             }
         }
 
+        //aanpassen van de speler
         public static int AanpassenSpeler(Speler speler)
         {
             try
@@ -159,6 +162,7 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
             }
         }
 
+        //verwijderen van het toernooi
         public static int VerwijderenToernooi(Toernooi toernooi)
         {
             try
@@ -175,7 +179,7 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
                 return 0;
             }
         }
-
+        //aanpassen van het toernooi
         public static int AanpassenToernooi(Toernooi toernooi)
         {
             try
@@ -195,6 +199,7 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
             }
         }
 
+        //toevoegen van het toernooi
         public static int ToevoegenToernooi(Toernooi toernooi)
         {
             try

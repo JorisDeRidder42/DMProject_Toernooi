@@ -10,7 +10,8 @@ namespace DeRidderJoris_GRPLTId1._1_DM_Models
     public abstract class BasisKlasse : IDataErrorInfo
     {
         public abstract string this[string columnName] { get; }
-
+    
+        // controle foutmeldingen
         public bool IsGeldig()
         {
             return string.IsNullOrWhiteSpace(Error);
