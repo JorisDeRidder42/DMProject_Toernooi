@@ -18,7 +18,6 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
                 return toernooiEntities.GameMode
                     .Where(t => t.gameModeNaam == Helper.buttonSpel)
                     .Include(x => x.Toernooien)
-                   // .OrderBy(t => t.Toernooien.Select(sub => sub.datum))
                   .SingleOrDefault();
             }   
         }
@@ -80,17 +79,6 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
             }
         }
 
-        //public static List<Rank> OphalengameRanks()
-        //{
-        //    using (DBToernooiEntities toernooiEntities = new DBToernooiEntities())
-        //    {
-        //        return toernooiEntities.Rank
-        //            .Where(r => r.GameModeRanks.Select(sub => sub.gameModeId == Helper.IdGameMode))
-        //            .ToList();
-        //    }
-        //}
-
-
 
         //gebruikt voor het verwijderen en aanpassen van het toernooi
         public static List<Toernooi> OphalenToernooienViaToernooiId()
@@ -113,10 +101,6 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
                     .ToList();
             }
         }
-
-        /// <summary>
-        /// CRUD OPERATIES SPELER
-        /// </summary>
 
         public static int ToevoegenSpeler(Speler speler)
         {
@@ -174,11 +158,6 @@ namespace DeRidderJoris_GRPLTId1._1_DM_DAL
                 return 0;
             }
         }
-
-        /// <summary>
-        /// CRUD TOERNOOI
-        /// </summary>
-        /// <returns></returns>
 
         public static int VerwijderenToernooi(Toernooi toernooi)
         {
